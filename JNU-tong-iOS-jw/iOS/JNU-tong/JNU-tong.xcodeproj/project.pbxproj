@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040586E81F6B7EAD0093FD98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040586E71F6B7EAD0093FD98 /* AppDelegate.swift */; };
+		040586ED1F6B7EAD0093FD98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040586EB1F6B7EAD0093FD98 /* Main.storyboard */; };
+		040586EF1F6B7EAD0093FD98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040586EE1F6B7EAD0093FD98 /* Assets.xcassets */; };
+		040586F21F6B7EAD0093FD98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040586F01F6B7EAD0093FD98 /* LaunchScreen.storyboard */; };
+		040586FD1F6B7EAD0093FD98 /* JNU_tongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040586FC1F6B7EAD0093FD98 /* JNU_tongTests.swift */; };
+		040587081F6B7EAD0093FD98 /* JNU_tongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040587071F6B7EAD0093FD98 /* JNU_tongUITests.swift */; };
+		0405871C1F6B7F110093FD98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405871B1F6B7F110093FD98 /* MainViewController.swift */; };
+		0405871E1F6B80BD0093FD98 /* CityBusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405871D1F6B80BD0093FD98 /* CityBusTableViewCell.swift */; };
+		040587201F6B80C90093FD98 /* SchoolBusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405871F1F6B80C90093FD98 /* SchoolBusTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		040586F91F6B7EAD0093FD98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040586DC1F6B7EAD0093FD98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040586E31F6B7EAD0093FD98;
+			remoteInfo = "JNU-tong";
+		};
+		040587041F6B7EAD0093FD98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040586DC1F6B7EAD0093FD98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040586E31F6B7EAD0093FD98;
+			remoteInfo = "JNU-tong";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		040586E41F6B7EAD0093FD98 /* JNU-tong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JNU-tong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		040586E71F6B7EAD0093FD98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		040586EC1F6B7EAD0093FD98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		040586EE1F6B7EAD0093FD98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		040586F11F6B7EAD0093FD98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		040586F31F6B7EAD0093FD98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040586F81F6B7EAD0093FD98 /* JNU-tongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JNU-tongTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		040586FC1F6B7EAD0093FD98 /* JNU_tongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNU_tongTests.swift; sourceTree = "<group>"; };
+		040586FE1F6B7EAD0093FD98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040587031F6B7EAD0093FD98 /* JNU-tongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JNU-tongUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		040587071F6B7EAD0093FD98 /* JNU_tongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNU_tongUITests.swift; sourceTree = "<group>"; };
+		040587091F6B7EAD0093FD98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0405871B1F6B7F110093FD98 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0405871D1F6B80BD0093FD98 /* CityBusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusTableViewCell.swift; sourceTree = "<group>"; };
+		0405871F1F6B80C90093FD98 /* SchoolBusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolBusTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		040586E11F6B7EAD0093FD98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040586F51F6B7EAD0093FD98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040587001F6B7EAD0093FD98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040586DB1F6B7EAD0093FD98 = {
+			isa = PBXGroup;
+			children = (
+				040586E61F6B7EAD0093FD98 /* JNU-tong */,
+				040586FB1F6B7EAD0093FD98 /* JNU-tongTests */,
+				040587061F6B7EAD0093FD98 /* JNU-tongUITests */,
+				040586E51F6B7EAD0093FD98 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		040586E51F6B7EAD0093FD98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				040586E41F6B7EAD0093FD98 /* JNU-tong.app */,
+				040586F81F6B7EAD0093FD98 /* JNU-tongTests.xctest */,
+				040587031F6B7EAD0093FD98 /* JNU-tongUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		040586E61F6B7EAD0093FD98 /* JNU-tong */ = {
+			isa = PBXGroup;
+			children = (
+				0405871A1F6B7ECE0093FD98 /* Storyboard */,
+				040587191F6B7EC60093FD98 /* etc */,
+				040587181F6B7EC10093FD98 /* Asset */,
+				040587171F6B7EBA0093FD98 /* ViewController */,
+				040587161F6B7EB60093FD98 /* View */,
+				040587151F6B7EB20093FD98 /* Model */,
+			);
+			path = "JNU-tong";
+			sourceTree = "<group>";
+		};
+		040586FB1F6B7EAD0093FD98 /* JNU-tongTests */ = {
+			isa = PBXGroup;
+			children = (
+				040586FC1F6B7EAD0093FD98 /* JNU_tongTests.swift */,
+				040586FE1F6B7EAD0093FD98 /* Info.plist */,
+			);
+			path = "JNU-tongTests";
+			sourceTree = "<group>";
+		};
+		040587061F6B7EAD0093FD98 /* JNU-tongUITests */ = {
+			isa = PBXGroup;
+			children = (
+				040587071F6B7EAD0093FD98 /* JNU_tongUITests.swift */,
+				040587091F6B7EAD0093FD98 /* Info.plist */,
+			);
+			path = "JNU-tongUITests";
+			sourceTree = "<group>";
+		};
+		040587151F6B7EB20093FD98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		040587161F6B7EB60093FD98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0405871D1F6B80BD0093FD98 /* CityBusTableViewCell.swift */,
+				0405871F1F6B80C90093FD98 /* SchoolBusTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		040587171F6B7EBA0093FD98 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0405871B1F6B7F110093FD98 /* MainViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		040587181F6B7EC10093FD98 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				040586EE1F6B7EAD0093FD98 /* Assets.xcassets */,
+			);
+			name = Asset;
+			sourceTree = "<group>";
+		};
+		040587191F6B7EC60093FD98 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				040586E71F6B7EAD0093FD98 /* AppDelegate.swift */,
+				040586F31F6B7EAD0093FD98 /* Info.plist */,
+			);
+			name = etc;
+			sourceTree = "<group>";
+		};
+		0405871A1F6B7ECE0093FD98 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				040586F01F6B7EAD0093FD98 /* LaunchScreen.storyboard */,
+				040586EB1F6B7EAD0093FD98 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		040586E31F6B7EAD0093FD98 /* JNU-tong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0405870C1F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tong" */;
+			buildPhases = (
+				040586E01F6B7EAD0093FD98 /* Sources */,
+				040586E11F6B7EAD0093FD98 /* Frameworks */,
+				040586E21F6B7EAD0093FD98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JNU-tong";
+			productName = "JNU-tong";
+			productReference = 040586E41F6B7EAD0093FD98 /* JNU-tong.app */;
+			productType = "com.apple.product-type.application";
+		};
+		040586F71F6B7EAD0093FD98 /* JNU-tongTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0405870F1F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongTests" */;
+			buildPhases = (
+				040586F41F6B7EAD0093FD98 /* Sources */,
+				040586F51F6B7EAD0093FD98 /* Frameworks */,
+				040586F61F6B7EAD0093FD98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				040586FA1F6B7EAD0093FD98 /* PBXTargetDependency */,
+			);
+			name = "JNU-tongTests";
+			productName = "JNU-tongTests";
+			productReference = 040586F81F6B7EAD0093FD98 /* JNU-tongTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		040587021F6B7EAD0093FD98 /* JNU-tongUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040587121F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongUITests" */;
+			buildPhases = (
+				040586FF1F6B7EAD0093FD98 /* Sources */,
+				040587001F6B7EAD0093FD98 /* Frameworks */,
+				040587011F6B7EAD0093FD98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				040587051F6B7EAD0093FD98 /* PBXTargetDependency */,
+			);
+			name = "JNU-tongUITests";
+			productName = "JNU-tongUITests";
+			productReference = 040587031F6B7EAD0093FD98 /* JNU-tongUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		040586DC1F6B7EAD0093FD98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = tong;
+				TargetAttributes = {
+					040586E31F6B7EAD0093FD98 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					040586F71F6B7EAD0093FD98 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 040586E31F6B7EAD0093FD98;
+					};
+					040587021F6B7EAD0093FD98 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 040586E31F6B7EAD0093FD98;
+					};
+				};
+			};
+			buildConfigurationList = 040586DF1F6B7EAD0093FD98 /* Build configuration list for PBXProject "JNU-tong" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 040586DB1F6B7EAD0093FD98;
+			productRefGroup = 040586E51F6B7EAD0093FD98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				040586E31F6B7EAD0093FD98 /* JNU-tong */,
+				040586F71F6B7EAD0093FD98 /* JNU-tongTests */,
+				040587021F6B7EAD0093FD98 /* JNU-tongUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		040586E21F6B7EAD0093FD98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040586F21F6B7EAD0093FD98 /* LaunchScreen.storyboard in Resources */,
+				040586EF1F6B7EAD0093FD98 /* Assets.xcassets in Resources */,
+				040586ED1F6B7EAD0093FD98 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040586F61F6B7EAD0093FD98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040587011F6B7EAD0093FD98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		040586E01F6B7EAD0093FD98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040587201F6B80C90093FD98 /* SchoolBusTableViewCell.swift in Sources */,
+				0405871E1F6B80BD0093FD98 /* CityBusTableViewCell.swift in Sources */,
+				040586E81F6B7EAD0093FD98 /* AppDelegate.swift in Sources */,
+				0405871C1F6B7F110093FD98 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040586F41F6B7EAD0093FD98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040586FD1F6B7EAD0093FD98 /* JNU_tongTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040586FF1F6B7EAD0093FD98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040587081F6B7EAD0093FD98 /* JNU_tongUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		040586FA1F6B7EAD0093FD98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040586E31F6B7EAD0093FD98 /* JNU-tong */;
+			targetProxy = 040586F91F6B7EAD0093FD98 /* PBXContainerItemProxy */;
+		};
+		040587051F6B7EAD0093FD98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040586E31F6B7EAD0093FD98 /* JNU-tong */;
+			targetProxy = 040587041F6B7EAD0093FD98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		040586EB1F6B7EAD0093FD98 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040586EC1F6B7EAD0093FD98 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		040586F01F6B7EAD0093FD98 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040586F11F6B7EAD0093FD98 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0405870A1F6B7EAD0093FD98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0405870B1F6B7EAD0093FD98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0405870D1F6B7EAD0093FD98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "JNU-tong/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tong";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0405870E1F6B7EAD0093FD98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "JNU-tong/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tong";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		040587101F6B7EAD0093FD98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "JNU-tongTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tongTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JNU-tong.app/JNU-tong";
+			};
+			name = Debug;
+		};
+		040587111F6B7EAD0093FD98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "JNU-tongTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tongTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JNU-tong.app/JNU-tong";
+			};
+			name = Release;
+		};
+		040587131F6B7EAD0093FD98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "JNU-tongUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tongUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "JNU-tong";
+			};
+			name = Debug;
+		};
+		040587141F6B7EAD0093FD98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "JNU-tongUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tongUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "JNU-tong";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		040586DF1F6B7EAD0093FD98 /* Build configuration list for PBXProject "JNU-tong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0405870A1F6B7EAD0093FD98 /* Debug */,
+				0405870B1F6B7EAD0093FD98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0405870C1F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0405870D1F6B7EAD0093FD98 /* Debug */,
+				0405870E1F6B7EAD0093FD98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0405870F1F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040587101F6B7EAD0093FD98 /* Debug */,
+				040587111F6B7EAD0093FD98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		040587121F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040587131F6B7EAD0093FD98 /* Debug */,
+				040587141F6B7EAD0093FD98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 040586DC1F6B7EAD0093FD98 /* Project object */;
+}
