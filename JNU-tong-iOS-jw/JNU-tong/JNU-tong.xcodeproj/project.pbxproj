@@ -16,6 +16,8 @@
 		0405871C1F6B7F110093FD98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405871B1F6B7F110093FD98 /* MainViewController.swift */; };
 		0405871E1F6B80BD0093FD98 /* CityBusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405871D1F6B80BD0093FD98 /* CityBusTableViewCell.swift */; };
 		040587201F6B80C90093FD98 /* SchoolBusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405871F1F6B80C90093FD98 /* SchoolBusTableViewCell.swift */; };
+		4E36F3451F6D23F500036F0E /* CityBusTableViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36F3441F6D23F500036F0E /* CityBusTableViewHome.swift */; };
+		4E36F3471F6D254700036F0E /* CityBusTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36F3461F6D254700036F0E /* CityBusTableViewSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		0405871B1F6B7F110093FD98 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0405871D1F6B80BD0093FD98 /* CityBusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusTableViewCell.swift; sourceTree = "<group>"; };
 		0405871F1F6B80C90093FD98 /* SchoolBusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolBusTableViewCell.swift; sourceTree = "<group>"; };
+		4E36F3441F6D23F500036F0E /* CityBusTableViewHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusTableViewHome.swift; sourceTree = "<group>"; };
+		4E36F3461F6D254700036F0E /* CityBusTableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusTableViewSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +105,12 @@
 		040586E61F6B7EAD0093FD98 /* JNU-tong */ = {
 			isa = PBXGroup;
 			children = (
+				040587151F6B7EB20093FD98 /* Model */,
 				0405871A1F6B7ECE0093FD98 /* Storyboard */,
 				040587191F6B7EC60093FD98 /* etc */,
 				040587181F6B7EC10093FD98 /* Asset */,
 				040587171F6B7EBA0093FD98 /* ViewController */,
 				040587161F6B7EB60093FD98 /* View */,
-				040587151F6B7EB20093FD98 /* Model */,
 			);
 			path = "JNU-tong";
 			sourceTree = "<group>";
@@ -140,7 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				0405871D1F6B80BD0093FD98 /* CityBusTableViewCell.swift */,
+				4E36F3441F6D23F500036F0E /* CityBusTableViewHome.swift */,
 				0405871F1F6B80C90093FD98 /* SchoolBusTableViewCell.swift */,
+				4E36F3461F6D254700036F0E /* CityBusTableViewSection.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 				TargetAttributes = {
 					040586E31F6B7EAD0093FD98 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B3PWYBKFUK;
 						ProvisioningStyle = Automatic;
 					};
 					040586F71F6B7EAD0093FD98 = {
@@ -315,8 +322,10 @@
 			files = (
 				040587201F6B80C90093FD98 /* SchoolBusTableViewCell.swift in Sources */,
 				0405871E1F6B80BD0093FD98 /* CityBusTableViewCell.swift in Sources */,
+				4E36F3451F6D23F500036F0E /* CityBusTableViewHome.swift in Sources */,
 				040586E81F6B7EAD0093FD98 /* AppDelegate.swift in Sources */,
 				0405871C1F6B7F110093FD98 /* MainViewController.swift in Sources */,
+				4E36F3471F6D254700036F0E /* CityBusTableViewSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = "JNU-tong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tong";
@@ -482,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = "JNU-tong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tong";
@@ -563,6 +574,7 @@
 				0405870E1F6B7EAD0093FD98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0405870F1F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongTests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +583,7 @@
 				040587111F6B7EAD0093FD98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		040587121F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongUITests" */ = {
 			isa = XCConfigurationList;
@@ -579,6 +592,7 @@
 				040587141F6B7EAD0093FD98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
