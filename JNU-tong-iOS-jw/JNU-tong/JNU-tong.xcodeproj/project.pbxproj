@@ -247,6 +247,7 @@
 				TargetAttributes = {
 					040586E31F6B7EAD0093FD98 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B3PWYBKFUK;
 						ProvisioningStyle = Automatic;
 					};
 					040586F71F6B7EAD0093FD98 = {
@@ -470,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = "JNU-tong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tong";
@@ -482,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = "JNU-tong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tong.JNU-tong";
@@ -563,6 +566,7 @@
 				0405870E1F6B7EAD0093FD98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0405870F1F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongTests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +575,7 @@
 				040587111F6B7EAD0093FD98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		040587121F6B7EAD0093FD98 /* Build configuration list for PBXNativeTarget "JNU-tongUITests" */ = {
 			isa = XCConfigurationList;
@@ -579,6 +584,7 @@
 				040587141F6B7EAD0093FD98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
