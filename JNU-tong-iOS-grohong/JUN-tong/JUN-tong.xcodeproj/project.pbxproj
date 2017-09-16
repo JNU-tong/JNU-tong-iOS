@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9E91F6D50590066C96D /* AppDelegate.swift */; };
-		4E7FB9EC1F6D50590066C96D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9EB1F6D50590066C96D /* ViewController.swift */; };
 		4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9ED1F6D50590066C96D /* Main.storyboard */; };
 		4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
 		4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F21F6D50590066C96D /* LaunchScreen.storyboard */; };
 		4E7FB9FF1F6D50590066C96D /* JUN_tongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */; };
+		4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */; };
+		4E7FBA151F6D766F0066C96D /* CityBusMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA141F6D766F0066C96D /* CityBusMainCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,6 @@
 /* Begin PBXFileReference section */
 		4E7FB9E61F6D50590066C96D /* JUN-tong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JUN-tong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7FB9E91F6D50590066C96D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E7FB9EB1F6D50590066C96D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E7FB9EE1F6D50590066C96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E7FB9F01F6D50590066C96D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E7FB9F31F6D50590066C96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		4E7FB9FA1F6D50590066C96D /* JUN-tongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JUN-tongTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JUN_tongTests.swift; sourceTree = "<group>"; };
 		4E7FBA001F6D50590066C96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4E7FBA141F6D766F0066C96D /* CityBusMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusMainCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				4E7FB9ED1F6D50590066C96D /* Main.storyboard */,
+				4E7FBA141F6D766F0066C96D /* CityBusMainCell.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -123,7 +126,7 @@
 		4E7FBA0C1F6D50D80066C96D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4E7FB9EB1F6D50590066C96D /* ViewController.swift */,
+				4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,7 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7FB9EC1F6D50590066C96D /* ViewController.swift in Sources */,
+				4E7FBA151F6D766F0066C96D /* CityBusMainCell.swift in Sources */,
+				4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */,
 				4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
