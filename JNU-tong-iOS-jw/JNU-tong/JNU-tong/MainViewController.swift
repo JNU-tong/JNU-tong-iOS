@@ -46,23 +46,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return nil
-        } else if section == 1 {
-            return "버스 리스트"
-        }
-        
-        return nil
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell?
         
         if tableView == self.cityBusTable {
-            cell = tableView.dequeueReusableCell(withIdentifier: "cityBus", for: indexPath)
-            if cityBusHome {
-                cell?.selectionStyle = UITableViewCellSelectionStyle.none
+            if indexPath.section == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "cityBus", for: indexPath)
+                if cityBusHome {
+                    cell?.selectionStyle = UITableViewCellSelectionStyle.none
+                }
+            } else if indexPath.section == 1 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "cityBusListCell", for: indexPath)
+                cell?.selectionStyle = UITableViewCellSelectionStyle.gray
+                
             }
         }
         
@@ -76,11 +72,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cityBusHome = false
                 UIView.animate(withDuration: 0.5,delay: 0, animations: {
                     self.cityBusView.frame.size.height += self.view.bounds.height-25-180
+                    self.cityBusTable.frame.size.height += self.view.bounds.height-25-180
+                    self.cityBusTable.isScrollEnabled = true
                 })
             } else{
                 cityBusHome = true
                 UIView.animate(withDuration: 0.5,delay: 0, animations: {
                     self.cityBusView.frame.size.height -= self.view.bounds.height-25-180
+                    self.cityBusTable.frame.size.height -= self.view.bounds.height-25-180
+                    self.cityBusTable.isScrollEnabled = false
                 })
             }
         }
