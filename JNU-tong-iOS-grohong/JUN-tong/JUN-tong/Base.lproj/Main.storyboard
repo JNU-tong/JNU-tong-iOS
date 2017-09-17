@@ -98,7 +98,6 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.92907480200000003" green="0.92907480200000003" blue="0.92907480200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstItem="E09-5C-rqU" firstAttribute="leading" secondItem="2T9-k5-gvx" secondAttribute="leading" constant="5" id="7sJ-Mj-n2M"/>
                                                                         <constraint firstItem="E09-5C-rqU" firstAttribute="centerY" secondItem="2T9-k5-gvx" secondAttribute="centerY" id="FeO-gK-r46"/>
@@ -116,66 +115,6 @@
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="bgView" destination="2T9-k5-gvx" id="jPO-ds-syY"/>
-                                                        </connections>
-                                                    </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityBusMainCell" id="Aqc-e1-mtI" customClass="CityBusMainCell" customModule="JUN_tong" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="112" width="343" height="84"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aqc-e1-mtI" id="5tG-qd-BT5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sds-bD-uaA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VjE-Qu-T9q">
-                                                                            <rect key="frame" x="5" y="33" width="141.5" height="18"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출발예정버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t7-cn-w5G">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="78" height="18"/>
-                                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                                                    <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XST-OP-oCb">
-                                                                                    <rect key="frame" x="86" y="0.0" width="4.5" height="18"/>
-                                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                                                    <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500번" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnq-Wr-zBg">
-                                                                                    <rect key="frame" x="98.5" y="0.0" width="43" height="18"/>
-                                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                                                    <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠시후도착" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5on-Ik-YB9">
-                                                                            <rect key="frame" x="273" y="33" width="65" height="18"/>
-                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                                            <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.92907480200000003" green="0.92907480200000003" blue="0.92907480200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstItem="VjE-Qu-T9q" firstAttribute="leading" secondItem="sds-bD-uaA" secondAttribute="leading" constant="5" id="9vR-fF-cG7"/>
-                                                                        <constraint firstItem="5on-Ik-YB9" firstAttribute="centerY" secondItem="sds-bD-uaA" secondAttribute="centerY" id="Ib3-MU-0oG"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="5on-Ik-YB9" secondAttribute="trailing" constant="5" id="QEu-za-G7U"/>
-                                                                        <constraint firstItem="VjE-Qu-T9q" firstAttribute="centerY" secondItem="sds-bD-uaA" secondAttribute="centerY" id="ec9-hc-PxB"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="sds-bD-uaA" secondAttribute="trailing" id="7M3-DW-BKY"/>
-                                                                <constraint firstAttribute="bottom" secondItem="sds-bD-uaA" secondAttribute="bottom" id="J5V-6X-lW5"/>
-                                                                <constraint firstItem="sds-bD-uaA" firstAttribute="top" secondItem="5tG-qd-BT5" secondAttribute="top" id="Uds-zV-G53"/>
-                                                                <constraint firstItem="sds-bD-uaA" firstAttribute="leading" secondItem="5tG-qd-BT5" secondAttribute="leading" id="eJy-GF-ejl"/>
-                                                            </constraints>
-                                                        </tableViewCellContentView>
-                                                        <connections>
-                                                            <outlet property="bgView" destination="sds-bD-uaA" id="nGu-Ph-P0e"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
