@@ -1,15 +1,15 @@
 //
-//  JNU_tongTests.swift
-//  JNU-tongTests
+//  JUN_tongTests.swift
+//  JUN-tongTests
 //
-//  Created by mac on 2017. 9. 15..
-//  Copyright © 2017년 tong. All rights reserved.
+//  Created by Seong ho Hong on 2017. 9. 16..
+//  Copyright © 2017년 Seong ho Hong. All rights reserved.
 //
 
 import XCTest
-@testable import JNU_tong
+@testable import JUN_tong
 
-class JNU_tongTests: XCTestCase {
+class JUN_tongTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

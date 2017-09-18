@@ -1,14 +1,14 @@
 //
-//  CityBusTableViewCell.swift
-//  JNU-tong
+//  CityBusCell.swift
+//  JUN-tong
 //
-//  Created by mac on 2017. 9. 15..
-//  Copyright © 2017년 tong. All rights reserved.
+//  Created by Seong ho Hong on 2017. 9. 18..
+//  Copyright © 2017년 Seong ho Hong. All rights reserved.
 //
 
 import UIKit
 
-class CityBusTableViewCell: UITableViewCell {
+class CityBusCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
