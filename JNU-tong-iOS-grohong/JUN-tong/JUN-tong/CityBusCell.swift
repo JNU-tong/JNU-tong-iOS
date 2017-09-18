@@ -1,18 +1,15 @@
 //
-//  CityBusMainCell.swift
+//  CityBusCell.swift
 //  JUN-tong
 //
-//  Created by Seong ho Hong on 2017. 9. 17..
+//  Created by Seong ho Hong on 2017. 9. 18..
 //  Copyright © 2017년 Seong ho Hong. All rights reserved.
 //
 
 import UIKit
 
-class CityBusMainCell: UITableViewCell {
+class CityBusCell: UITableViewCell {
 
-   
-    @IBOutlet weak var bgView: UIView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

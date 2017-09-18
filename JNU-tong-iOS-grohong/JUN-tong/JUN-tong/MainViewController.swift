@@ -16,15 +16,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityBusInfo: UIView!
     @IBOutlet weak var cityBusTable: UITableView!
     
+    
+    
+    
     var mainView = true
     // 본래 있던 자리를 알기 위해
     var shuttleBusCenter: CGPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cityBusTable.delegate = self
-        cityBusTable.dataSource = self
 
         let cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
         cityBusInfoTap.delegate = self
@@ -39,6 +39,9 @@ class MainViewController: UIViewController {
         shuttleBusMain.layer.borderColor = UIColor.darkGray.cgColor
         shuttleBusMain.layer.borderWidth = 0.5
         shuttleBusMain.layer.cornerRadius = 7
+        
+        self.cityBusTable.delegate = self
+        self.cityBusTable.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,26 +63,34 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "자주타는 버스"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusCell", for: indexPath) as? CityBusMainCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusCell", for: indexPath) as? CityBusCell {
+            
             return cell
         }
+        
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
-    
 }
 
 extension MainViewController: UIGestureRecognizerDelegate {

@@ -13,7 +13,7 @@
 		4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F21F6D50590066C96D /* LaunchScreen.storyboard */; };
 		4E7FB9FF1F6D50590066C96D /* JUN_tongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */; };
 		4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */; };
-		4E7FBA151F6D766F0066C96D /* CityBusMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA141F6D766F0066C96D /* CityBusMainCell.swift */; };
+		4E7FBA171F6FAD270066C96D /* CityBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA161F6FAD270066C96D /* CityBusCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JUN_tongTests.swift; sourceTree = "<group>"; };
 		4E7FBA001F6D50590066C96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4E7FBA141F6D766F0066C96D /* CityBusMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusMainCell.swift; sourceTree = "<group>"; };
+		4E7FBA161F6FAD270066C96D /* CityBusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				4E7FB9ED1F6D50590066C96D /* Main.storyboard */,
-				4E7FBA141F6D766F0066C96D /* CityBusMainCell.swift */,
+				4E7FBA161F6FAD270066C96D /* CityBusCell.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -244,8 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7FBA151F6D766F0066C96D /* CityBusMainCell.swift in Sources */,
 				4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */,
+				4E7FBA171F6FAD270066C96D /* CityBusCell.swift in Sources */,
 				4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +456,7 @@
 				4E7FBA051F6D50590066C96D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E7FBA061F6D50590066C96D /* Build configuration list for PBXNativeTarget "JUN-tongTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				4E7FBA081F6D50590066C96D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
