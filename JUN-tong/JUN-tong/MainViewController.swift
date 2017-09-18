@@ -16,12 +16,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityBusInfo: UIView!
     @IBOutlet weak var cityBusTable: UITableView!
     
-    
-    
+    @IBOutlet weak var cityBusTableHeight: NSLayoutConstraint!
     
     var mainView = true
     // 본래 있던 자리를 알기 위해
     var shuttleBusCenter: CGPoint?
+    var extensRange: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
         cityBusInfo.addGestureRecognizer(cityBusInfoTap)
         
         shuttleBusCenter = shuttleBusMain.center
+        extensRange = self.view.bounds.height-25-180
         
         cityBusMain.layer.borderColor = UIColor.darkGray.cgColor
         cityBusMain.layer.borderWidth = 0.5
@@ -72,7 +73,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -101,6 +102,7 @@ extension MainViewController: UIGestureRecognizerDelegate {
         
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
                 self.cityBusMain.frame.size.height += self.view.bounds.height-25-180
+                self.cityBusTableHeight.constant += self.view.bounds.height-25-180
                 self.cityBusTable.frame.size.height += self.view.bounds.height-25-180
                 self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: self.shuttleBusMain.frame.height + self.view.bounds.height)
             })
@@ -108,7 +110,9 @@ extension MainViewController: UIGestureRecognizerDelegate {
             self.mainView = true
             
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
+
                 self.cityBusMain.frame.size.height -= self.view.bounds.height-25-180
+                self.cityBusTableHeight.constant -= self.view.bounds.height-25-180
                 self.cityBusTable.frame.size.height -= self.view.bounds.height-25-180
                 self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)!)
             })
