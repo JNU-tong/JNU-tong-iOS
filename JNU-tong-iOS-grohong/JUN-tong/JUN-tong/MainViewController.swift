@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityBusMain: UIView!
     @IBOutlet weak var shuttleBusMain: UIView!
     
+    @IBOutlet weak var cityBusInfo: UIView!
     @IBOutlet weak var cityBusTable: UITableView!
     
     var mainView = true
@@ -24,7 +25,10 @@ class MainViewController: UIViewController {
         
         cityBusTable.delegate = self
         cityBusTable.dataSource = self
-        cityBusTable.isScrollEnabled = false
+
+        let cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
+        cityBusInfoTap.delegate = self
+        cityBusInfo.addGestureRecognizer(cityBusInfoTap)
         
         shuttleBusCenter = shuttleBusMain.center
         
@@ -54,6 +58,7 @@ class MainViewController: UIViewController {
     */
 
 }
+
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,41 +70,37 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusMainCell", for: indexPath) as? CityBusMainCell {
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusCell", for: indexPath) as? CityBusMainCell {
             return cell
         }
-        
         return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && self.mainView == true {
-            self.mainView = false
-            UIView.animate(withDuration: 0.5,delay: 0, animations: {
-                self.cityBusMain.frame.size.height += self.view.bounds.height-25-180
-                self.cityBusTable.frame.size.height += self.view.bounds.height-25-180
-                self.cityBusTable.isScrollEnabled = true
-                
-                //뷰 밖으로 나갈수 있도록
-                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: self.shuttleBusMain.frame.height + self.view.bounds.height)
-            })
-        } else if indexPath.section == 0 && self.mainView == false {
-            self.mainView = true
-            UIView.animate(withDuration: 0.5,delay: 0, animations: {
-                self.cityBusMain.frame.size.height -= self.view.bounds.height-25-180
-                self.cityBusTable.frame.size.height -= self.view.bounds.height-25-180
-                self.cityBusTable.isScrollEnabled = false
-                
-                //원래 있던 자리로(좀 엉망이네...ㅋㅋㅋ)
-                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)! - 80)
-            })
-        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
     
+}
+
+extension MainViewController: UIGestureRecognizerDelegate {
+    func cityBusInfoTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        
+        if mainView == true {
+            self.mainView = false
+        
+            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.cityBusMain.frame.size.height += self.view.bounds.height-25-180
+                self.cityBusTable.frame.size.height += self.view.bounds.height-25-180
+                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: self.shuttleBusMain.frame.height + self.view.bounds.height)
+            })
+        } else if mainView == false {
+            self.mainView = true
+            
+            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.cityBusMain.frame.size.height -= self.view.bounds.height-25-180
+                self.cityBusTable.frame.size.height -= self.view.bounds.height-25-180
+                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)!)
+            })
+        }
+    }
 }
