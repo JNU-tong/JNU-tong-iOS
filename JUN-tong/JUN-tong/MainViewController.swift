@@ -16,10 +16,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityBusInfo: UIView!
     @IBOutlet weak var cityBusTable: UITableView!
     
+    @IBOutlet weak var shuttleBusInfo: UIView!
+    
+    
     @IBOutlet weak var cityBusTableHeight: NSLayoutConstraint!
     
-    var mainView = true
+    var cityBusInfoFolder = false
+    var shuttleBusInfoFolder = false
+    
     // 본래 있던 자리를 알기 위해
+    var cityBusCenter: CGPoint?
     var shuttleBusCenter: CGPoint?
     var extensRange: CGFloat?
     
@@ -30,6 +36,11 @@ class MainViewController: UIViewController {
         cityBusInfoTap.delegate = self
         cityBusInfo.addGestureRecognizer(cityBusInfoTap)
         
+        let shuttleBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.shuttleBusInfoTap(_:)))
+        shuttleBusInfoTap.delegate = self
+        shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap)
+        
+        cityBusCenter = cityBusMain.center
         shuttleBusCenter = shuttleBusMain.center
         extensRange = self.view.bounds.height-25-180
         
@@ -116,24 +127,47 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 extension MainViewController: UIGestureRecognizerDelegate {
     func cityBusInfoTap(_ gestureRecognizer: UITapGestureRecognizer) {
         
-        if mainView == true {
-            self.mainView = false
+        if cityBusInfoFolder == false {
+            self.cityBusInfoFolder = true
         
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
-                self.cityBusMain.frame.size.height += self.view.bounds.height-25-180
-                self.cityBusTableHeight.constant += self.view.bounds.height-25-180
-                self.cityBusTable.frame.size.height += self.view.bounds.height-25-180
+                self.cityBusMain.frame.size.height += self.extensRange!
+                self.cityBusTableHeight.constant += self.extensRange!
+                self.cityBusTable.frame.size.height += self.extensRange!
                 self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: self.shuttleBusMain.frame.height + self.view.bounds.height)
             })
-        } else if mainView == false {
-            self.mainView = true
+        } else if cityBusInfoFolder == true {
+            self.cityBusInfoFolder = false
             
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
 
-                self.cityBusMain.frame.size.height -= self.view.bounds.height-25-180
-                self.cityBusTableHeight.constant -= self.view.bounds.height-25-180
-                self.cityBusTable.frame.size.height -= self.view.bounds.height-25-180
+                self.cityBusMain.frame.size.height -= self.extensRange!
+                self.cityBusTableHeight.constant -= self.extensRange!
+                self.cityBusTable.frame.size.height -= self.extensRange!
                 self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)!)
+            })
+        }
+    }
+    
+    func shuttleBusInfoTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        
+        if shuttleBusInfoFolder == false {
+            shuttleBusInfoFolder = true
+            
+            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)!)
+                self.shuttleBusMain.frame.size.height += self.extensRange!
+                
+                self.cityBusMain.isHidden = true
+            })
+        } else if shuttleBusInfoFolder == true {
+            shuttleBusInfoFolder = false
+            
+            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.shuttleBusMain.frame.size.height -= self.extensRange!
+                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)!)
+                
+                self.cityBusMain.isHidden = false
             })
         }
     }
