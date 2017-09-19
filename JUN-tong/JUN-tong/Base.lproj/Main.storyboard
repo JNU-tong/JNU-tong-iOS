@@ -178,7 +178,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-xr-TzG">
-                                <rect key="frame" x="16" y="199" width="343" height="150"/>
+                                <rect key="frame" x="16" y="199" width="343" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="교내셔틀버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-S2-Ibg">
                                         <rect key="frame" x="10" y="10" width="97" height="21"/>
@@ -188,17 +188,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPy-rK-1UY">
-                                        <rect key="frame" x="0.0" y="30" width="343" height="120"/>
+                                        <rect key="frame" x="0.0" y="30" width="343" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="eDG-SC-bY8"/>
+                                            <constraint firstAttribute="height" constant="50" id="GhX-Un-8YY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="9Mc-7L-JDf"/>
                                     <constraint firstItem="wPy-rK-1UY" firstAttribute="leading" secondItem="C1D-xr-TzG" secondAttribute="leading" id="CqI-AQ-iZw"/>
+                                    <constraint firstAttribute="height" constant="80" id="YhA-06-Lmm"/>
                                     <constraint firstAttribute="trailing" secondItem="wPy-rK-1UY" secondAttribute="trailing" id="mQH-4x-5ob"/>
                                     <constraint firstAttribute="bottom" secondItem="wPy-rK-1UY" secondAttribute="bottom" id="oyC-Ia-cbk"/>
                                 </constraints>

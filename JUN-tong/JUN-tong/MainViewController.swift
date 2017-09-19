@@ -76,8 +76,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return 10
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "자주타는 버스"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        if section == 0{
+            let headerText = UILabel()
+            headerText.text = "자주타는 버스"
+            headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+            headerText.frame = CGRect(x: 15, y: 10, width: 100, height: 25)
+            headerText.font = UIFont.boldSystemFont(ofSize: 14)
+            headerView.addSubview(headerText)
+            headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor
+            return headerView
+        } else {
+            let headerText = UILabel()
+            headerText.text = "도착예정 버스"
+            headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+            headerText.frame = CGRect(x: 15, y: 10, width: 100, height: 25)
+            headerText.font = UIFont.boldSystemFont(ofSize: 14)
+            headerView.addSubview(headerText)
+            headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor
+            return headerView
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
