@@ -14,6 +14,8 @@
 		4E7FB9FF1F6D50590066C96D /* JUN_tongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */; };
 		4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */; };
 		4E7FBA171F6FAD270066C96D /* CityBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA161F6FAD270066C96D /* CityBusCell.swift */; };
+		4E9CF5841F7CE20F0072ED05 /* CityBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CF5831F7CE20F0072ED05 /* CityBus.swift */; };
+		4E9CF58A1F7D22080072ED05 /* JNU_main_cityBus.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CF5891F7D22080072ED05 /* JNU_main_cityBus.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		4E7FBA001F6D50590066C96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4E7FBA161F6FAD270066C96D /* CityBusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusCell.swift; sourceTree = "<group>"; };
+		4E9CF5831F7CE20F0072ED05 /* CityBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBus.swift; sourceTree = "<group>"; };
+		4E9CF5891F7D22080072ED05 /* JNU_main_cityBus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JNU_main_cityBus.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		4E7FB9E81F6D50590066C96D /* JUN-tong */ = {
 			isa = PBXGroup;
 			children = (
+				4E9CF5891F7D22080072ED05 /* JNU_main_cityBus.json */,
+				4E9CF56C1F7BCDE80072ED05 /* Model */,
 				4E7FBA0C1F6D50D80066C96D /* Controller */,
 				4E7FBA0A1F6D50AC0066C96D /* View */,
 				4E7FBA091F6D50740066C96D /* Supporting Files */,
@@ -137,6 +143,14 @@
 				4E7FB9F01F6D50590066C96D /* Assets.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		4E9CF56C1F7BCDE80072ED05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E9CF5831F7CE20F0072ED05 /* CityBus.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9CF58A1F7D22080072ED05 /* JNU_main_cityBus.json in Resources */,
 				4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */,
 				4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */,
 				4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */,
@@ -247,6 +262,7 @@
 				4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */,
 				4E7FBA171F6FAD270066C96D /* CityBusCell.swift in Sources */,
 				4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */,
+				4E9CF5841F7CE20F0072ED05 /* CityBus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,6 +28,8 @@ class MainViewController: UIViewController {
     var cityBusCenter: CGPoint?
     var shuttleBusCenter: CGPoint?
     var extensRange: CGFloat?
+    
+    let cityBus: CityBus = CityBus()
 
     
     override func viewDidLoad() {
@@ -55,6 +57,9 @@ class MainViewController: UIViewController {
         
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
+        
+        let cityBusInfoJson = cityBus.readJsonData(resource: "JNU_main_cityBus") as? [[String : Any]]
+        print(cityBusInfoJson)
     }
 
     override func didReceiveMemoryWarning() {
