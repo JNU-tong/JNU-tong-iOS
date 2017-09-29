@@ -13,10 +13,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityBusMain: UIView!
     @IBOutlet weak var shuttleBusMain: UIView!
     
-    @IBOutlet weak var cityBusInfo: UIView!
     @IBOutlet weak var cityBusTable: UITableView!
     
+    @IBOutlet weak var cityBusInfo: UIView!
     @IBOutlet weak var shuttleBusInfo: UIView!
+    @IBOutlet weak var soonArriveBusInfo: UILabel!
     
     
     @IBOutlet weak var cityBusTableHeight: NSLayoutConstraint!
@@ -61,6 +62,15 @@ class MainViewController: UIViewController {
         self.cityBusTable.dataSource = self
         
         cityBusList = jsonReader.readJsonData(resource: "JNU_main_cityBus")
+        var arriveSoonBus: String = ""
+        
+        for cityBus in cityBusList {
+            if cityBus.firstBusTime! < 3 {
+                arriveSoonBus.append(cityBus.lineNo + "번 ")
+            }
+        }
+        
+        soonArriveBusInfo.text = arriveSoonBus
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,7 +139,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusCell", for: indexPath) as? CityBusCell {
-            
+            cell.setBusInfo(busInfo: cityBusList[indexPath.row])
             return cell
         }
         
