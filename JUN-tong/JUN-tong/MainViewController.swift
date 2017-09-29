@@ -29,7 +29,9 @@ class MainViewController: UIViewController {
     var shuttleBusCenter: CGPoint?
     var extensRange: CGFloat?
     
-    let cityBus: CityBus = CityBus()
+    let jsonReader: JsonReader = JsonReader()
+    var cityBusList: [CityBus] = []
+    var favoriteBusList: [CityBus] = []
 
     
     override func viewDidLoad() {
@@ -58,8 +60,7 @@ class MainViewController: UIViewController {
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
         
-        let cityBusInfoJson = cityBus.readJsonData(resource: "JNU_main_cityBus") as? [[String : Any]]
-        print(cityBusInfoJson)
+        cityBusList = jsonReader.readJsonData(resource: "JNU_main_cityBus")
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,16 +87,24 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 && favoriteBusList.count == 0{
+            return 0
+        }
+        
         return 44
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if section == 0 {
+            return favoriteBusList.count
+        } else {
+            return cityBusList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
-        if section == 0{
+        if section == 0 {
             let headerText = UILabel()
             headerText.text = "자주타는 버스"
             headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
@@ -104,7 +113,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             headerView.addSubview(headerText)
             headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor
             return headerView
-        } else {
+        } else if section == 1 {
             let headerText = UILabel()
             headerText.text = "도착예정 버스"
             headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
@@ -112,6 +121,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             headerText.font = UIFont.boldSystemFont(ofSize: 14)
             headerView.addSubview(headerText)
             headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor
+            return headerView
+        } else {
             return headerView
         }
     }
