@@ -50,8 +50,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyo-k7-wYP">
-                                        <rect key="frame" x="0.0" y="32" width="343" height="266"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyo-k7-wYP">
+                                        <rect key="frame" x="0.0" y="32" width="343" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkP-l6-c1w">
                                                 <rect key="frame" x="5" y="16" width="95" height="18"/>
@@ -101,8 +101,8 @@
                                             <constraint firstAttribute="height" constant="50" id="uqD-tZ-M0B"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JZF-et-4Qs">
-                                        <rect key="frame" x="0.0" y="82" width="343" height="216"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JZF-et-4Qs">
+                                        <rect key="frame" x="0.0" y="82" width="343" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="2dy-XZ-DB7"/>
@@ -198,6 +198,7 @@
                                                     <outlet property="firstBusArriveTimeLabel" destination="474-HT-TQe" id="zlm-Cf-IxU"/>
                                                     <outlet property="lineNoLabel" destination="UfU-Dn-RTW" id="e7L-Zn-SQg"/>
                                                     <outlet property="secondBusArriveTimeLabel" destination="gHz-VG-2cl" id="ZjK-OW-03k"/>
+                                                    <segue destination="Q7X-Tm-wKQ" kind="show" id="f0g-3D-s4v"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -216,8 +217,8 @@
                                     <constraint firstItem="u1o-hH-MGi" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="top" constant="10" id="ze8-nV-eJf"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-xr-TzG">
-                                <rect key="frame" x="16" y="430" width="343" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-xr-TzG">
+                                <rect key="frame" x="16" y="199" width="343" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="교내셔틀버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-S2-Ibg">
                                         <rect key="frame" x="10" y="10" width="97" height="21"/>
@@ -293,6 +294,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="304.80000000000001" y="114.69265367316342"/>
+        </scene>
+        <!--CityBusDetailView-->
+        <scene sceneID="SBC-mg-EOk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CityBusDetailView" id="Q7X-Tm-wKQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPO-7L-qj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="114"/>
         </scene>
     </scenes>
 </document>
