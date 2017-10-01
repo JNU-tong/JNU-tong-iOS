@@ -2,11 +2,12 @@
 //  CityBus.swift
 //  JUN-tong
 //
-//  Created by Seong ho Hong on 2017. 9. 28..
+//  Created by Seong ho Hong on 2017. 10. 1..
 //  Copyright © 2017년 Seong ho Hong. All rights reserved.
 //
 
 import Foundation
+
 
 struct CityBus {
     private var _lineNo: String
