@@ -272,6 +272,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="arrowView" destination="ftZ-mx-435" id="hVF-1A-oJE"/>
+                                            <outlet property="stationNameLabel" destination="hIA-JI-5xK" id="tkt-FA-7h2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -12,8 +12,12 @@ class CityBusLineView: UIViewController {
     
     @IBOutlet weak var cityBusLineTable: UITableView!
     
+    let cityBusLineController = CityBusLineController()
+    var cityBusLineList:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        cityBusLineList = cityBusLineController.getCityBusLineList()
         
         self.cityBusLineTable.dataSource = self
         self.cityBusLineTable.delegate = self
@@ -21,12 +25,12 @@ class CityBusLineView: UIViewController {
 }
 extension CityBusLineView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return cityBusLineList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusLine", for: indexPath) as? CityBusLineCell {
-            cell.setCustom()
+            cell.setCustom(stationName: cityBusLineList[indexPath.row])
             return cell
         }
         

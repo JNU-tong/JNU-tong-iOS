@@ -58,7 +58,6 @@ class CityBusController {
                         
                     }
                 }
-                
                 return cityBusList
             }
             
@@ -71,5 +70,4 @@ class CityBusController {
     public func getCityBusList() -> [CityBus]{
         return self.cityBusInfoList
     }
-    
 }

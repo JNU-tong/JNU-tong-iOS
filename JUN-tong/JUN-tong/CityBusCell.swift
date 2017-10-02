@@ -16,15 +16,24 @@ class CityBusCell: UITableViewCell {
     @IBOutlet weak var firstBusArriveTimeLabel: UILabel!
     @IBOutlet weak var secondBusArriveTimeLabel: UILabel!
     
+    @IBOutlet weak var favoriteButtonOulet: UIButton!
+    
+    var table: UITableView = UITableView()
+    var tableIndexPath: IndexPath = IndexPath()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setTableAndIndexPath(table: UITableView, indexPath: IndexPath) {
+        self.table = table
+        self.tableIndexPath = indexPath
     }
     
     func setBusInfo(busInfo: CityBus) {
@@ -38,5 +47,9 @@ class CityBusCell: UITableViewCell {
         } else {
             secondBusArriveTimeLabel.text = "없음"
         }
+    }
+    
+    @IBAction func clickFavoriteButton(_ sender: Any) {
+        
     }
 }

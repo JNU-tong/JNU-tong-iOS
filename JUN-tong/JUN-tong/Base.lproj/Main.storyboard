@@ -148,7 +148,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-SM-2fb">
-                                                                    <rect key="frame" x="258" y="6.5" width="50" height="32"/>
+                                                                    <rect key="frame" x="268" y="6.5" width="50" height="32"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5분전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="474-HT-TQe">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="16"/>
@@ -167,21 +167,29 @@
                                                                         <constraint firstAttribute="width" constant="50" id="HpP-Ed-ai5"/>
                                                                     </constraints>
                                                                 </stackView>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEy-Xz-FqR">
-                                                                    <rect key="frame" x="313" y="7" width="30" height="30"/>
-                                                                    <state key="normal" title="하트"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEy-Xz-FqR">
+                                                                    <rect key="frame" x="318" y="0.0" width="25" height="43.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="25" id="oaP-Uo-RdF"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="ifIconHeart211673"/>
+                                                                    <connections>
+                                                                        <action selector="clickFavoriteButton:" destination="Nqv-mE-bmm" eventType="touchUpInside" id="DMa-ku-ljM"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="NJF-NS-dwr" firstAttribute="centerY" secondItem="X8O-H7-rBx" secondAttribute="centerY" id="1a9-Y0-EUI"/>
+                                                                <constraint firstItem="xEy-Xz-FqR" firstAttribute="top" secondItem="X8O-H7-rBx" secondAttribute="top" id="62x-OM-Qe4"/>
                                                                 <constraint firstItem="NJF-NS-dwr" firstAttribute="leading" secondItem="ylh-M6-P9e" secondAttribute="trailing" constant="10" id="Kwy-FU-YE7"/>
+                                                                <constraint firstAttribute="bottom" secondItem="xEy-Xz-FqR" secondAttribute="bottom" id="KzX-nm-TZV"/>
                                                                 <constraint firstItem="kNW-SM-2fb" firstAttribute="centerY" secondItem="X8O-H7-rBx" secondAttribute="centerY" id="L87-zM-OH2"/>
                                                                 <constraint firstItem="ylh-M6-P9e" firstAttribute="leading" secondItem="X8O-H7-rBx" secondAttribute="leading" constant="5" id="MB9-Li-TH5"/>
                                                                 <constraint firstAttribute="trailing" secondItem="NJF-NS-dwr" secondAttribute="trailing" constant="90" id="OYA-Od-Moz"/>
                                                                 <constraint firstItem="xEy-Xz-FqR" firstAttribute="centerY" secondItem="X8O-H7-rBx" secondAttribute="centerY" id="ZDL-Cp-Ff6"/>
                                                                 <constraint firstItem="ylh-M6-P9e" firstAttribute="centerY" secondItem="X8O-H7-rBx" secondAttribute="centerY" id="sQT-Pf-eIV"/>
-                                                                <constraint firstItem="xEy-Xz-FqR" firstAttribute="leading" secondItem="kNW-SM-2fb" secondAttribute="trailing" constant="5" id="sQa-Q0-B03"/>
+                                                                <constraint firstItem="xEy-Xz-FqR" firstAttribute="leading" secondItem="kNW-SM-2fb" secondAttribute="trailing" id="sQa-Q0-B03"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xEy-Xz-FqR" secondAttribute="trailing" id="xCJ-n7-UGP"/>
                                                             </constraints>
                                                         </view>
@@ -195,6 +203,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="descriptionLabel" destination="NJF-NS-dwr" id="5f7-f8-qg6"/>
+                                                    <outlet property="favoriteButtonOulet" destination="xEy-Xz-FqR" id="1R0-yd-tcO"/>
                                                     <outlet property="firstBusArriveTimeLabel" destination="474-HT-TQe" id="zlm-Cf-IxU"/>
                                                     <outlet property="lineNoLabel" destination="UfU-Dn-RTW" id="e7L-Zn-SQg"/>
                                                     <outlet property="secondBusArriveTimeLabel" destination="gHz-VG-2cl" id="ZjK-OW-03k"/>
@@ -304,4 +313,7 @@
             <point key="canvasLocation" x="1212" y="114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ifIconHeart211673" width="15" height="14"/>
+    </resources>
 </document>
