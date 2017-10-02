@@ -139,6 +139,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusCell", for: indexPath) as? CityBusCell {
+            cell.setTableAndIndexPath(table: tableView, indexPath: indexPath)
             cell.setBusInfo(busInfo: cityBusList[indexPath.row])
             return cell
         }
