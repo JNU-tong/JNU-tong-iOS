@@ -112,7 +112,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nqv-mE-bmm" id="iKj-fR-J7d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8O-H7-rBx">
@@ -172,7 +172,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="25" id="oaP-Uo-RdF"/>
                                                                     </constraints>
-                                                                    <state key="normal" image="ifIconHeart211673"/>
+                                                                    <state key="normal" image="heartIcon"/>
                                                                     <connections>
                                                                         <action selector="clickFavoriteButton:" destination="Nqv-mE-bmm" eventType="touchUpInside" id="DMa-ku-ljM"/>
                                                                     </connections>
@@ -208,6 +208,106 @@
                                                     <outlet property="lineNoLabel" destination="UfU-Dn-RTW" id="e7L-Zn-SQg"/>
                                                     <outlet property="secondBusArriveTimeLabel" destination="gHz-VG-2cl" id="ZjK-OW-03k"/>
                                                     <segue destination="Q7X-Tm-wKQ" kind="show" id="f0g-3D-s4v"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteBusCell" id="mr1-RW-UiR" customClass="FavoriteBusCell" customModule="JUN_tong" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="72" width="343" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mr1-RW-UiR" id="Fxo-4t-Mka">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiQ-WC-Mhi">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKu-iP-nww">
+                                                                    <rect key="frame" x="5" y="12.5" width="52" height="18"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1p-oT-jYP">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="18"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="50" id="MAO-yp-O7e"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                            <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8B-Dd-IyD">
+                                                                            <rect key="frame" x="50" y="0.0" width="2" height="18"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="2" id="UZg-88-iBe"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                            <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(제주대-삼양초-함덕)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-nT-vE5">
+                                                                    <rect key="frame" x="66.5" y="13.5" width="186.5" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                    <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tn6-gs-0EY">
+                                                                    <rect key="frame" x="268" y="6.5" width="50" height="32"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5분전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcz-Ql-beo">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="16"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                            <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5분전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ox-It-aEG">
+                                                                            <rect key="frame" x="0.0" y="16" width="50" height="16"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                            <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="o6Z-uC-gdm"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g61-8t-q6I">
+                                                                    <rect key="frame" x="318" y="0.0" width="25" height="43.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="25" id="Koi-cy-718"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="ifIconHeart211673"/>
+                                                                    <connections>
+                                                                        <action selector="clickUnFavoriteButton:" destination="mr1-RW-UiR" eventType="touchUpInside" id="RG4-wP-EcR"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="tKu-iP-nww" firstAttribute="centerY" secondItem="GiQ-WC-Mhi" secondAttribute="centerY" id="2Gx-PT-HEZ"/>
+                                                                <constraint firstItem="g61-8t-q6I" firstAttribute="leading" secondItem="tn6-gs-0EY" secondAttribute="trailing" id="CEY-K2-7ZV"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Ggp-nT-vE5" secondAttribute="trailing" constant="90" id="HdB-R2-Np5"/>
+                                                                <constraint firstAttribute="bottom" secondItem="g61-8t-q6I" secondAttribute="bottom" id="LKp-uk-MaF"/>
+                                                                <constraint firstItem="Ggp-nT-vE5" firstAttribute="centerY" secondItem="GiQ-WC-Mhi" secondAttribute="centerY" id="SVb-Nu-D1W"/>
+                                                                <constraint firstItem="tn6-gs-0EY" firstAttribute="centerY" secondItem="GiQ-WC-Mhi" secondAttribute="centerY" id="fV6-J0-4Eg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="g61-8t-q6I" secondAttribute="trailing" id="g6Q-bF-PBT"/>
+                                                                <constraint firstItem="Ggp-nT-vE5" firstAttribute="leading" secondItem="tKu-iP-nww" secondAttribute="trailing" constant="10" id="r7F-Ns-2F9"/>
+                                                                <constraint firstItem="tKu-iP-nww" firstAttribute="leading" secondItem="GiQ-WC-Mhi" secondAttribute="leading" constant="5" id="tat-bd-cQL"/>
+                                                                <constraint firstItem="g61-8t-q6I" firstAttribute="centerY" secondItem="GiQ-WC-Mhi" secondAttribute="centerY" id="v5r-Wx-5qI"/>
+                                                                <constraint firstItem="g61-8t-q6I" firstAttribute="top" secondItem="GiQ-WC-Mhi" secondAttribute="top" id="yLI-gk-a0S"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="GiQ-WC-Mhi" secondAttribute="trailing" id="D0Z-H8-3yc"/>
+                                                        <constraint firstItem="GiQ-WC-Mhi" firstAttribute="leading" secondItem="Fxo-4t-Mka" secondAttribute="leading" id="Qng-Pi-fLl"/>
+                                                        <constraint firstItem="GiQ-WC-Mhi" firstAttribute="top" secondItem="Fxo-4t-Mka" secondAttribute="top" id="VGU-pH-Rlu"/>
+                                                        <constraint firstAttribute="bottom" secondItem="GiQ-WC-Mhi" secondAttribute="bottom" id="eDf-2d-qHs"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="descriptionLabel" destination="Ggp-nT-vE5" id="p3c-x5-FhQ"/>
+                                                    <outlet property="firstBusArriveTimeLabel" destination="jcz-Ql-beo" id="v0I-tf-NQ0"/>
+                                                    <outlet property="lineNoLabel" destination="G1p-oT-jYP" id="jjl-ke-Jua"/>
+                                                    <outlet property="secondBusArriveTimeLabel" destination="8ox-It-aEG" id="Gy5-6S-Mex"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -314,6 +414,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heartIcon" width="15" height="14"/>
         <image name="ifIconHeart211673" width="15" height="14"/>
     </resources>
 </document>
