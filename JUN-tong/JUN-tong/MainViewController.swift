@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var shuttleBusInfo: UIView!
     @IBOutlet weak var soonArriveBusInfo: UILabel!
     
-    
     @IBOutlet weak var cityBusTableHeight: NSLayoutConstraint!
     
     var cityBusInfoFolder = false
@@ -38,6 +37,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteHeart),
+                                               name: NSNotification.Name(rawValue: "FavoriteHeartClick"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clickUnfavoriteHeart),
+                                               name: NSNotification.Name(rawValue: "UnFavoriteHeartClick"), object: nil)
+        
         let cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
         cityBusInfoTap.delegate = self
         cityBusInfo.addGestureRecognizer(cityBusInfoTap)
@@ -78,6 +82,30 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func clickFavoriteHeart(_ notification: NSNotification) {
+        guard let heartIndexPath = notification.userInfo?["rowIndexPath"] as? IndexPath else {
+            return
+        }
+        
+        if let heartClickBus = notification.userInfo?["cityBusInfo"] as? CityBus {
+            favoriteBusList.append(heartClickBus)
+        }
+        
+        cityBusList.remove(at: heartIndexPath.row)
+        cityBusTable.reloadData()
+    }
+    
+    func clickUnfavoriteHeart(_ notification: NSNotification) {
+        if let heartIndexPath = notification.userInfo?["rowIndexPath"] as? IndexPath {
+            favoriteBusList.remove(at: heartIndexPath.row)
+        }
+        
+        if let heartClickBus = notification.userInfo?["cityBusInfo"] as? CityBus {
+            cityBusList.append(heartClickBus)
+        }
+        
+        cityBusTable.reloadData()
+    }
 
     /*
     // MARK: - Navigation
@@ -138,9 +166,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusCell", for: indexPath) as? CityBusCell {
-            cell.setTableAndIndexPath(table: tableView, indexPath: indexPath)
-            cell.setBusInfo(busInfo: cityBusList[indexPath.row])
+        if indexPath.section==1, let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusCell", for: indexPath) as? CityBusCell {
+            cell.setBusInfo(busInfo: cityBusList[indexPath.row], cellIndexPath:  indexPath)
+            
+            return cell
+        } else if indexPath.section==0, let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteBusCell", for: indexPath) as? FavoriteBusCell {
+            cell.setBusInfo(busInfo: favoriteBusList[indexPath.row], cellIndexPath:  indexPath)
+            
             return cell
         }
         

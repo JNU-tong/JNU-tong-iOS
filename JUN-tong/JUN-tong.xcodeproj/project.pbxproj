@@ -10,6 +10,7 @@
 		4E4D223F1F81159B00F576F1 /* Bus_Line.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D223E1F81159B00F576F1 /* Bus_Line.json */; };
 		4E4D22411F81179800F576F1 /* CityBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22401F81179800F576F1 /* CityBus.swift */; };
 		4E4D22431F82036000F576F1 /* CityBusLineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22421F82036000F576F1 /* CityBusLineController.swift */; };
+		4E4D22481F8388A600F576F1 /* FavoriteBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */; };
 		4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9E91F6D50590066C96D /* AppDelegate.swift */; };
 		4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9ED1F6D50590066C96D /* Main.storyboard */; };
 		4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		4E4D223E1F81159B00F576F1 /* Bus_Line.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Bus_Line.json; sourceTree = "<group>"; };
 		4E4D22401F81179800F576F1 /* CityBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBus.swift; sourceTree = "<group>"; };
 		4E4D22421F82036000F576F1 /* CityBusLineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusLineController.swift; sourceTree = "<group>"; };
+		4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBusCell.swift; sourceTree = "<group>"; };
 		4E7FB9E61F6D50590066C96D /* JUN-tong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JUN-tong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7FB9E91F6D50590066C96D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E7FB9EE1F6D50590066C96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				4E7FB9ED1F6D50590066C96D /* Main.storyboard */,
 				4E7FBA161F6FAD270066C96D /* CityBusCell.swift */,
+				4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				4ED42C911F7F8C92004417FE /* CityBusController.swift in Sources */,
 				4ED42C981F80C83A004417FE /* CityBusTimeView.swift in Sources */,
 				4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */,
+				4E4D22481F8388A600F576F1 /* FavoriteBusCell.swift in Sources */,
 				4ED42C9C1F810D15004417FE /* CityBusLineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

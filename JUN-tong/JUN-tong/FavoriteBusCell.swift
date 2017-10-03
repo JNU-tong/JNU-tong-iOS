@@ -1,22 +1,20 @@
 //
-//  CityBusCell.swift
+//  FavoriteBusCell.swift
 //  JUN-tong
 //
-//  Created by Seong ho Hong on 2017. 9. 18..
+//  Created by Seong ho Hong on 2017. 10. 3..
 //  Copyright © 2017년 Seong ho Hong. All rights reserved.
 //
 
 import UIKit
 
-class CityBusCell: UITableViewCell {
-
+class FavoriteBusCell: UITableViewCell {
+    
     @IBOutlet weak var lineNoLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var firstBusArriveTimeLabel: UILabel!
     @IBOutlet weak var secondBusArriveTimeLabel: UILabel!
-    
-    @IBOutlet weak var favoriteButtonOulet: UIButton!
     
     var cellIndexPath: IndexPath?
     var cityBus: CityBus?
@@ -37,7 +35,7 @@ class CityBusCell: UITableViewCell {
         }
     }
     
-    @IBAction func clickFavoriteButton(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoriteHeartClick"), object: nil, userInfo: ["rowIndexPath": cellIndexPath!, "cityBusInfo": cityBus!])
+    @IBAction func clickUnFavoriteButton(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UnFavoriteHeartClick"), object: nil, userInfo: ["rowIndexPath": cellIndexPath!, "cityBusInfo": cityBus!])
     }
 }
