@@ -112,7 +112,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nqv-mE-bmm" id="iKj-fR-J7d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8O-H7-rBx">
@@ -207,14 +207,14 @@
                                                     <outlet property="firstBusArriveTimeLabel" destination="474-HT-TQe" id="zlm-Cf-IxU"/>
                                                     <outlet property="lineNoLabel" destination="UfU-Dn-RTW" id="e7L-Zn-SQg"/>
                                                     <outlet property="secondBusArriveTimeLabel" destination="gHz-VG-2cl" id="ZjK-OW-03k"/>
-                                                    <segue destination="Q7X-Tm-wKQ" kind="show" id="f0g-3D-s4v"/>
+                                                    <segue destination="Q7X-Tm-wKQ" kind="show" identifier="cityBusSegue" id="f0g-3D-s4v"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteBusCell" id="mr1-RW-UiR" customClass="FavoriteBusCell" customModule="JUN_tong" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="72" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mr1-RW-UiR" id="Fxo-4t-Mka">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiQ-WC-Mhi">
@@ -308,6 +308,7 @@
                                                     <outlet property="firstBusArriveTimeLabel" destination="jcz-Ql-beo" id="v0I-tf-NQ0"/>
                                                     <outlet property="lineNoLabel" destination="G1p-oT-jYP" id="jjl-ke-Jua"/>
                                                     <outlet property="secondBusArriveTimeLabel" destination="8ox-It-aEG" id="Gy5-6S-Mex"/>
+                                                    <segue destination="Q7X-Tm-wKQ" kind="show" identifier="cityBusSegue" id="U5d-bC-N1N"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -417,4 +418,7 @@
         <image name="heartIcon" width="15" height="14"/>
         <image name="ifIconHeart211673" width="15" height="14"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="U5d-bC-N1N"/>
+    </inferredMetricsTieBreakers>
 </document>

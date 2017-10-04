@@ -20,6 +20,8 @@ class CityBusDetailViewController: UIViewController {
     @IBOutlet weak var busLineView: UIView!
     @IBOutlet weak var busTimeView: UIView!
     
+    var busInfo: CityBus?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,9 @@ class CityBusDetailViewController: UIViewController {
         
         busLineView.alpha = 1
         busTimeView.alpha = 0
+        
+        busNoLabel.text = busInfo!.lineNo
+        busLineLabel.text = busInfo!.description
     }
     
     @IBAction func timeTableButton(_ sender: Any) {

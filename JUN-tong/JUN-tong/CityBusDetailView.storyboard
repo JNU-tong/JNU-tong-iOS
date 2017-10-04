@@ -210,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yin-Et-TcI" id="SAe-WP-0RQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-x0-zis">
@@ -295,20 +295,86 @@
             </objects>
             <point key="canvasLocation" x="21.600000000000001" y="662.96851574212894"/>
         </scene>
-        <!--View Controller-->
+        <!--City Bus Time View-->
         <scene sceneID="Iit-Mr-10S">
             <objects>
-                <viewController id="aia-hp-WpD" sceneMemberID="viewController">
+                <viewController id="aia-hp-WpD" customClass="CityBusTimeView" customModule="JUN_tong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ffa-Eh-4dh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="438"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-q0-yI1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="438"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityBusTime" id="n9l-cv-rSO" customClass="CityBusTimeCell" customModule="JUN_tong" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n9l-cv-rSO" id="xV7-P2-dkd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRg-h3-Rrt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Oiw-nu-9rk">
+                                                            <rect key="frame" x="29" y="13.5" width="101" height="17"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:55" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNY-Zy-ggi">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="39" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" red="0.0" green="0.17254901960784313" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0m-FL-9vw">
+                                                                    <rect key="frame" x="51" y="0.0" width="5" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" red="0.0" green="0.17254901960784313" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5분전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPt-ot-s26">
+                                                                    <rect key="frame" x="68" y="0.0" width="33" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" red="0.97647058823529409" green="0.23529411764705882" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Oiw-nu-9rk" firstAttribute="leading" secondItem="ZRg-h3-Rrt" secondAttribute="leading" constant="29" id="rjl-Ac-F2r"/>
+                                                        <constraint firstItem="Oiw-nu-9rk" firstAttribute="centerY" secondItem="ZRg-h3-Rrt" secondAttribute="centerY" id="vGK-at-Z5M"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZRg-h3-Rrt" firstAttribute="top" secondItem="xV7-P2-dkd" secondAttribute="top" id="2mR-It-RDX"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZRg-h3-Rrt" secondAttribute="bottom" id="PVp-BJ-Yxm"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZRg-h3-Rrt" secondAttribute="trailing" id="QOx-3Q-nDF"/>
+                                                <constraint firstItem="ZRg-h3-Rrt" firstAttribute="leading" secondItem="xV7-P2-dkd" secondAttribute="leading" id="ZVN-Eg-cHf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="51P-XF-51n" firstAttribute="bottom" secondItem="NDi-q0-yI1" secondAttribute="bottom" id="YQ8-dh-81k"/>
+                            <constraint firstItem="NDi-q0-yI1" firstAttribute="leading" secondItem="51P-XF-51n" secondAttribute="leading" id="Yii-Ui-S8A"/>
+                            <constraint firstItem="NDi-q0-yI1" firstAttribute="top" secondItem="51P-XF-51n" secondAttribute="top" id="iUZ-Yv-NMj"/>
+                            <constraint firstItem="51P-XF-51n" firstAttribute="trailing" secondItem="NDi-q0-yI1" secondAttribute="trailing" id="vRb-6o-Dpa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="51P-XF-51n"/>
                     </view>
+                    <connections>
+                        <outlet property="cityBusTimeTable" destination="NDi-q0-yI1" id="JQb-ZY-IrD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXJ-OG-oQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="-70"/>
+            <point key="canvasLocation" x="1048.8" y="-70.164917541229386"/>
         </scene>
     </scenes>
 </document>
