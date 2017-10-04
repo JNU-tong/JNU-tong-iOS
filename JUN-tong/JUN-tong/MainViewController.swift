@@ -107,15 +107,23 @@ class MainViewController: UIViewController {
         cityBusTable.reloadData()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "cityBusSegue" {
+            if let indexPath = cityBusTable.indexPathForSelectedRow {
+                if indexPath.section == 0 {
+                    let busInfo = favoriteBusList[indexPath.row]
+                    let cityBusView = segue.destination as! CityBusDetailViewController
+                    
+                    cityBusView.busInfo = busInfo
+                } else if indexPath.section == 1 {
+                    let busInfo = cityBusList[indexPath.row]
+                    let cityBusView = segue.destination as! CityBusDetailViewController
+                    
+                    cityBusView.busInfo = busInfo
+                }
+            }
+        }
     }
-    */
 
 }
 
