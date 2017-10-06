@@ -17,6 +17,7 @@ class CityBusDetailViewController: UIViewController {
     @IBOutlet weak var busTimeClickStatus: UIView!
     @IBOutlet weak var busLineClickStatus: UIView!
     
+    @IBOutlet weak var busColorView: UIView!
     @IBOutlet weak var busLineView: UIView!
     @IBOutlet weak var busTimeView: UIView!
     
@@ -25,7 +26,8 @@ class CityBusDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        busImageView.layer.borderColor = UIColor.red.cgColor
+        busColorView.backgroundColor = busInfo?.cityBusColor
+        busImageView.layer.borderColor = busInfo?.cityBusColor.cgColor
         busImageView.layer.borderWidth = 3
         busImageView.layer.cornerRadius = 36
         
@@ -34,7 +36,9 @@ class CityBusDetailViewController: UIViewController {
         busLineView.alpha = 1
         busTimeView.alpha = 0
         
+        busNoLabel.textColor = busInfo?.cityBusColor
         busNoLabel.text = busInfo!.lineNo
+        busLineLabel.textColor = busInfo?.cityBusColor
         busLineLabel.text = busInfo!.description
     }
     
