@@ -10,11 +10,15 @@ import Foundation
 
 class CityBusController {
     
-    var cityBusInfoList:[CityBus] = []
+    var cityBusList:[CityBus] = []
     var favoriteBusList:[CityBus] = []
     
     init(jsonInfo: String) {
-        cityBusInfoList = cityBusJsonData(resource: jsonInfo)
+        self.cityBusList = cityBusJsonData(resource: jsonInfo)
+        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteHeart),
+                                               name: NSNotification.Name(rawValue: "FavoriteHeartClick"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clickUnfavoriteHeart),
+                                               name: NSNotification.Name(rawValue: "UnFavoriteHeartClick"), object: nil)
     }
     
     private func cityBusJsonData(resource: String) -> [CityBus] {
@@ -67,7 +71,36 @@ class CityBusController {
         return []
     }
     
-    public func getCityBusList() -> [CityBus]{
-        return self.cityBusInfoList
+    @objc private func clickFavoriteHeart(_ notification: NSNotification) {
+        guard let heartIndexPath = notification.userInfo?["rowIndexPath"] as? IndexPath else {
+            return
+        }
+        
+        if let heartClickBus = notification.userInfo?["cityBusInfo"] as? CityBus {
+            favoriteBusList.append(heartClickBus)
+        }
+        
+        cityBusList.remove(at: heartIndexPath.row)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busInfoChange"), object: nil, userInfo: nil)
+    }
+    
+    @objc private func clickUnfavoriteHeart(_ notification: NSNotification) {
+        if let heartIndexPath = notification.userInfo?["rowIndexPath"] as? IndexPath {
+            favoriteBusList.remove(at: heartIndexPath.row)
+        }
+        
+        if let heartClickBus = notification.userInfo?["cityBusInfo"] as? CityBus {
+            cityBusList.append(heartClickBus)
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busInfoChange"), object: nil, userInfo: nil)
+    }
+    
+    public func getCityBusList() -> [CityBus] {
+        return self.cityBusList
+    }
+    
+    public func getFavoriteBusList() -> [CityBus] {
+        return self.favoriteBusList
     }
 }

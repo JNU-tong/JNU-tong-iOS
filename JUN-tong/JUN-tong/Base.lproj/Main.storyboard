@@ -79,7 +79,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠시후도착" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXO-Ei-2jY">
                                                 <rect key="frame" x="273" y="16" width="65" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <color key="textColor" red="0.97647058823529409" green="0.23529411764705882" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.82352941180000006" green="0.1529411765" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500번 300번 100번 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNZ-VS-ckH">
@@ -172,7 +172,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="25" id="oaP-Uo-RdF"/>
                                                                     </constraints>
-                                                                    <state key="normal" image="heartIcon"/>
+                                                                    <state key="normal" image="blackHeart"/>
                                                                     <connections>
                                                                         <action selector="clickFavoriteButton:" destination="Nqv-mE-bmm" eventType="touchUpInside" id="DMa-ku-ljM"/>
                                                                     </connections>
@@ -274,7 +274,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="25" id="Koi-cy-718"/>
                                                                     </constraints>
-                                                                    <state key="normal" image="ifIconHeart211673"/>
+                                                                    <state key="normal" image="redHeart"/>
                                                                     <connections>
                                                                         <action selector="clickUnFavoriteButton:" destination="mr1-RW-UiR" eventType="touchUpInside" id="RG4-wP-EcR"/>
                                                                     </connections>
@@ -415,8 +415,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heartIcon" width="15" height="14"/>
-        <image name="ifIconHeart211673" width="15" height="14"/>
+        <image name="blackHeart" width="15" height="14"/>
+        <image name="redHeart" width="15" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="U5d-bC-N1N"/>

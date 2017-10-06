@@ -12,6 +12,8 @@
 		4E4D22431F82036000F576F1 /* CityBusLineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22421F82036000F576F1 /* CityBusLineController.swift */; };
 		4E4D22481F8388A600F576F1 /* FavoriteBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */; };
 		4E4D224A1F83E2B300F576F1 /* CityBusTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22491F83E2B300F576F1 /* CityBusTimeCell.swift */; };
+		4E4D224C1F85D59500F576F1 /* CityBusDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D224B1F85D59500F576F1 /* CityBusDetailView.storyboard */; };
+		4E4D224F1F87681100F576F1 /* UIColor+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D224E1F87681100F576F1 /* UIColor+extention.swift */; };
 		4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9E91F6D50590066C96D /* AppDelegate.swift */; };
 		4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9ED1F6D50590066C96D /* Main.storyboard */; };
 		4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
@@ -22,7 +24,6 @@
 		4E9CF58A1F7D22080072ED05 /* JNU_main_cityBus.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CF5891F7D22080072ED05 /* JNU_main_cityBus.json */; };
 		4E9CF58D1F7E5F3B0072ED05 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9CF58C1F7E5F3B0072ED05 /* JsonReader.swift */; };
 		4ED42C911F7F8C92004417FE /* CityBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C901F7F8C92004417FE /* CityBusController.swift */; };
-		4ED42C941F7F9E74004417FE /* CityBusDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED42C931F7F9E74004417FE /* CityBusDetailView.storyboard */; };
 		4ED42C961F7FA0B5004417FE /* CityBusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */; };
 		4ED42C981F80C83A004417FE /* CityBusTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C971F80C83A004417FE /* CityBusTimeView.swift */; };
 		4ED42C9A1F80C856004417FE /* CityBusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C991F80C856004417FE /* CityBusLineView.swift */; };
@@ -45,6 +46,8 @@
 		4E4D22421F82036000F576F1 /* CityBusLineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusLineController.swift; sourceTree = "<group>"; };
 		4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBusCell.swift; sourceTree = "<group>"; };
 		4E4D22491F83E2B300F576F1 /* CityBusTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusTimeCell.swift; sourceTree = "<group>"; };
+		4E4D224B1F85D59500F576F1 /* CityBusDetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CityBusDetailView.storyboard; sourceTree = "<group>"; };
+		4E4D224E1F87681100F576F1 /* UIColor+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extention.swift"; sourceTree = "<group>"; };
 		4E7FB9E61F6D50590066C96D /* JUN-tong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JUN-tong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7FB9E91F6D50590066C96D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E7FB9EE1F6D50590066C96D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		4E9CF5891F7D22080072ED05 /* JNU_main_cityBus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JNU_main_cityBus.json; sourceTree = "<group>"; };
 		4E9CF58C1F7E5F3B0072ED05 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		4ED42C901F7F8C92004417FE /* CityBusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusController.swift; sourceTree = "<group>"; };
-		4ED42C931F7F9E74004417FE /* CityBusDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityBusDetailView.storyboard; sourceTree = "<group>"; };
 		4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusDetailViewController.swift; sourceTree = "<group>"; };
 		4ED42C971F80C83A004417FE /* CityBusTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusTimeView.swift; sourceTree = "<group>"; };
 		4ED42C991F80C856004417FE /* CityBusLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusLineView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E4D224D1F87677E00F576F1 /* extention */ = {
+			isa = PBXGroup;
+			children = (
+				4E4D224E1F87681100F576F1 /* UIColor+extention.swift */,
+			);
+			name = extention;
+			sourceTree = "<group>";
+		};
 		4E7FB9DD1F6D50590066C96D = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 			children = (
 				4E4D223E1F81159B00F576F1 /* Bus_Line.json */,
 				4E9CF5891F7D22080072ED05 /* JNU_main_cityBus.json */,
+				4E4D224D1F87677E00F576F1 /* extention */,
 				4E9CF58B1F7E5B000072ED05 /* DataReader */,
 				4E9CF56C1F7BCDE80072ED05 /* Model */,
 				4E7FBA0C1F6D50D80066C96D /* Controller */,
@@ -193,7 +204,7 @@
 		4ED42C921F7F9D9E004417FE /* CityBusDetail */ = {
 			isa = PBXGroup;
 			children = (
-				4ED42C931F7F9E74004417FE /* CityBusDetailView.storyboard */,
+				4E4D224B1F85D59500F576F1 /* CityBusDetailView.storyboard */,
 				4ED42C991F80C856004417FE /* CityBusLineView.swift */,
 				4ED42C9B1F810D15004417FE /* CityBusLineCell.swift */,
 				4ED42C971F80C83A004417FE /* CityBusTimeView.swift */,
@@ -288,10 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E9CF58A1F7D22080072ED05 /* JNU_main_cityBus.json in Resources */,
-				4ED42C941F7F9E74004417FE /* CityBusDetailView.storyboard in Resources */,
 				4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */,
 				4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */,
 				4E4D223F1F81159B00F576F1 /* Bus_Line.json in Resources */,
+				4E4D224C1F85D59500F576F1 /* CityBusDetailView.storyboard in Resources */,
 				4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +323,7 @@
 			files = (
 				4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */,
 				4ED42C9A1F80C856004417FE /* CityBusLineView.swift in Sources */,
+				4E4D224F1F87681100F576F1 /* UIColor+extention.swift in Sources */,
 				4E4D22431F82036000F576F1 /* CityBusLineController.swift in Sources */,
 				4E9CF58D1F7E5F3B0072ED05 /* JsonReader.swift in Sources */,
 				4E4D22411F81179800F576F1 /* CityBus.swift in Sources */,

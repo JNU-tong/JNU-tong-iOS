@@ -29,18 +29,16 @@ class MainViewController: UIViewController {
     var shuttleBusCenter: CGPoint?
     var extensRange: CGFloat?
     
-    let jsonReader: JsonReader = JsonReader()
+    let cityBusController = CityBusController(jsonInfo: "JNU_main_cityBus")
     var cityBusList: [CityBus] = []
     var favoriteBusList: [CityBus] = []
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteHeart),
-                                               name: NSNotification.Name(rawValue: "FavoriteHeartClick"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(clickUnfavoriteHeart),
-                                               name: NSNotification.Name(rawValue: "UnFavoriteHeartClick"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
+                                               name: NSNotification.Name(rawValue: "busInfoChange"), object: nil)
         
         let cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
         cityBusInfoTap.delegate = self
@@ -62,10 +60,11 @@ class MainViewController: UIViewController {
         shuttleBusMain.layer.borderWidth = 0.5
         shuttleBusMain.layer.cornerRadius = 7
         
+        setBusInfo()
+        
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
         
-        cityBusList = jsonReader.readJsonData(resource: "JNU_main_cityBus")
         var arriveSoonBus: String = ""
         
         for cityBus in cityBusList {
@@ -82,28 +81,9 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func clickFavoriteHeart(_ notification: NSNotification) {
-        guard let heartIndexPath = notification.userInfo?["rowIndexPath"] as? IndexPath else {
-            return
-        }
-        
-        if let heartClickBus = notification.userInfo?["cityBusInfo"] as? CityBus {
-            favoriteBusList.append(heartClickBus)
-        }
-        
-        cityBusList.remove(at: heartIndexPath.row)
-        cityBusTable.reloadData()
-    }
-    
-    func clickUnfavoriteHeart(_ notification: NSNotification) {
-        if let heartIndexPath = notification.userInfo?["rowIndexPath"] as? IndexPath {
-            favoriteBusList.remove(at: heartIndexPath.row)
-        }
-        
-        if let heartClickBus = notification.userInfo?["cityBusInfo"] as? CityBus {
-            cityBusList.append(heartClickBus)
-        }
-        
+    @objc private func setBusInfo() {
+        self.cityBusList = cityBusController.getCityBusList()
+        self.favoriteBusList = cityBusController.getFavoriteBusList()
         cityBusTable.reloadData()
     }
 

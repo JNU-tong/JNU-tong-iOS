@@ -10,12 +10,9 @@ import UIKit
 
 class CityBusLineCell: UITableViewCell {
     
-    @IBOutlet weak var arrowView: UIView!
     @IBOutlet weak var stationNameLabel: UILabel!
     
     func setCustom(stationName: String) {
-        
-        arrowView.layer.cornerRadius = 7
         stationNameLabel.text = stationName
     }
 }
