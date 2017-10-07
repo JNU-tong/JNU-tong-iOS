@@ -1,0 +1,6 @@
+framework module Pods_JUN_tong {
+  umbrella header "Pods-JUN-tong-umbrella.h"
+
+  export *
+  module * { export * }
+}

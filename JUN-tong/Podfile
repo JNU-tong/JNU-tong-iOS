@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+pod 'Alamofire'
+pod 'SwiftyJSON'
+ 
+target 'JUN-tong' do
+  use_frameworks!
+
+ # Pods for JUN-tong
+
+  target 'JUN-tongTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end

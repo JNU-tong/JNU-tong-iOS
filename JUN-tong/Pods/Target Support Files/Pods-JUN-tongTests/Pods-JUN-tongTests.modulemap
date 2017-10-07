@@ -1,0 +1,6 @@
+framework module Pods_JUN_tongTests {
+  umbrella header "Pods-JUN-tongTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
