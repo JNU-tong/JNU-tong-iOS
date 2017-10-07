@@ -29,16 +29,15 @@ class MainViewController: UIViewController {
     var shuttleBusCenter: CGPoint?
     var extensRange: CGFloat?
     
-    let cityBusController = CityBusController(jsonInfo: "JNU_main_cityBus")
     var cityBusList: [CityBus] = []
     var favoriteBusList: [CityBus] = []
-
     
+    let cityBusController = CityBusController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
                                                name: NSNotification.Name(rawValue: "busInfoChange"), object: nil)
+        cityBusController.setBusData()
         
         let cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
         cityBusInfoTap.delegate = self
@@ -60,20 +59,8 @@ class MainViewController: UIViewController {
         shuttleBusMain.layer.borderWidth = 0.5
         shuttleBusMain.layer.cornerRadius = 7
         
-        setBusInfo()
-        
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
-        
-        var arriveSoonBus: String = ""
-        
-        for cityBus in cityBusList {
-            if cityBus.firstBusTime! < 3 {
-                arriveSoonBus.append(cityBus.lineNo + "번 ")
-            }
-        }
-        
-        soonArriveBusInfo.text = arriveSoonBus
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,6 +72,15 @@ class MainViewController: UIViewController {
         self.cityBusList = cityBusController.getCityBusList()
         self.favoriteBusList = cityBusController.getFavoriteBusList()
         cityBusTable.reloadData()
+        
+        var arriveSoonBus: String = ""
+        
+        for cityBus in cityBusList {
+            if cityBus.firstBusTime! < 3 {
+                arriveSoonBus.append(cityBus.lineNo + "번 ")
+            }
+        }
+        soonArriveBusInfo.text = arriveSoonBus
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
