@@ -13,6 +13,7 @@ import SwiftyJSON
 class ServerRepository {
     static var cityBusList:[CityBus] = []
     static var cityBusLineList:[String] = []
+
     
     static func getCityBusData(completion: @escaping([CityBus]) -> Void) {
         
@@ -80,10 +81,8 @@ class ServerRepository {
             guard let value = response.result.value else { return }
             let swiftyJson = JSON(value)
             
-            print(swiftyJson)
             for busLineJson in swiftyJson {
                 if let stationName = busLineJson.1["stationName"].string {
-                    print(stationName)
                     cityBusLineList.append(stationName)
                 }
             }
@@ -91,9 +90,9 @@ class ServerRepository {
         }
     }
     
-    static func getCityBusTimeData(lineId: String, completion: @escaping([String]) -> Void) {
+    static func getCityBusTimeData(lineId: String, completion: @escaping([String], [Int]) -> Void) {
         
-        guard let url = URL(string: baseURL + "getBusStationListByLineId/" + lineId) else {
+        guard let url = URL(string: baseURL + "getBusScheduleListByLineId/" + lineId) else {
             print("URL is nil")
             return
         }
@@ -110,14 +109,21 @@ class ServerRepository {
             guard let value = response.result.value else { return }
             let swiftyJson = JSON(value)
             
-            print(swiftyJson)
-            for busLineJson in swiftyJson {
-                if let stationName = busLineJson.1["stationName"].string {
-                    print(stationName)
-                    cityBusLineList.append(stationName)
+            var timeInfo:[JSON] = []
+            timeInfo = swiftyJson["busScheduleList"].arrayValue
+            
+            var departTimeList:[String] = []
+            var remainTimeList:[Int] = []
+            for busTimeJson in timeInfo {
+                if let departTime = busTimeJson["departureTime"].string,
+                    let remainTime = busTimeJson["remainTime"].int {
+                    departTimeList.append(departTime)
+                    remainTimeList.append(remainTime)
                 }
             }
-            completion(self.cityBusLineList)
+            completion(departTimeList, remainTimeList)
         }
     }
+    
+    
 }

@@ -12,19 +12,37 @@ class CityBusTimeView: UIViewController {
     
     @IBOutlet weak var cityBusTimeTable: UITableView!
     
+    @IBOutlet weak var departTimeLabel: UILabel!
+    
+    
+    var cityBusTimeList:[String] = []
+    var cityBusRemainTimeList:[Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setBusTImeInfo),
+                                               name: NSNotification.Name(rawValue: "setBusTimeInfo"), object: nil)
+        
         self.cityBusTimeTable.dataSource = self
         self.cityBusTimeTable.delegate = self
+    }
+    
+    func setBusTImeInfo(_ notification: Notification) {
+        self.cityBusTimeList = notification.userInfo!["departTime"] as! [String]
+        self.cityBusRemainTimeList = notification.userInfo!["remainTime"] as! [Int]
+        cityBusTimeTable.reloadData()
     }
 }
 extension CityBusTimeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return cityBusTimeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusTime", for: indexPath) as? CityBusTimeCell {
+            cell.setCustone(departTime: cityBusTimeList[indexPath.row], reaminTime: cityBusRemainTimeList[indexPath.row])
+            
             return cell
         }
         
