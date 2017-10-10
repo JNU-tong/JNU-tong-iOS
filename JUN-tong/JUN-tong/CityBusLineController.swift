@@ -10,40 +10,27 @@ import Foundation
 
 class CityBusLineController {
     var cityBusLineInfo: [String] = []
+    var cityBusDepartTimeInfo: [String] = []
+    var cityBusRemainTimeInfo: [Int] = []
     
-    init() {
-        cityBusLineInfo = cityBusLineJsonData(resource: "Bus_Line")
+    func setBusLineData(lineId: String) {
+        ServerRepository.getCityBusLineData(lineId: lineId) { cityBusLineData in
+            self.cityBusLineInfo = cityBusLineData
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busLineInfo"), object: nil, userInfo: ["lineData": self.cityBusLineInfo])
+        }
     }
     
-    private func cityBusLineJsonData(resource: String) -> [String] {
-        var cityBusLineList: [String] = []
-        
-        guard let path = Bundle.main.url(forResource: resource, withExtension: "json") else {
-            NSLog("path 오류")
-            return []
-        }
-        
-        
-        do {
-            let data = try String(contentsOf: path).data(using: .utf8)
-            let json = try JSONSerialization.jsonObject(with: data!, options: [])
-            if let arr = json as? [[String : Any]] {
-                for value in arr{
-                    if let busLineInfo = value["stationName"] {
-                        cityBusLineList.append(busLineInfo as! String)
-                    }
-                }
-                return cityBusLineList
-            }
+    func setBusTimeData(lineId: String) {
+        ServerRepository.getCityBusTimeData(lineId: lineId) { cityBusTimeData in
             
-        } catch let err as NSError {
-            print("json data 변경 에러 : \(err)")
+            for i in 0..<cityBusTimeData.0.count {
+                
+                if cityBusTimeData.1[i] != -1 {
+                    self.cityBusDepartTimeInfo.append(cityBusTimeData.0[i])
+                    self.cityBusRemainTimeInfo.append(cityBusTimeData.1[i])
+                }
+            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busTimeInfo"), object: nil, userInfo: ["departData": self.cityBusDepartTimeInfo, "remainData": self.cityBusRemainTimeInfo])
         }
-        
-        return []
-    }
-    
-    public func getCityBusLineList() -> [String]{
-        return self.cityBusLineInfo
     }
 }

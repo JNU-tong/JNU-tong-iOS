@@ -11,7 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class CityBusController {
-    
     var cityBusList:[CityBus] = []
     var favoriteBusList:[CityBus] = []
     
@@ -20,11 +19,6 @@ class CityBusController {
                                                name: NSNotification.Name(rawValue: "FavoriteHeartClick"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(clickUnfavoriteHeart),
                                                name: NSNotification.Name(rawValue: "UnFavoriteHeartClick"), object: nil)
-        
-        ServerRepository.getCityBusData() { cityBusData in
-            self.cityBusList = cityBusData
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busInfoChange"), object: nil, userInfo: nil)
-        }
     }
     
     @objc private func clickFavoriteHeart(_ notification: NSNotification) {

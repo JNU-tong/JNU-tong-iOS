@@ -351,6 +351,10 @@
                                                 <constraint firstItem="ZRg-h3-Rrt" firstAttribute="leading" secondItem="xV7-P2-dkd" secondAttribute="leading" id="ZVN-Eg-cHf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="departTimeLabel" destination="jNY-Zy-ggi" id="s2z-xM-MEJ"/>
+                                            <outlet property="remainTimeLabel" destination="gPt-ot-s26" id="iIR-GY-lTa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
