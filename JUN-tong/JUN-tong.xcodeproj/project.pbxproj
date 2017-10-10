@@ -111,6 +111,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4E03FA181F8CADCA00EA8DF8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */,
+				4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		4E03FA191F8CADEC00EA8DF8 /* DataController */ = {
+			isa = PBXGroup;
+			children = (
+				4ED42C901F7F8C92004417FE /* CityBusController.swift */,
+				4E4D22421F82036000F576F1 /* CityBusLineController.swift */,
+			);
+			name = DataController;
+			sourceTree = "<group>";
+		};
 		4E4D224D1F87677E00F576F1 /* extention */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,10 +224,8 @@
 		4E7FBA0C1F6D50D80066C96D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */,
-				4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */,
-				4ED42C901F7F8C92004417FE /* CityBusController.swift */,
-				4E4D22421F82036000F576F1 /* CityBusLineController.swift */,
+				4E03FA191F8CADEC00EA8DF8 /* DataController */,
+				4E03FA181F8CADCA00EA8DF8 /* ViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

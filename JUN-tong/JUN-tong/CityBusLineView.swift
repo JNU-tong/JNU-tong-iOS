@@ -11,16 +11,20 @@ import UIKit
 class CityBusLineView: UIViewController {
     
     @IBOutlet weak var cityBusLineTable: UITableView!
-    
-    let cityBusLineController = CityBusLineController()
     var cityBusLineList:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cityBusLineList = cityBusLineController.getCityBusLineList()
+        NotificationCenter.default.addObserver(self, selector: #selector(setBusLineInfo),
+                                               name: NSNotification.Name(rawValue: "setBusLineInfo"), object: nil)
         
         self.cityBusLineTable.dataSource = self
         self.cityBusLineTable.delegate = self
+    }
+    
+    func setBusLineInfo(_ notification: Notification) {
+        self.cityBusLineList = notification.userInfo!["lineData"] as! [String]
+        cityBusLineTable.reloadData()
     }
 }
 extension CityBusLineView: UITableViewDelegate, UITableViewDataSource {
