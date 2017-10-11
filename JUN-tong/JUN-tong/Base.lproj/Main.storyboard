@@ -82,7 +82,7 @@
                                                 <color key="textColor" red="0.82352941180000006" green="0.1529411765" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500번 300번 100번 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNZ-VS-ckH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로딩중 입니다." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNZ-VS-ckH">
                                                 <rect key="frame" x="105" y="16" width="158" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -377,22 +377,36 @@
                                     <constraint firstAttribute="bottom" secondItem="wPy-rK-1UY" secondAttribute="bottom" id="oyC-Ia-cbk"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="czl-rq-k7o">
+                                <rect key="frame" x="177" y="162" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Sa-HF-OEe"/>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="bottom" constant="45" id="1kL-xf-7O4"/>
+                            <constraint firstItem="czl-rq-k7o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CZt-6a-Ytb"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="D23-i3-E70"/>
+                            <constraint firstItem="czl-rq-k7o" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="bottom" constant="8" id="T9B-CT-oA5"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bye-ug-Rrc"/>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cUn-rJ-VX0"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uwC-8e-xH1"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="제대로通(통)한다" id="xkG-o5-4Bn"/>
+                    <navigationItem key="navigationItem" title="제대로通(통)한다" id="xkG-o5-4Bn">
+                        <barButtonItem key="rightBarButtonItem" image="reset" id="5BS-aB-Zw3">
+                            <color key="tintColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="resetData:" destination="BYZ-38-t0r" id="sPa-aC-Z5t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activeIndicator" destination="czl-rq-k7o" id="8rp-1z-gUG"/>
                         <outlet property="cityBusInfo" destination="oyo-k7-wYP" id="Iwb-ta-lah"/>
+                        <outlet property="cityBusInfoHeight" destination="hDu-J0-qgA" id="edx-U5-Qan"/>
                         <outlet property="cityBusMain" destination="8zJ-Db-oH5" id="b7v-cM-rnf"/>
                         <outlet property="cityBusTable" destination="JZF-et-4Qs" id="Sxs-P7-FU6"/>
                         <outlet property="cityBusTableHeight" destination="2dy-XZ-DB7" id="xJr-tv-lPG"/>
@@ -417,6 +431,7 @@
     <resources>
         <image name="blackHeart" width="15" height="14"/>
         <image name="redHeart" width="15" height="14"/>
+        <image name="reset" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="U5d-bC-N1N"/>
