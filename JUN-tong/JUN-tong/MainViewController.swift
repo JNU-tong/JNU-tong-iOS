@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var cityBusTableHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var activeIndicator: UIActivityIndicatorView!
+    
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
     
@@ -33,20 +35,28 @@ class MainViewController: UIViewController {
     var favoriteBusList: [CityBus] = []
     
     let cityBusController = CityBusController()
+    
+    var cityBusInfoTap: UITapGestureRecognizer?
+    var shuttleBusInfoTap: UITapGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
-                                               name: NSNotification.Name(rawValue: "busInfoChange"), object: nil)
+                                               name: NSNotification.Name(rawValue: "setBusInfo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteButton),
+                                               name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil)
+        //loading Data...
         cityBusController.setBusData()
+        startLoading()
         
-        let cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
-        cityBusInfoTap.delegate = self
-        cityBusInfo.addGestureRecognizer(cityBusInfoTap)
+        //set button animation(애니메이션 설정만)  ->  로딩중에 애니메이션 설정만 하기로
+        cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
+        cityBusInfoTap?.delegate = self
         
-        let shuttleBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.shuttleBusInfoTap(_:)))
-        shuttleBusInfoTap.delegate = self
-        shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap)
+        shuttleBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.shuttleBusInfoTap(_:)))
+        shuttleBusInfoTap?.delegate = self
         
+        //custom mainView
         cityBusCenter = cityBusMain.center
         shuttleBusCenter = shuttleBusMain.center
         extensRange = self.view.bounds.height-25-180
@@ -68,19 +78,57 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // setSoonBusInfo 랑 clickButton 이랑 같이 작동할 경우 어플이 죽음....
     @objc private func setBusInfo() {
         self.cityBusList = cityBusController.getCityBusList()
         self.favoriteBusList = cityBusController.getFavoriteBusList()
         cityBusTable.reloadData()
-        
+        setSoonBusInfo()
+        finishLoading()
+    }
+    
+    @objc private func clickFavoriteButton() {
+        self.cityBusList = cityBusController.getCityBusList()
+        self.favoriteBusList = cityBusController.getFavoriteBusList()
+        cityBusTable.reloadData()
+    }
+    
+    private func setSoonBusInfo() {
         var arriveSoonBus: String = ""
         
-        for cityBus in cityBusList {
-            if cityBus.firstBusTime! < 3 {
-                arriveSoonBus.append(cityBus.lineNo + "번 ")
+        for i in 0..<cityBusList.count {
+            if i == (cityBusList.count - 1) {
+                arriveSoonBus.append(cityBusList[i].lineNo)
+                break;
+            }
+            
+            if cityBusList[i].firstBusTime! < 3 {
+                arriveSoonBus.append(cityBusList[i].lineNo + ", ")
             }
         }
+        
         soonArriveBusInfo.text = arriveSoonBus
+    }
+    
+    private func startLoading() {
+        activeIndicator.startAnimating()
+        activeIndicator.isHidden = false
+        
+        if cityBusInfoTap != nil && shuttleBusInfoTap != nil {
+            self.cityBusInfo.removeGestureRecognizer(cityBusInfoTap!)
+            self.shuttleBusInfo.removeGestureRecognizer(shuttleBusInfoTap!)
+        }
+    }
+    
+    private func finishLoading() {
+        activeIndicator.stopAnimating()
+        activeIndicator.isHidden = true
+        
+        if cityBusInfoTap != nil && shuttleBusInfoTap != nil {
+            self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
+            self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

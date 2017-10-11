@@ -31,7 +31,7 @@ class CityBusController {
         }
         
         cityBusList.remove(at: heartIndexPath.row)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busInfoChange"), object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil, userInfo: nil)
     }
     
     @objc private func clickUnfavoriteHeart(_ notification: NSNotification) {
@@ -43,13 +43,13 @@ class CityBusController {
             cityBusList.append(heartClickBus)
         }
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busInfoChange"), object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil, userInfo: nil)
     }
     
     func setBusData() {
         ServerRepository.getCityBusData() { cityBusData in
             self.cityBusList = cityBusData
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busInfoChange"), object: nil, userInfo: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBusInfo"), object: nil, userInfo: nil)
         }
     }
     
