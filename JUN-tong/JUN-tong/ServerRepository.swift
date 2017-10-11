@@ -11,11 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class ServerRepository {
-    static var cityBusList:[CityBus] = []
-    static var cityBusLineList:[String] = []
+//    static var cityBusList:[CityBus] = []
+//    static var cityBusLineList:[String] = []
 
     
     static func getCityBusData(completion: @escaping([CityBus]) -> Void) {
+        var cityBusList:[CityBus] = []
         
         guard let url = URL(string: baseURL + "getDepartureSoonBusList") else {
             print("URL is nil")
@@ -50,19 +51,20 @@ class ServerRepository {
                     //secondBus의 nil 값
                     if let secondBusTime = remainInfo["second"]?.int {
                         let cityBus = CityBus(lineNo: lineNo, description: description, lineId: lineId, firstBusTime: firstBusTime, secondBusTime: secondBusTime)
-                        self.cityBusList.append(cityBus)
+                        cityBusList.append(cityBus)
                     } else {
                         let cityBus = CityBus(lineNo: lineNo, description: description, lineId: lineId, firstBusTime: firstBusTime, secondBusTime: nil)
-                        self.cityBusList.append(cityBus)
+                        cityBusList.append(cityBus)
                     }
                 }
             }
-            completion(self.cityBusList)
+            completion(cityBusList)
         }
     }
     
     
     static func getCityBusLineData(lineId: String, completion: @escaping([String]) -> Void) {
+        var cityBusLineList:[String] = []
         
         guard let url = URL(string: baseURL + "getBusStationListByLineId/" + lineId) else {
             print("URL is nil")
@@ -86,7 +88,7 @@ class ServerRepository {
                     cityBusLineList.append(stationName)
                 }
             }
-            completion(self.cityBusLineList)
+            completion(cityBusLineList)
         }
     }
     

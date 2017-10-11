@@ -20,6 +20,8 @@ class CityBusLineView: UIViewController {
         
         self.cityBusLineTable.dataSource = self
         self.cityBusLineTable.delegate = self
+        
+        cityBusLineTable.allowsSelection = false
     }
     
     func setBusLineInfo(_ notification: Notification) {

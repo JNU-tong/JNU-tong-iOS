@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var soonArriveBusInfo: UILabel!
     
     @IBOutlet weak var cityBusTableHeight: NSLayoutConstraint!
+    @IBOutlet weak var cityBusInfoHeight: NSLayoutConstraint!
     
     @IBOutlet weak var activeIndicator: UIActivityIndicatorView!
     
@@ -78,14 +79,20 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func resetData(_ sender: Any) {
+        cityBusTable.allowsSelection = false
+        cityBusController.setBusData()
+        startLoading()
+    }
     
     // setSoonBusInfo 랑 clickButton 이랑 같이 작동할 경우 어플이 죽음....
     @objc private func setBusInfo() {
         self.cityBusList = cityBusController.getCityBusList()
         self.favoriteBusList = cityBusController.getFavoriteBusList()
         cityBusTable.reloadData()
-        setSoonBusInfo()
+        cityBusTable.allowsSelection = true
         finishLoading()
+        setSoonBusInfo()
     }
     
     @objc private func clickFavoriteButton() {
@@ -95,16 +102,22 @@ class MainViewController: UIViewController {
     }
     
     private func setSoonBusInfo() {
+        
         var arriveSoonBus: String = ""
         
         for i in 0..<cityBusList.count {
-            if i == (cityBusList.count - 1) {
-                arriveSoonBus.append(cityBusList[i].lineNo)
-                break;
-            }
             
-            if cityBusList[i].firstBusTime! < 3 {
-                arriveSoonBus.append(cityBusList[i].lineNo + ", ")
+            
+            if cityBusList[i].firstBusTime! < 3 && arriveSoonBus.count == 0{
+                arriveSoonBus.append(cityBusList[i].lineNo)
+            } else if cityBusList[i].firstBusTime! < 3 && arriveSoonBus.count != 0{
+                arriveSoonBus.append(", " + cityBusList[i].lineNo)
+            }
+        }
+        
+        for i in 0..<favoriteBusList.count {
+            if favoriteBusList[i].firstBusTime! < 3 {
+                arriveSoonBus.append(", " + favoriteBusList[i].lineNo)
             }
         }
         
@@ -226,6 +239,7 @@ extension MainViewController: UIGestureRecognizerDelegate {
                 self.cityBusMain.frame.size.height += self.extensRange!
                 self.cityBusTableHeight.constant += self.extensRange!
                 self.cityBusTable.frame.size.height += self.extensRange!
+                self.cityBusInfoHeight.constant += self.extensRange!
                 self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: self.shuttleBusMain.frame.height + self.view.bounds.height)
             })
         } else if cityBusInfoFolder == true {
@@ -236,6 +250,7 @@ extension MainViewController: UIGestureRecognizerDelegate {
                 self.cityBusMain.frame.size.height -= self.extensRange!
                 self.cityBusTableHeight.constant -= self.extensRange!
                 self.cityBusTable.frame.size.height -= self.extensRange!
+                self.cityBusInfoHeight.constant -= self.extensRange!
                 self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)!)
             })
         }

@@ -26,6 +26,8 @@ class CityBusTimeView: UIViewController {
         
         self.cityBusTimeTable.dataSource = self
         self.cityBusTimeTable.delegate = self
+        
+        cityBusTimeTable.allowsSelection = false
     }
     
     func setBusTImeInfo(_ notification: Notification) {
