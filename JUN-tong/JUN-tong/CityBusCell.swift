@@ -26,6 +26,7 @@ class CityBusCell: UITableViewCell {
         self.cityBus = busInfo
         
         lineNoLabel.text = cityBus?.lineNo
+        lineNoLabel.textColor = cityBus?.cityBusColor
         descriptionLabel.text = cityBus?.description
         
         firstBusArriveTimeLabel.text = "\(cityBus?.firstBusTime! ?? 0)분전"
@@ -35,6 +36,10 @@ class CityBusCell: UITableViewCell {
         } else {
             secondBusArriveTimeLabel.text = "없음"
         }
+    }
+    
+    func busTextColor() {
+        
     }
     
     @IBAction func clickFavoriteButton(_ sender: Any) {

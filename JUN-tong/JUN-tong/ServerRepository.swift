@@ -11,9 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class ServerRepository {
-//    static var cityBusList:[CityBus] = []
-//    static var cityBusLineList:[String] = []
-
     
     static func getCityBusData(completion: @escaping([CityBus]) -> Void) {
         var cityBusList:[CityBus] = []

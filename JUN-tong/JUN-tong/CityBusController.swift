@@ -60,6 +60,11 @@ class CityBusController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil, userInfo: nil)
     }
     
+    @objc private func sortBusTime() {
+        self.cityBusList = self.cityBusList.sorted { $0.firstBusTime! < $1.firstBusTime! }
+        self.favoriteBusList = self.favoriteBusList.sorted { $0.firstBusTime! < $1.firstBusTime! }
+    }
+    
     func setBusData() {
         //새로고침
         self.cityBusList = []
@@ -80,10 +85,12 @@ class CityBusController {
     }
     
     func getCityBusList() -> [CityBus] {
+        sortBusTime()
         return self.cityBusList
     }
     
     func getFavoriteBusList() -> [CityBus] {
+        sortBusTime()
         return self.favoriteBusList
     }
 }
