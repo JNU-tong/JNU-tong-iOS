@@ -17,7 +17,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var cityBusInfo: UIView!
     @IBOutlet weak var shuttleBusInfo: UIView!
-    @IBOutlet weak var soonArriveBusInfo: UILabel!
+    
+    @IBOutlet weak var arriveBus1: UILabel!
+    @IBOutlet weak var arriveBus2: UILabel!
     
     @IBOutlet weak var cityBusTableHeight: NSLayoutConstraint!
     @IBOutlet weak var cityBusInfoHeight: NSLayoutConstraint!
@@ -102,26 +104,42 @@ class MainViewController: UIViewController {
     }
     
     private func setSoonBusInfo() {
-        
-        var arriveSoonBus: String = ""
-        
-        for i in 0..<cityBusList.count {
-            
-            
-            if cityBusList[i].firstBusTime! < 3 && arriveSoonBus.count == 0{
-                arriveSoonBus.append(cityBusList[i].lineNo)
-            } else if cityBusList[i].firstBusTime! < 3 && arriveSoonBus.count != 0{
-                arriveSoonBus.append(", " + cityBusList[i].lineNo)
-            }
-        }
+        var arriveBus: [CityBus] = []
         
         for i in 0..<favoriteBusList.count {
-            if favoriteBusList[i].firstBusTime! < 3 {
-                arriveSoonBus.append(", " + favoriteBusList[i].lineNo)
+            if favoriteBusList[i].firstBusTime! < 3 && arriveBus.count < 2 {
+                arriveBus.append(favoriteBusList[i])
             }
         }
         
-        soonArriveBusInfo.text = arriveSoonBus
+        for i in 0..<cityBusList.count {
+            if cityBusList[i].firstBusTime! < 3 && arriveBus.count < 2 {
+                arriveBus.append(cityBusList[i])
+            }
+        }
+        
+        if arriveBus.count == 2 {
+            arriveBus1.text = arriveBus[0].lineNo
+            arriveBus1.textColor = UIColor.white
+            arriveBus1.backgroundColor = arriveBus[0].cityBusColor
+            arriveBus1.layer.cornerRadius = 5
+            arriveBus1.layer.masksToBounds = true
+            arriveBus2.text = arriveBus[1].lineNo
+            arriveBus2.textColor = UIColor.white
+            arriveBus2.backgroundColor = arriveBus[0].cityBusColor
+            arriveBus2.layer.cornerRadius = 5
+            arriveBus2.layer.masksToBounds = true
+        } else if arriveBus.count == 1{
+            arriveBus1.text = arriveBus[0].lineNo
+            arriveBus1.textColor = UIColor.white
+            arriveBus1.backgroundColor = arriveBus[0].cityBusColor
+            arriveBus1.layer.cornerRadius = 5
+            arriveBus1.layer.masksToBounds = true
+            arriveBus2.isHidden = true
+        } else {
+            arriveBus1.isHidden = true
+            arriveBus2.isHidden = true
+        }
     }
     
     private func startLoading() {
