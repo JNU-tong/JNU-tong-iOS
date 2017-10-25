@@ -24,7 +24,10 @@ class FavoriteBusCell: UITableViewCell {
         self.cityBus = busInfo
         
         lineNoLabel.text = cityBus?.lineNo
-        lineNoLabel.textColor = cityBus?.cityBusColor
+        lineNoLabel.backgroundColor = cityBus?.cityBusColor
+        lineNoLabel.textColor = UIColor.white
+        lineNoLabel.layer.cornerRadius = 5
+        lineNoLabel.layer.masksToBounds = true
         descriptionLabel.text = cityBus?.description
         
         firstBusArriveTimeLabel.text = "\(cityBus?.firstBusTime! ?? 0)분전"

@@ -17,6 +17,7 @@ class CityBusTimeView: UIViewController {
     
     var cityBusTimeList:[String] = []
     var cityBusRemainTimeList:[Int] = []
+    var cellColor:UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,7 @@ extension CityBusTimeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusTime", for: indexPath) as? CityBusTimeCell {
             cell.setCustone(departTime: cityBusTimeList[indexPath.row], reaminTime: cityBusRemainTimeList[indexPath.row])
+            cell.backgroundColor = cellColor?.withAlphaComponent(0.1)
             
             return cell
         }
