@@ -14,5 +14,6 @@ class CityBusLineCell: UITableViewCell {
     
     func setCustom(stationName: String) {
         stationNameLabel.text = stationName
+        
     }
 }

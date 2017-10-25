@@ -69,29 +69,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsS-Ca-POn">
                                         <rect key="frame" x="0.0" y="177" width="375" height="32"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kwG-ct-eer">
-                                                <rect key="frame" x="0.0" y="31" width="375" height="1"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFM-aY-Ptn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="1"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isy-J7-oNh">
-                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="1"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="NGi-GE-fHa"/>
-                                                </constraints>
-                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TiD-U3-kXX">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85F-wE-IhE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="31"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85F-wE-IhE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="32"/>
                                                         <color key="backgroundColor" red="0.0" green="0.17254901960784313" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="노선">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -100,7 +83,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyg-ol-i2s">
-                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="31"/>
+                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="32"/>
                                                         <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="시간표">
@@ -116,13 +99,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="TiD-U3-kXX" firstAttribute="top" secondItem="hsS-Ca-POn" secondAttribute="top" id="869-tD-TZC"/>
-                                            <constraint firstItem="kwG-ct-eer" firstAttribute="leading" secondItem="hsS-Ca-POn" secondAttribute="leading" id="9W3-fm-lcX"/>
                                             <constraint firstItem="TiD-U3-kXX" firstAttribute="leading" secondItem="hsS-Ca-POn" secondAttribute="leading" id="Q8d-Ff-V9R"/>
-                                            <constraint firstItem="kwG-ct-eer" firstAttribute="top" secondItem="TiD-U3-kXX" secondAttribute="bottom" id="U7u-xP-9jS"/>
-                                            <constraint firstAttribute="bottom" secondItem="TiD-U3-kXX" secondAttribute="bottom" constant="1" id="YjL-ey-w08"/>
+                                            <constraint firstAttribute="bottom" secondItem="TiD-U3-kXX" secondAttribute="bottom" id="YjL-ey-w08"/>
                                             <constraint firstAttribute="trailing" secondItem="TiD-U3-kXX" secondAttribute="trailing" id="ZiB-DP-tmb"/>
-                                            <constraint firstAttribute="bottom" secondItem="kwG-ct-eer" secondAttribute="bottom" id="btp-Yj-ani"/>
-                                            <constraint firstAttribute="trailing" secondItem="kwG-ct-eer" secondAttribute="trailing" id="rGP-Py-5zf"/>
                                             <constraint firstAttribute="height" constant="32" id="vFH-vY-MfL"/>
                                         </constraints>
                                     </view>
@@ -183,11 +162,11 @@
                     <connections>
                         <outlet property="busColorView" destination="08z-N8-6mR" id="VjX-LB-04l"/>
                         <outlet property="busImageView" destination="dn4-U2-mBt" id="7EC-cu-tgl"/>
-                        <outlet property="busLineClickStatus" destination="kFM-aY-Ptn" id="186-QO-bag"/>
+                        <outlet property="busLineButtonOutlet" destination="85F-wE-IhE" id="4Rx-ix-2eg"/>
                         <outlet property="busLineLabel" destination="rSF-l9-l2y" id="kDN-je-5Wu"/>
                         <outlet property="busLineView" destination="wmA-zr-hhb" id="hN1-eI-Ejh"/>
                         <outlet property="busNoLabel" destination="9Dn-bO-9Cg" id="OQl-uh-xdg"/>
-                        <outlet property="busTimeClickStatus" destination="Isy-J7-oNh" id="4wP-A7-9Pl"/>
+                        <outlet property="busTimeButtonOutlet" destination="cyg-ol-i2s" id="aNe-MV-ZqN"/>
                         <outlet property="busTimeView" destination="lVV-Zc-05s" id="YKh-gR-Ppp"/>
                     </connections>
                 </viewController>

@@ -14,8 +14,8 @@ class CityBusDetailViewController: UIViewController {
     @IBOutlet weak var busLineLabel: UILabel!
     @IBOutlet weak var busImageView: UIView!
 
-    @IBOutlet weak var busTimeClickStatus: UIView!
-    @IBOutlet weak var busLineClickStatus: UIView!
+    @IBOutlet weak var busLineButtonOutlet: UIButton!
+    @IBOutlet weak var busTimeButtonOutlet: UIButton!
     
     @IBOutlet weak var busColorView: UIView!
     
@@ -24,6 +24,9 @@ class CityBusDetailViewController: UIViewController {
     
     var busInfo: CityBus?
     let cityBusLineController = CityBusLineController()
+    
+    let cityBusLineView = CityBusLineView()
+    let cityBusTimeView = CityBusTimeView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +39,13 @@ class CityBusDetailViewController: UIViewController {
         cityBusLineController.setBusLineData(lineId: (busInfo?.lineId)!)
         cityBusLineController.setBusTimeData(lineId: (busInfo?.lineId)!)
         
+        cityBusLineView.cellColor = busInfo?.cityBusColor
+        cityBusTimeView.cellColor = busInfo?.cityBusColor
+        
         busColorView.backgroundColor = busInfo?.cityBusColor
         busImageView.layer.borderColor = busInfo?.cityBusColor.cgColor
         busImageView.layer.borderWidth = 3
         busImageView.layer.cornerRadius = 36
-        
-        busTimeClickStatus.layer.backgroundColor = UIColor.white.cgColor
         
         busLineView.alpha = 1
         busTimeView.alpha = 0
@@ -50,6 +54,32 @@ class CityBusDetailViewController: UIViewController {
         busNoLabel.text = busInfo!.lineNo
         busLineLabel.textColor = busInfo?.cityBusColor
         busLineLabel.text = busInfo!.description
+        
+        setBusLineImage()
+    }
+    
+    private func setBusLineImage() {
+        if busInfo?.cityBusType.rawValue == 1 {
+            self.busLineButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "nightBusLine"), for: .normal)
+        } else if busInfo?.cityBusType.rawValue == 2 {
+            self.busLineButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "blueBusLine"), for: .normal)
+        } else if busInfo?.cityBusType.rawValue == 3 {
+            self.busLineButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "blueBusLine"), for: .normal)
+        } else if busInfo?.cityBusType.rawValue == 4 {
+            self.busLineButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "greenBusLine"), for: .normal)
+        }
+    }
+    
+    private func setBusTimeImage() {
+        if busInfo?.cityBusType.rawValue == 1 {
+            self.busTimeButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "nightBusTime"), for: .normal)
+        } else if busInfo?.cityBusType.rawValue == 2 {
+            self.busTimeButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "blueBusTime"), for: .normal)
+        } else if busInfo?.cityBusType.rawValue == 3 {
+            self.busTimeButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "blueBusTime"), for: .normal)
+        } else if busInfo?.cityBusType.rawValue == 4 {
+            self.busTimeButtonOutlet.setBackgroundImage(#imageLiteral(resourceName: "greenBusTime"), for: .normal)
+        }
     }
     
     @objc private func setLine(_ notification: Notification) {
@@ -65,8 +95,8 @@ class CityBusDetailViewController: UIViewController {
     }
     
     @IBAction func timeTableButton(_ sender: Any) {
-        busLineClickStatus.layer.backgroundColor = UIColor.white.cgColor
-        busTimeClickStatus.layer.backgroundColor = UIColor.darkGray.cgColor
+        busLineButtonOutlet.setBackgroundImage(nil, for: .normal)
+        setBusTimeImage()
         
         UIView.animate(withDuration: 0.5, animations: {
             self.busLineView.alpha = 0
@@ -75,8 +105,8 @@ class CityBusDetailViewController: UIViewController {
     }
     
     @IBAction func busLineButton(_ sender: Any) {
-        busTimeClickStatus.layer.backgroundColor = UIColor.white.cgColor
-        busLineClickStatus.layer.backgroundColor = UIColor.darkGray.cgColor
+        busTimeButtonOutlet.setBackgroundImage(nil, for: .normal)
+        setBusLineImage()
         
         UIView.animate(withDuration: 0.5, animations: {
             self.busLineView.alpha = 1

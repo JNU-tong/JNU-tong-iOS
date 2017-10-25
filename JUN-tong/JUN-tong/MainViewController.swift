@@ -29,6 +29,8 @@ class MainViewController: UIViewController {
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
     
+    var loadingFlag = false
+    
     // 본래 있던 자리를 알기 위해
     var cityBusCenter: CGPoint?
     var shuttleBusCenter: CGPoint?
@@ -81,10 +83,16 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func resetData(_ sender: Any) {
-        cityBusTable.allowsSelection = false
-        cityBusController.setBusData()
-        startLoading()
+        
+        if loadingFlag == false {
+            cityBusTable.allowsSelection = false
+            cityBusController.setBusData()
+            startLoading()
+        }
+        
+        loadingFlag = true
     }
     
     // setSoonBusInfo 랑 clickButton 이랑 같이 작동할 경우 어플이 죽음....
@@ -95,6 +103,7 @@ class MainViewController: UIViewController {
         cityBusTable.allowsSelection = true
         finishLoading()
         setSoonBusInfo()
+        loadingFlag = false
     }
     
     @objc private func clickFavoriteButton() {
@@ -105,6 +114,12 @@ class MainViewController: UIViewController {
     
     private func setSoonBusInfo() {
         var arriveBus: [CityBus] = []
+        
+        //라벨 초기화
+        arriveBus1.isHidden = false
+        arriveBus2.isHidden = false
+        arriveBus1.reloadInputViews()
+        arriveBus2.reloadInputViews()
         
         for i in 0..<favoriteBusList.count {
             if favoriteBusList[i].firstBusTime! < 3 && arriveBus.count < 2 {
@@ -126,7 +141,7 @@ class MainViewController: UIViewController {
             arriveBus1.layer.masksToBounds = true
             arriveBus2.text = arriveBus[1].lineNo
             arriveBus2.textColor = UIColor.white
-            arriveBus2.backgroundColor = arriveBus[0].cityBusColor
+            arriveBus2.backgroundColor = arriveBus[1].cityBusColor
             arriveBus2.layer.cornerRadius = 5
             arriveBus2.layer.masksToBounds = true
         } else if arriveBus.count == 1{

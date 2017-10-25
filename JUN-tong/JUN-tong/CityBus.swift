@@ -18,22 +18,25 @@ struct CityBus {
     private var _secondBusTime: Int?
     
     enum cityBusType: Int {
-        case redBus = 2
-        case blueBus = 3
-        case greenBus = 4
+        case nightBus = 1
+        case busOf200 = 2
+        case busOf300 = 3
+        case busOf400 = 4
         
         func getBusUIColor() -> UIColor {
-            let redBus = UIColor(red: 249.0/255.0, green: 60.0/255.0, blue: 69.0/255.0, alpha: 1.0)
-            let blueBus = UIColor(red: 49.0/255.0, green: 183.0/255.0, blue: 227.0/255.0, alpha: 1.0)
-            let greenBus = UIColor(red: 114.0/255.0, green: 197.0/255.0, blue: 173.0/255.0, alpha: 1.0)
+            let nightBusColor = UIColor(red: 248.0/255.0, green: 202.0/255.0, blue: 114.0/255.0, alpha: 1.0)
+            let blueBusColor = UIColor(red: 49.0/255.0, green: 183.0/255.0, blue: 227.0/255.0, alpha: 1.0)
+            let greenBusColor = UIColor(red: 114.0/255.0, green: 197.0/255.0, blue: 173.0/255.0, alpha: 1.0)
             
             switch self {
-            case .redBus:
-                return redBus
-            case .blueBus:
-                return blueBus
-            case .greenBus:
-                return greenBus
+            case .nightBus:
+                return nightBusColor
+            case .busOf200:
+                return blueBusColor
+            case .busOf300:
+                return blueBusColor
+            case .busOf400:
+                return greenBusColor
             }
         }
     }
@@ -46,9 +49,30 @@ struct CityBus {
         self._secondBusTime = secondBusTime
     }
     
+    public var cityBusType: cityBusType {
+        get {
+            var busType:cityBusType?
+            
+            if Int(lineNo) == 3003{
+                busType = cityBusType(rawValue: 1)
+            } else {
+                busType = cityBusType(rawValue: Int(String(Array(lineNo)[0]))!)
+            }
+            
+            return busType!
+        }
+    }
+    
     public var cityBusColor: UIColor {
         get {
-            let busType = cityBusType(rawValue: Int(String(Array(lineNo)[0]))!)
+            var busType:cityBusType?
+            
+            if Int(lineNo) == 3003{
+                busType = cityBusType(rawValue: 1)
+            } else {
+                busType = cityBusType(rawValue: Int(String(Array(lineNo)[0]))!)
+            }
+            
             return busType!.getBusUIColor()
         }
     }

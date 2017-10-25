@@ -12,6 +12,7 @@ class CityBusLineView: UIViewController {
     
     @IBOutlet weak var cityBusLineTable: UITableView!
     var cityBusLineList:[String] = []
+    var cellColor:UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ extension CityBusLineView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusLine", for: indexPath) as? CityBusLineCell {
             cell.setCustom(stationName: cityBusLineList[indexPath.row])
+            cell.backgroundColor = cellColor?.withAlphaComponent(0.1)
             return cell
         }
         
