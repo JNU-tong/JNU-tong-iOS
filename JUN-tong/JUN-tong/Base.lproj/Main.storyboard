@@ -376,12 +376,53 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="D31-3r-SlF">
+                                                <rect key="frame" x="99" y="16" width="178" height="17"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNM-H6-9r0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="17"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A노선" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-Bb-JaJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="34.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5분전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T52-SO-4nx">
+                                                                <rect key="frame" x="44.5" y="0.0" width="33.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L3z-6w-qOM">
+                                                        <rect key="frame" x="93" y="0.0" width="85" height="17"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B노선" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-d0-Iyk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="17"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10분전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ6-fq-uiG">
+                                                                <rect key="frame" x="44" y="0.0" width="41" height="17"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GhX-Un-8YY"/>
                                             <constraint firstItem="W8M-Bt-l4j" firstAttribute="centerY" secondItem="wPy-rK-1UY" secondAttribute="centerY" id="Nb7-LK-znc"/>
                                             <constraint firstItem="W8M-Bt-l4j" firstAttribute="leading" secondItem="wPy-rK-1UY" secondAttribute="leading" constant="5" id="Yfb-qj-680"/>
+                                            <constraint firstItem="D31-3r-SlF" firstAttribute="centerY" secondItem="wPy-rK-1UY" secondAttribute="centerY" id="j1D-LQ-Imr"/>
+                                            <constraint firstItem="D31-3r-SlF" firstAttribute="leading" secondItem="W8M-Bt-l4j" secondAttribute="trailing" constant="1" id="jPC-M5-mv7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -430,6 +471,7 @@
                         <outlet property="cityBusTableHeight" destination="2dy-XZ-DB7" id="xJr-tv-lPG"/>
                         <outlet property="shuttleBusInfo" destination="wPy-rK-1UY" id="bWM-fy-30y"/>
                         <outlet property="shuttleBusMain" destination="C1D-xr-TzG" id="9vp-Ws-ltg"/>
+                        <segue destination="Ded-4y-HZN" kind="show" identifier="shuttleBusSegue" id="PUY-GE-gqb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -442,7 +484,15 @@
                 <viewControllerPlaceholder storyboardName="CityBusDetailView" id="Q7X-Tm-wKQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPO-7L-qj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="114"/>
+            <point key="canvasLocation" x="1182" y="-136"/>
+        </scene>
+        <!--ShuttleBusDetailView-->
+        <scene sceneID="Wx8-9v-Ct2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShuttleBusDetailView" id="Ded-4y-HZN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ymr-Po-gQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197" y="199"/>
         </scene>
     </scenes>
     <resources>
@@ -451,6 +501,6 @@
         <image name="reset" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U5d-bC-N1N"/>
+        <segue reference="f0g-3D-s4v"/>
     </inferredMetricsTieBreakers>
 </document>
