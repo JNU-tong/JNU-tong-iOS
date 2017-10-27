@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEg-1b-3Cp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shuttle Bus Detail View Controller-->
+        <scene sceneID="Zxw-ef-zMF">
+            <objects>
+                <viewController id="wEg-1b-3Cp" customClass="ShuttleBusDetailViewController" customModule="JUN_tong" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yxH-mr-RTT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nYF-KD-t8h">
+                                <rect key="frame" x="119" y="43" width="137" height="41"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FUh-e3-T8P">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="41"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-SH-sLC">
+                                                <rect key="frame" x="2" y="0.0" width="52" height="38"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <state key="normal" title="A호선">
+                                                    <color key="titleColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ABusTab:" destination="wEg-1b-3Cp" eventType="touchUpInside" id="lc4-Cw-Si5"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TgR-0b-vdC">
+                                                <rect key="frame" x="0.0" y="38" width="56" height="3"/>
+                                                <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="3" id="rO4-m2-K17"/>
+                                                    <constraint firstAttribute="width" constant="56" id="tUM-DE-uqm"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JbH-pl-fVm">
+                                        <rect key="frame" x="81" y="0.0" width="56" height="41"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72b-7u-wZy">
+                                                <rect key="frame" x="2.5" y="0.0" width="51" height="38"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <state key="normal" title="B호선">
+                                                    <color key="titleColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="BBusTab:" destination="wEg-1b-3Cp" eventType="touchUpInside" id="Nq9-0U-CHK"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azo-qc-12p">
+                                                <rect key="frame" x="0.0" y="38" width="56" height="3"/>
+                                                <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="3" id="ODz-BN-9NX"/>
+                                                    <constraint firstAttribute="width" constant="56" id="le1-aT-j1m"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nYF-KD-t8h" firstAttribute="top" secondItem="hTv-Ml-wjI" secondAttribute="top" constant="23" id="Aah-5H-bkt"/>
+                            <constraint firstItem="nYF-KD-t8h" firstAttribute="centerX" secondItem="yxH-mr-RTT" secondAttribute="centerX" id="O18-L8-qNs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hTv-Ml-wjI"/>
+                    </view>
+                    <connections>
+                        <outlet property="ABusButtonOutlet" destination="lsO-SH-sLC" id="53z-0v-Bvn"/>
+                        <outlet property="ABusStatus" destination="TgR-0b-vdC" id="wRN-Qy-JqF"/>
+                        <outlet property="BBusButtonOutlet" destination="72b-7u-wZy" id="ozs-pb-V5V"/>
+                        <outlet property="BBusStatus" destination="Azo-qc-12p" id="zP4-17-QmA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NW9-rj-duS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429.60000000000002" y="-454.72263868065971"/>
+        </scene>
+    </scenes>
+</document>

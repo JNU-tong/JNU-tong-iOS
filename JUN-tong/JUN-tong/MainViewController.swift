@@ -61,6 +61,9 @@ class MainViewController: UIViewController {
         shuttleBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.shuttleBusInfoTap(_:)))
         shuttleBusInfoTap?.delegate = self
         
+        self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
+        self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
+        
         //custom mainView
         cityBusCenter = cityBusMain.center
         shuttleBusCenter = shuttleBusMain.center
@@ -76,6 +79,8 @@ class MainViewController: UIViewController {
         
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -161,20 +166,20 @@ class MainViewController: UIViewController {
         activeIndicator.startAnimating()
         activeIndicator.isHidden = false
         
-        if cityBusInfoTap != nil && shuttleBusInfoTap != nil {
-            self.cityBusInfo.removeGestureRecognizer(cityBusInfoTap!)
-            self.shuttleBusInfo.removeGestureRecognizer(shuttleBusInfoTap!)
-        }
+//        if cityBusInfoTap != nil && shuttleBusInfoTap != nil {
+//            self.cityBusInfo.removeGestureRecognizer(cityBusInfoTap!)
+//            self.shuttleBusInfo.removeGestureRecognizer(shuttleBusInfoTap!)
+//        }
     }
     
     private func finishLoading() {
         activeIndicator.stopAnimating()
         activeIndicator.isHidden = true
         
-        if cityBusInfoTap != nil && shuttleBusInfoTap != nil {
-            self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
-            self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
-        }
+//        if cityBusInfoTap != nil && shuttleBusInfoTap != nil {
+//            self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
+//            self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
+//        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -290,25 +295,29 @@ extension MainViewController: UIGestureRecognizerDelegate {
     }
     
     func shuttleBusInfoTap(_ gestureRecognizer: UITapGestureRecognizer) {
-        
-        if shuttleBusInfoFolder == false {
-            shuttleBusInfoFolder = true
-            
-            UIView.animate(withDuration: 0.5, delay: 0, animations: {
-                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)!)
-                self.shuttleBusMain.frame.size.height += self.extensRange!
-                
-                self.cityBusMain.isHidden = true
-            })
-        } else if shuttleBusInfoFolder == true {
-            shuttleBusInfoFolder = false
-            
-            UIView.animate(withDuration: 0.5, delay: 0, animations: {
-                self.shuttleBusMain.frame.size.height -= self.extensRange!
-                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)!)
-                
-                self.cityBusMain.isHidden = false
-            })
-        }
+        performSegue(withIdentifier: "shuttleBusSegue", sender: self)
     }
+    
+//    func shuttleBusInfoTap(_ gestureRecognizer: UITapGestureRecognizer) {
+//
+//        if shuttleBusInfoFolder == false {
+//            shuttleBusInfoFolder = true
+//
+//            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+//                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)!)
+//                self.shuttleBusMain.frame.size.height += self.extensRange!
+//
+//                self.cityBusMain.isHidden = true
+//            })
+//        } else if shuttleBusInfoFolder == true {
+//            shuttleBusInfoFolder = false
+//
+//            UIView.animate(withDuration: 0.5, delay: 0, animations: {
+//                self.shuttleBusMain.frame.size.height -= self.extensRange!
+//                self.shuttleBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.shuttleBusCenter?.y)!)
+//
+//                self.cityBusMain.isHidden = false
+//            })
+//        }
+//    }
 }
