@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,11 +70,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBJ-Yq-CgA">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <connections>
+                                    <segue destination="tIS-u4-hFI" kind="embed" id="372-gr-sb3"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VBJ-Yq-CgA" firstAttribute="top" secondItem="nYF-KD-t8h" secondAttribute="bottom" constant="40" id="3Vy-FQ-e0j"/>
                             <constraint firstItem="nYF-KD-t8h" firstAttribute="top" secondItem="hTv-Ml-wjI" secondAttribute="top" constant="23" id="Aah-5H-bkt"/>
                             <constraint firstItem="nYF-KD-t8h" firstAttribute="centerX" secondItem="yxH-mr-RTT" secondAttribute="centerX" id="O18-L8-qNs"/>
+                            <constraint firstItem="VBJ-Yq-CgA" firstAttribute="bottom" secondItem="hTv-Ml-wjI" secondAttribute="bottom" id="Que-E2-1j0"/>
+                            <constraint firstItem="VBJ-Yq-CgA" firstAttribute="leading" secondItem="hTv-Ml-wjI" secondAttribute="leading" id="mok-NN-gbV"/>
+                            <constraint firstItem="VBJ-Yq-CgA" firstAttribute="trailing" secondItem="hTv-Ml-wjI" secondAttribute="trailing" id="vea-12-D7B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTv-Ml-wjI"/>
                     </view>
@@ -88,5 +99,98 @@
             </objects>
             <point key="canvasLocation" x="429.60000000000002" y="-454.72263868065971"/>
         </scene>
+        <!--Shuttle Bus View-->
+        <scene sceneID="Wip-U8-kQ3">
+            <objects>
+                <viewController id="tIS-u4-hFI" customClass="ShuttleBusView" customModule="JUN_tong" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y1D-aT-L6E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="TWX-x9-xIN">
+                                <rect key="frame" x="79" y="0.0" width="216" height="17"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의전원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3q-E5-2ud">
+                                        <rect key="frame" x="0.0" y="0.0" width="58" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공대4호관" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5I-8v-RYy">
+                                        <rect key="frame" x="79" y="0.0" width="58" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해대4호관" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuf-Bv-tvN">
+                                        <rect key="frame" x="158" y="0.0" width="58" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotLine" translatesAutoresizingMaskIntoConstraints="NO" id="u6l-eO-cni">
+                                <rect key="frame" x="53" y="37" width="269" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="bFM-Eb-4aM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackHeart" translatesAutoresizingMaskIntoConstraints="NO" id="8Tv-ZK-Mpi">
+                                <rect key="frame" x="180" y="32" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Heq-Wn-FvO"/>
+                                    <constraint firstAttribute="width" constant="15" id="XKG-di-2cC"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qfv-3K-kFb">
+                                <rect key="frame" x="0.0" y="72" width="375" height="331"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4pU-6m-zja">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShuttleBusInfo" id="qIr-gR-Rka" customClass="ShuttleBusCollectionViewCell" customModule="JUN_tong" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Tv-ZK-Mpi" firstAttribute="top" secondItem="TWX-x9-xIN" secondAttribute="bottom" constant="15" id="5Xg-tE-hJZ"/>
+                            <constraint firstItem="u6l-eO-cni" firstAttribute="top" secondItem="TWX-x9-xIN" secondAttribute="bottom" constant="20" id="9mI-sA-E4v"/>
+                            <constraint firstItem="qfv-3K-kFb" firstAttribute="top" secondItem="8Tv-ZK-Mpi" secondAttribute="bottom" constant="25" id="QS8-cU-ImE"/>
+                            <constraint firstAttribute="bottom" secondItem="qfv-3K-kFb" secondAttribute="bottom" constant="140" id="Qq8-S6-Z3h"/>
+                            <constraint firstItem="TWX-x9-xIN" firstAttribute="top" secondItem="y1D-aT-L6E" secondAttribute="top" id="XK0-Q6-c3W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u6l-eO-cni" secondAttribute="trailing" constant="37" id="cBb-bd-79S"/>
+                            <constraint firstItem="u6l-eO-cni" firstAttribute="leading" secondItem="y1D-aT-L6E" secondAttribute="leadingMargin" constant="37" id="hWM-9W-hfQ"/>
+                            <constraint firstItem="u6l-eO-cni" firstAttribute="centerX" secondItem="y1D-aT-L6E" secondAttribute="centerX" id="kQA-9j-Ztf"/>
+                            <constraint firstItem="TWX-x9-xIN" firstAttribute="centerX" secondItem="y1D-aT-L6E" secondAttribute="centerX" id="mRB-Cm-wuZ"/>
+                            <constraint firstAttribute="trailing" secondItem="qfv-3K-kFb" secondAttribute="trailing" id="ozA-ak-q7Z"/>
+                            <constraint firstItem="8Tv-ZK-Mpi" firstAttribute="centerX" secondItem="y1D-aT-L6E" secondAttribute="centerX" id="uca-8D-jCM"/>
+                            <constraint firstItem="qfv-3K-kFb" firstAttribute="leading" secondItem="y1D-aT-L6E" secondAttribute="leading" id="voZ-xa-qIm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shuttleBusCollectionView" destination="qfv-3K-kFb" id="3sa-nn-Jf9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUm-0p-V49" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429.60000000000002" y="253.2233883058471"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="blackHeart" width="15" height="14"/>
+        <image name="dotLine" width="302" height="1"/>
+    </resources>
 </document>
