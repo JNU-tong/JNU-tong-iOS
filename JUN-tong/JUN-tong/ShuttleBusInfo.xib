@@ -22,33 +22,34 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="691-0b-wsf">
                         <rect key="frame" x="0.0" y="0.0" width="460" height="409"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="I87-gD-NBQ">
-                                <rect key="frame" x="0.0" y="118" width="460" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-An-l9U">
+                                <rect key="frame" x="0.0" y="0.0" width="460" height="409"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="그로홍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkC-dK-Jsc">
-                                <rect key="frame" x="113" y="289" width="131" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hFD-An-l9U" firstAttribute="top" secondItem="691-0b-wsf" secondAttribute="top" id="2Ee-HH-hz8"/>
+                            <constraint firstItem="hFD-An-l9U" firstAttribute="leading" secondItem="691-0b-wsf" secondAttribute="leading" id="2wV-vX-jEU"/>
+                            <constraint firstAttribute="trailing" secondItem="hFD-An-l9U" secondAttribute="trailing" id="MYP-Oy-taF"/>
+                            <constraint firstAttribute="bottom" secondItem="hFD-An-l9U" secondAttribute="bottom" id="S65-q5-sWt"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="691-0b-wsf" secondAttribute="trailing" id="44b-gx-4NW"/>
+                <constraint firstItem="691-0b-wsf" firstAttribute="top" secondItem="cDN-pg-Ghy" secondAttribute="top" id="Sts-kE-5Vb"/>
                 <constraint firstItem="691-0b-wsf" firstAttribute="top" secondItem="cDN-pg-Ghy" secondAttribute="top" id="YgX-r1-YiR"/>
+                <constraint firstItem="691-0b-wsf" firstAttribute="leading" secondItem="cDN-pg-Ghy" secondAttribute="leading" id="apn-KC-CCR"/>
                 <constraint firstItem="691-0b-wsf" firstAttribute="leading" secondItem="cDN-pg-Ghy" secondAttribute="leading" id="g8z-Bu-QtF"/>
                 <constraint firstAttribute="bottom" secondItem="691-0b-wsf" secondAttribute="bottom" id="hck-EH-Wyi"/>
                 <constraint firstAttribute="trailing" secondItem="691-0b-wsf" secondAttribute="trailing" id="sg0-fG-mdN"/>
+                <constraint firstAttribute="bottom" secondItem="691-0b-wsf" secondAttribute="bottom" id="xFv-8f-iP9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="cLa-BZ-Gfc"/>
             <size key="customSize" width="460" height="409"/>
             <connections>
                 <outlet property="backView" destination="691-0b-wsf" id="Pcy-hX-iOa"/>
-                <outlet property="name" destination="YkC-dK-Jsc" id="94s-JU-ZA7"/>
             </connections>
             <point key="canvasLocation" x="307" y="295.5"/>
         </collectionViewCell>
