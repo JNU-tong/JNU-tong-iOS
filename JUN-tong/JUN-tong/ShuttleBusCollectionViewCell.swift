@@ -11,11 +11,9 @@ import UIKit
 class ShuttleBusCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var name: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        name.text = "g"
     }
 }
 

@@ -24,12 +24,9 @@ class ShuttleBusView: UIViewController {
 }
 
 extension ShuttleBusView: UICollectionViewDelegate, UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -43,6 +40,10 @@ extension ShuttleBusView: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension ShuttleBusView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.view.bounds.width / 2) - (15 + 7.5), height: 185)
+        return CGSize(width: self.view.bounds.width - (15 + 7.5), height: (self.view.bounds.height / 2))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
     }
 }
