@@ -17,10 +17,14 @@ class ShuttleBusView: UIViewController {
     @IBOutlet weak var righyStationLabel: UILabel!
     
     var prevOffset: CGPoint?
-    var AmainStationIndex: Int?
+    var aStationIndex: Int?
+    var onceOnly = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setShuttleIndex),
+                                               name: NSNotification.Name(rawValue: "setAShuttleIndex"), object: nil)
         
         view.addSubview(shuttleBusCollectionView)
         
@@ -29,6 +33,10 @@ class ShuttleBusView: UIViewController {
         
         shuttleBusCollectionView.register(UINib(nibName: "ShuttleBusInfo", bundle: nil), forCellWithReuseIdentifier: "ShuttleBusInfo")
         setCollectionViewLayout()
+    }
+    
+    @objc func setShuttleIndex(_ notification: Notification) {
+        aStationIndex = notification.userInfo!["aShuttleIndex"] as! Int
     }
     
     func setCollectionViewLayout() {
@@ -43,7 +51,7 @@ class ShuttleBusView: UIViewController {
         shuttleBusCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
-    func setStationLabel() {
+    func setStationLabel(stationIndex: Int) {
         
     }
 }
@@ -65,6 +73,15 @@ extension ShuttleBusView: UICollectionViewDataSource {
 }
 
 extension ShuttleBusView: UICollectionViewDelegate {
+    //즐겨찾기 인텍스 부터 시작
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if !onceOnly {
+            let indexToScrollTo = IndexPath(item: aStationIndex!, section: 0)
+            self.shuttleBusCollectionView.scrollToItem(at: indexToScrollTo, at: .centeredHorizontally, animated: false)
+            onceOnly = true
+        }
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         prevOffset = scrollView.contentOffset
     }

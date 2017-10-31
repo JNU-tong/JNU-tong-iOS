@@ -18,10 +18,8 @@ class ShuttleBusDetailViewController: UIViewController {
     @IBOutlet weak var ABusContainerView: UIView!
     @IBOutlet weak var BBusContainerView: UIView!
     
-    var mainStation:String?
-    
-//    var ABusIndextion: Int?
-//    var BBusIndextion: Int?
+    let shuttleBusController = ShuttleBusController()
+    var mainStation: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +29,7 @@ class ShuttleBusDetailViewController: UIViewController {
         BBusButtonOutlet.setTitleColor(.gray, for: .normal)
         BBusContainerView.isHidden = true
         
+        shuttleBusController.setShuttleBusIndex(shuttleBusName: mainStation!)
     }
     
     @IBAction func ABusTab(_ sender: Any) {

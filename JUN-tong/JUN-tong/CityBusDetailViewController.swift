@@ -25,9 +25,6 @@ class CityBusDetailViewController: UIViewController {
     var busInfo: CityBus?
     let cityBusLineController = CityBusLineController()
     
-//    let cityBusLineView = CityBusLineView()
-//    let cityBusTimeView = CityBusTimeView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,9 +35,6 @@ class CityBusDetailViewController: UIViewController {
         
         cityBusLineController.setBusLineData(lineId: (busInfo?.lineId)!)
         cityBusLineController.setBusTimeData(lineId: (busInfo?.lineId)!)
-        
-//        cityBusLineView.cellColor = busInfo?.cityBusColor
-//        cityBusTimeView.cellColor = busInfo?.cityBusColor
         
         busColorView.backgroundColor = busInfo?.cityBusColor
         busImageView.layer.borderColor = busInfo?.cityBusColor.cgColor
