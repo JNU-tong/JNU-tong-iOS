@@ -26,6 +26,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var activeIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var shuttleStationLabel: UILabel!
+    
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
     
@@ -40,9 +42,12 @@ class MainViewController: UIViewController {
     var favoriteBusList: [CityBus] = []
     
     let cityBusController = CityBusController()
+    let shuttleBusController = ShuttleBusController()
     
     var cityBusInfoTap: UITapGestureRecognizer?
     var shuttleBusInfoTap: UITapGestureRecognizer?
+    
+    var mainStation: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +55,14 @@ class MainViewController: UIViewController {
                                                name: NSNotification.Name(rawValue: "setBusInfo"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteButton),
                                                name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleBus),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil)
+        
         //loading Data...
         cityBusController.setBusData()
         startLoading()
+        
+        shuttleBusController.setMainStation()
         
         //set button animation(애니메이션 설정만)  ->  로딩중에 애니메이션 설정만 하기로
         cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
@@ -79,15 +89,12 @@ class MainViewController: UIViewController {
         
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func resetData(_ sender: Any) {
         
@@ -100,7 +107,11 @@ class MainViewController: UIViewController {
         loadingFlag = true
     }
     
-    // setSoonBusInfo 랑 clickButton 이랑 같이 작동할 경우 어플이 죽음....
+    @objc private func setMainShuttleBus(_ notification: Notification) {
+        mainStation = notification.userInfo!["mainStation"] as! String
+        shuttleStationLabel.text = mainStation
+    }
+    
     @objc private func setBusInfo() {
         self.cityBusList = cityBusController.getCityBusList()
         self.favoriteBusList = cityBusController.getFavoriteBusList()
@@ -197,6 +208,9 @@ class MainViewController: UIViewController {
                     cityBusView.busInfo = busInfo
                 }
             }
+        } else if segue.identifier == "shuttleBusSegue" {
+            let shuttleBusView = segue.destination as! ShuttleBusDetailViewController
+            shuttleBusView.mainStation = self.mainStation
         }
     }
 

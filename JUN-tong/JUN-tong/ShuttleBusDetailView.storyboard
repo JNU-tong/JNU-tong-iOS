@@ -76,22 +76,34 @@
                                     <segue destination="tIS-u4-hFI" kind="embed" id="372-gr-sb3"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcs-B8-wrN">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <connections>
+                                    <segue destination="Nub-Ra-a7L" kind="embed" id="aTv-5v-2rK"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VBJ-Yq-CgA" firstAttribute="top" secondItem="nYF-KD-t8h" secondAttribute="bottom" constant="40" id="3Vy-FQ-e0j"/>
+                            <constraint firstItem="hTv-Ml-wjI" firstAttribute="bottom" secondItem="rcs-B8-wrN" secondAttribute="bottom" id="ADJ-0n-qIc"/>
                             <constraint firstItem="nYF-KD-t8h" firstAttribute="top" secondItem="hTv-Ml-wjI" secondAttribute="top" constant="23" id="Aah-5H-bkt"/>
                             <constraint firstItem="nYF-KD-t8h" firstAttribute="centerX" secondItem="yxH-mr-RTT" secondAttribute="centerX" id="O18-L8-qNs"/>
                             <constraint firstItem="VBJ-Yq-CgA" firstAttribute="bottom" secondItem="hTv-Ml-wjI" secondAttribute="bottom" id="Que-E2-1j0"/>
                             <constraint firstItem="VBJ-Yq-CgA" firstAttribute="leading" secondItem="hTv-Ml-wjI" secondAttribute="leading" id="mok-NN-gbV"/>
+                            <constraint firstItem="rcs-B8-wrN" firstAttribute="leading" secondItem="hTv-Ml-wjI" secondAttribute="leading" id="pWi-sq-NEB"/>
+                            <constraint firstItem="rcs-B8-wrN" firstAttribute="top" secondItem="nYF-KD-t8h" secondAttribute="bottom" constant="40" id="s02-TB-e7k"/>
                             <constraint firstItem="VBJ-Yq-CgA" firstAttribute="trailing" secondItem="hTv-Ml-wjI" secondAttribute="trailing" id="vea-12-D7B"/>
+                            <constraint firstItem="hTv-Ml-wjI" firstAttribute="trailing" secondItem="rcs-B8-wrN" secondAttribute="trailing" id="xWa-gJ-wUd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTv-Ml-wjI"/>
                     </view>
                     <connections>
                         <outlet property="ABusButtonOutlet" destination="lsO-SH-sLC" id="53z-0v-Bvn"/>
+                        <outlet property="ABusContainerView" destination="VBJ-Yq-CgA" id="8ZI-hq-Yzi"/>
                         <outlet property="ABusStatus" destination="TgR-0b-vdC" id="wRN-Qy-JqF"/>
                         <outlet property="BBusButtonOutlet" destination="72b-7u-wZy" id="ozs-pb-V5V"/>
+                        <outlet property="BBusContainerView" destination="rcs-B8-wrN" id="BXc-Bg-vPQ"/>
                         <outlet property="BBusStatus" destination="Azo-qc-12p" id="zP4-17-QmA"/>
                     </connections>
                 </viewController>
@@ -179,14 +191,33 @@
                             <constraint firstItem="8Tv-ZK-Mpi" firstAttribute="centerX" secondItem="y1D-aT-L6E" secondAttribute="centerX" id="uca-8D-jCM"/>
                             <constraint firstItem="qfv-3K-kFb" firstAttribute="leading" secondItem="y1D-aT-L6E" secondAttribute="leading" id="voZ-xa-qIm"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="xdt-PF-dSe"/>
                     </view>
                     <connections>
+                        <outlet property="centerStationLabel" destination="l5I-8v-RYy" id="UKx-xC-cRp"/>
+                        <outlet property="leftStationLabel" destination="E3q-E5-2ud" id="bBO-ra-5Yl"/>
+                        <outlet property="righyStationLabel" destination="cuf-Bv-tvN" id="VFD-Sx-eM0"/>
                         <outlet property="shuttleBusCollectionView" destination="qfv-3K-kFb" id="3sa-nn-Jf9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUm-0p-V49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="429.60000000000002" y="253.2233883058471"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="J7B-hK-v5Z">
+            <objects>
+                <viewController id="Nub-Ra-a7L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2v9-EW-nlq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="V6F-8A-MNg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfc-Zx-n92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1303" y="271"/>
         </scene>
     </scenes>
     <resources>

@@ -25,9 +25,6 @@ class CityBusDetailViewController: UIViewController {
     var busInfo: CityBus?
     let cityBusLineController = CityBusLineController()
     
-    let cityBusLineView = CityBusLineView()
-    let cityBusTimeView = CityBusTimeView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,9 +35,6 @@ class CityBusDetailViewController: UIViewController {
         
         cityBusLineController.setBusLineData(lineId: (busInfo?.lineId)!)
         cityBusLineController.setBusTimeData(lineId: (busInfo?.lineId)!)
-        
-        cityBusLineView.cellColor = busInfo?.cityBusColor
-        cityBusTimeView.cellColor = busInfo?.cityBusColor
         
         busColorView.backgroundColor = busInfo?.cityBusColor
         busImageView.layer.borderColor = busInfo?.cityBusColor.cgColor
@@ -84,14 +78,14 @@ class CityBusDetailViewController: UIViewController {
     
     @objc private func setLine(_ notification: Notification) {
         let cityBusLine = notification.userInfo!["lineData"] as! [String]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBusLineInfo"), object: nil, userInfo: ["lineData": cityBusLine])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBusLineInfo"), object: nil, userInfo: ["lineData": cityBusLine, "busInfo": busInfo!])
     }
     
     @objc private func setTime(_ notification: Notification) {
         let cityBusTime = notification.userInfo!["departData"] as! [String]
         let cityBusRemainTime = notification.userInfo!["remainData"] as! [Int]
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBusTimeInfo"), object: nil, userInfo: ["departTime": cityBusTime, "remainTime": cityBusRemainTime])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBusTimeInfo"), object: nil, userInfo: ["departTime": cityBusTime, "remainTime": cityBusRemainTime, "busInfo": busInfo!])
     }
     
     @IBAction func timeTableButton(_ sender: Any) {

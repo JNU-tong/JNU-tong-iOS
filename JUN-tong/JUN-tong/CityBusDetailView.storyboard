@@ -238,6 +238,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cityBusLineCell" destination="Y0T-x0-zis" id="nCL-N4-idM"/>
                                             <outlet property="stationNameLabel" destination="hIA-JI-5xK" id="tkt-FA-7h2"/>
                                         </connections>
                                     </tableViewCell>
@@ -331,6 +332,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cityBusTimeCell" destination="ZRg-h3-Rrt" id="OFW-P7-KCT"/>
                                             <outlet property="departTimeLabel" destination="jNY-Zy-ggi" id="s2z-xM-MEJ"/>
                                             <outlet property="remainTimeLabel" destination="gPt-ot-s26" id="iIR-GY-lTa"/>
                                         </connections>

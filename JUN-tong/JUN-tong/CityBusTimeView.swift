@@ -34,6 +34,8 @@ class CityBusTimeView: UIViewController {
     func setBusTImeInfo(_ notification: Notification) {
         self.cityBusTimeList = notification.userInfo!["departTime"] as! [String]
         self.cityBusRemainTimeList = notification.userInfo!["remainTime"] as! [Int]
+        let cityBus = notification.userInfo!["busInfo"] as! CityBus
+        self.cellColor = cityBus.cityBusColor
         cityBusTimeTable.reloadData()
     }
 }
@@ -44,8 +46,7 @@ extension CityBusTimeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusTime", for: indexPath) as? CityBusTimeCell {
-            cell.setCustone(departTime: cityBusTimeList[indexPath.row], reaminTime: cityBusRemainTimeList[indexPath.row])
-            cell.backgroundColor = cellColor?.withAlphaComponent(0.1)
+            cell.setCustone(departTime: cityBusTimeList[indexPath.row], reaminTime: cityBusRemainTimeList[indexPath.row], cellColor: cellColor!)
             
             return cell
         }
