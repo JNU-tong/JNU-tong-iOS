@@ -27,6 +27,8 @@ class CityBusLineView: UIViewController {
     
     func setBusLineInfo(_ notification: Notification) {
         self.cityBusLineList = notification.userInfo!["lineData"] as! [String]
+        let cityBus = notification.userInfo!["busInfo"] as! CityBus
+        self.cellColor = cityBus.cityBusColor
         cityBusLineTable.reloadData()
     }
 }
@@ -37,8 +39,7 @@ extension CityBusLineView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cityBusLine", for: indexPath) as? CityBusLineCell {
-            cell.setCustom(stationName: cityBusLineList[indexPath.row])
-            cell.backgroundColor = cellColor?.withAlphaComponent(0.1)
+            cell.setCustom(stationName: cityBusLineList[indexPath.row], cellColor: cellColor!)
             return cell
         }
         

@@ -197,6 +197,8 @@ class MainViewController: UIViewController {
                     cityBusView.busInfo = busInfo
                 }
             }
+        } else if segue.identifier == "shuttleBusSegue" {
+            
         }
     }
 
