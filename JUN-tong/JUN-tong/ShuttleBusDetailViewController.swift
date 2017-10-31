@@ -18,6 +18,10 @@ class ShuttleBusDetailViewController: UIViewController {
     @IBOutlet weak var ABusContainerView: UIView!
     @IBOutlet weak var BBusContainerView: UIView!
     
+    var mainStation:String?
+    
+//    var ABusIndextion: Int?
+//    var BBusIndextion: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,9 +17,11 @@ class ShuttleBusView: UIViewController {
     @IBOutlet weak var righyStationLabel: UILabel!
     
     var prevOffset: CGPoint?
+    var AmainStationIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(shuttleBusCollectionView)
         
         shuttleBusCollectionView.dataSource = self

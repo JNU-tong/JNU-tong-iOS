@@ -471,6 +471,7 @@
                         <outlet property="cityBusTableHeight" destination="2dy-XZ-DB7" id="xJr-tv-lPG"/>
                         <outlet property="shuttleBusInfo" destination="wPy-rK-1UY" id="bWM-fy-30y"/>
                         <outlet property="shuttleBusMain" destination="C1D-xr-TzG" id="9vp-Ws-ltg"/>
+                        <outlet property="shuttleStationLabel" destination="7qf-rZ-eMr" id="BGC-0k-TZ1"/>
                         <segue destination="Ded-4y-HZN" kind="show" identifier="shuttleBusSegue" id="PUY-GE-gqb"/>
                     </connections>
                 </viewController>
