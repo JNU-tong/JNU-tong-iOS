@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,25 +13,49 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShuttleBusInfo" id="cDN-pg-Ghy" customClass="ShuttleBusCollectionViewCell" customModule="JUN_tong" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="460" height="409"/>
+            <rect key="frame" x="0.0" y="0.0" width="288" height="247"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="460" height="409"/>
+                <rect key="frame" x="0.0" y="0.0" width="288" height="247"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="691-0b-wsf">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="409"/>
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="247"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-An-l9U">
-                                <rect key="frame" x="0.0" y="0.0" width="460" height="409"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="hFD-An-l9U">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="247"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKv-EH-tVH">
+                                <rect key="frame" x="159" y="87" width="120" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10분전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqQ-PP-ncG">
+                                        <rect key="frame" x="8" y="35" width="70" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="HAl-qZ-BaI"/>
+                                            <constraint firstAttribute="width" constant="70" id="cmG-Y5-url"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="eqQ-PP-ncG" firstAttribute="top" secondItem="kKv-EH-tVH" secondAttribute="top" constant="35" id="05r-9e-ufD"/>
+                                    <constraint firstItem="eqQ-PP-ncG" firstAttribute="leading" secondItem="kKv-EH-tVH" secondAttribute="leading" constant="8" id="Nbn-6s-bYI"/>
+                                    <constraint firstAttribute="height" constant="120" id="tfQ-qX-ZgW"/>
+                                    <constraint firstAttribute="width" constant="120" id="wOU-zr-l9C"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hFD-An-l9U" firstAttribute="top" secondItem="691-0b-wsf" secondAttribute="top" id="2Ee-HH-hz8"/>
                             <constraint firstItem="hFD-An-l9U" firstAttribute="leading" secondItem="691-0b-wsf" secondAttribute="leading" id="2wV-vX-jEU"/>
                             <constraint firstAttribute="trailing" secondItem="hFD-An-l9U" secondAttribute="trailing" id="MYP-Oy-taF"/>
+                            <constraint firstAttribute="bottom" secondItem="kKv-EH-tVH" secondAttribute="bottom" constant="40" id="OOr-6g-6Rd"/>
                             <constraint firstAttribute="bottom" secondItem="hFD-An-l9U" secondAttribute="bottom" id="S65-q5-sWt"/>
+                            <constraint firstAttribute="trailing" secondItem="kKv-EH-tVH" secondAttribute="trailing" constant="9" id="gUj-Ji-6t5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -47,14 +71,16 @@
                 <constraint firstAttribute="bottom" secondItem="691-0b-wsf" secondAttribute="bottom" id="xFv-8f-iP9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="cLa-BZ-Gfc"/>
-            <size key="customSize" width="460" height="409"/>
+            <size key="customSize" width="288" height="247"/>
             <connections>
                 <outlet property="backView" destination="691-0b-wsf" id="Pcy-hX-iOa"/>
+                <outlet property="firstTimeLabel" destination="eqQ-PP-ncG" id="zol-Fa-pOh"/>
+                <outlet property="timeView" destination="kKv-EH-tVH" id="d9w-v1-a1g"/>
             </connections>
-            <point key="canvasLocation" x="307" y="295.5"/>
+            <point key="canvasLocation" x="393" y="214.5"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="example" width="800" height="600"/>
+        <image name="example" width="960" height="960"/>
     </resources>
 </document>

@@ -28,6 +28,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var shuttleStationLabel: UILabel!
     
+    @IBOutlet weak var aShuttleTime: UILabel!
+    @IBOutlet weak var bShuttleTime: UILabel!
+    
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
     
@@ -57,12 +60,16 @@ class MainViewController: UIViewController {
                                                name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleBus),
                                                name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleTime),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusTime"), object: nil)
         
         //loading Data...
         cityBusController.setBusData()
         startLoading()
+        loadingFlag = true
         
-        shuttleBusController.setMainStation()
+        shuttleBusController.getMainStation()
+        shuttleBusController.getMainShuttleTime()
         
         //set button animation(애니메이션 설정만)  ->  로딩중에 애니메이션 설정만 하기로
         cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
@@ -91,13 +98,18 @@ class MainViewController: UIViewController {
         self.cityBusTable.dataSource = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetData(Bool.self)
+        shuttleBusController.getMainStation()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func resetData(_ sender: Any) {
-        
         if loadingFlag == false {
             cityBusTable.allowsSelection = false
             cityBusController.setBusData()
@@ -107,8 +119,25 @@ class MainViewController: UIViewController {
         loadingFlag = true
     }
     
+    @objc private func setMainShuttleTime(_ notification: Notification) {
+        let aShuttle = notification.userInfo!["aShuttleTime"] as! Int
+        let bShuttle = notification.userInfo!["bShuttleTime"] as! Int
+        
+        if aShuttle == -1 {
+            aShuttleTime.text = "미운행"
+        } else {
+            aShuttleTime.text = "\(aShuttle)분전"
+        }
+        
+        if bShuttle == -1 {
+            bShuttleTime.text = "미운행"
+        } else {
+            bShuttleTime.text = "\(bShuttle)분전"
+        }
+    }
+    
     @objc private func setMainShuttleBus(_ notification: Notification) {
-        mainStation = notification.userInfo!["mainStation"] as! String
+        mainStation = notification.userInfo!["mainStation"] as? String
         shuttleStationLabel.text = mainStation
     }
     

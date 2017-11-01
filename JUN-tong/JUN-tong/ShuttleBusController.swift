@@ -10,26 +10,29 @@ import Foundation
 
 
 class ShuttleBusController {
-    let AshuttleStation = ["정문", "제2도서관", "해대서쪽", "본관", "학생회관", "인대서쪽", "생활관", "인대동쪽", "도서관", "의전원", "공대4호관", "해대4호관", "교양동", "해대서쪽", "제2도서관", "정문"]
-    let BshuttleStation = ["정문", "제2도서관", "해대서쪽", "교양동", "해대4호관", "공대4호관", "의전원", "도서관", "인대동쪽", "생활관", "인대서쪽", "학생회관", "본관", "해대서쪽", "제2도서관", "정문"]
-    
     var mainStation = "본관"
     var aShuttleIndex: Int?
     var bShuttleIndex: Int?
     
-    func setMainStation() {
+    func getMainStation() {
         if UserDefaults.standard.object(forKey: "mainStation") != nil {
-            mainStation = UserDefaults.standard.string(forKey: "mainStation")!
+            self.mainStation = UserDefaults.standard.string(forKey: "mainStation")!
         }
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil, userInfo: ["mainStation": mainStation])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil, userInfo: ["mainStation": self.mainStation])
     }
     
     func setShuttleBusIndex(shuttleBusName: String) {
         aShuttleIndex = AshuttleStation.index(of: shuttleBusName)
         bShuttleIndex = BshuttleStation.index(of: shuttleBusName)
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setAShuttleIndex"), object: nil, userInfo: ["aShuttleIndex": aShuttleIndex])
-
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setAShuttleIndex"), object: nil, userInfo: ["aShuttleIndex": aShuttleIndex!])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBShuttleIndex"), object: nil, userInfo: ["bShuttleIndex": bShuttleIndex!])
+    }
+    
+    func getMainShuttleTime() {
+        ServerRepository.getShuttleBusMain(shuttleIndex: AshuttleStation.index(of: mainStation)!) { mainShuttleBusTime in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusTime"), object: nil, userInfo: ["aShuttleTime": mainShuttleBusTime[0], "bShuttleTime": mainShuttleBusTime[1]])
+        }
     }
 }

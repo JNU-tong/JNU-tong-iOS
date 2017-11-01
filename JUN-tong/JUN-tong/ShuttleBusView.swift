@@ -14,10 +14,14 @@ class ShuttleBusView: UIViewController {
     
     @IBOutlet weak var centerStationLabel: UILabel!
     @IBOutlet weak var leftStationLabel: UILabel!
-    @IBOutlet weak var righyStationLabel: UILabel!
+    @IBOutlet weak var rightStationLabel: UILabel!
+    @IBOutlet weak var favoriteButtonOutlet: UIButton!
     
+    
+    let shuttleBusController = ShuttleBusController()
     var prevOffset: CGPoint?
     var aStationIndex: Int?
+    var currentIndex: Int?
     var onceOnly = false
     
     override func viewDidLoad() {
@@ -35,8 +39,26 @@ class ShuttleBusView: UIViewController {
         setCollectionViewLayout()
     }
     
+    @IBAction func favoriteButtionClick(_ sender: Any) {
+        UserDefaults.standard.set(AshuttleStation[currentIndex!], forKey: "mainStation")
+        aStationIndex = currentIndex
+        setFavoriteButton(stationIndex: aStationIndex!)
+        shuttleBusController.setShuttleBusIndex(shuttleBusName: AshuttleStation[aStationIndex!])
+    }
+    
     @objc func setShuttleIndex(_ notification: Notification) {
-        aStationIndex = notification.userInfo!["aShuttleIndex"] as! Int
+        aStationIndex = notification.userInfo!["aShuttleIndex"] as? Int
+        currentIndex = aStationIndex
+        setStationLabel(stationIndex: aStationIndex!)
+        setFavoriteButton(stationIndex: aStationIndex!)
+    }
+    
+    func setFavoriteButton(stationIndex: Int) {
+        if aStationIndex == stationIndex {
+            favoriteButtonOutlet.setImage(#imageLiteral(resourceName: "redHeart"), for: .normal)
+        } else {
+            favoriteButtonOutlet.setImage(#imageLiteral(resourceName: "blackHeart"), for: .normal)
+        }
     }
     
     func setCollectionViewLayout() {
@@ -45,14 +67,28 @@ class ShuttleBusView: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
-        layout.itemSize = CGSize(width: self.view.bounds.width - 64 - 10, height: self.view.bounds.height/2)
+        layout.itemSize = CGSize(width: self.view.bounds.width - 64 - 10, height: self.view.bounds.height/2 + 20)
         
         shuttleBusCollectionView.collectionViewLayout = layout
         shuttleBusCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
     func setStationLabel(stationIndex: Int) {
-        
+        if stationIndex == 0 {
+            self.leftStationLabel.isHidden = true
+            self.centerStationLabel.text = AshuttleStation[stationIndex]
+            self.rightStationLabel.text = AshuttleStation[stationIndex+1]
+        } else if stationIndex == AshuttleStation.count-1 {
+            self.leftStationLabel.text = AshuttleStation[stationIndex-1]
+            self.centerStationLabel.text = AshuttleStation[stationIndex]
+            self.rightStationLabel.isHidden = true
+        } else {
+            self.rightStationLabel.isHidden = false
+            self.leftStationLabel.isHidden = false
+            self.leftStationLabel.text = AshuttleStation[stationIndex-1]
+            self.centerStationLabel.text = AshuttleStation[stationIndex]
+            self.rightStationLabel.text = AshuttleStation[stationIndex+1]
+        }
     }
 }
 
@@ -109,6 +145,10 @@ extension ShuttleBusView: UICollectionViewDelegate {
                 }
             }
         }
+        
+        setStationLabel(stationIndex: (indexPath?.row)!)
+        setFavoriteButton(stationIndex: (indexPath?.row)!)
+        self.currentIndex = indexPath?.row
     }
 }
 

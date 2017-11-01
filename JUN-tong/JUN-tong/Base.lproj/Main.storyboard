@@ -346,9 +346,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-xr-TzG">
                                 <rect key="frame" x="16" y="199" width="343" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="교내셔틀버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-S2-Ibg">
-                                        <rect key="frame" x="10" y="10" width="97" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="교내셔틀버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-S2-Ibg">
+                                        <rect key="frame" x="10" y="8" width="73" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -357,9 +356,9 @@
                                         <rect key="frame" x="0.0" y="30" width="343" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8M-Bt-l4j">
-                                                <rect key="frame" x="5" y="16" width="93" height="18"/>
+                                                <rect key="frame" x="5" y="16" width="90" height="18"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정문" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qf-rZ-eMr">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정문" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qf-rZ-eMr">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="OD6-Um-Ssh"/>
@@ -369,7 +368,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅣ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-6q-Do4">
-                                                        <rect key="frame" x="80" y="0.0" width="13" height="18"/>
+                                                        <rect key="frame" x="80" y="0.0" width="10" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="10" id="G8l-eY-TTA"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -377,7 +379,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="D31-3r-SlF">
-                                                <rect key="frame" x="99" y="16" width="178" height="17"/>
+                                                <rect key="frame" x="96" y="16" width="178" height="17"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNM-H6-9r0">
                                                         <rect key="frame" x="0.0" y="0.0" width="78" height="17"/>
@@ -429,9 +431,11 @@
                                 <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="wPy-rK-1UY" firstAttribute="leading" secondItem="C1D-xr-TzG" secondAttribute="leading" id="CqI-AQ-iZw"/>
+                                    <constraint firstItem="6zn-S2-Ibg" firstAttribute="leading" secondItem="C1D-xr-TzG" secondAttribute="leading" constant="10" id="Vnw-jU-j2l"/>
                                     <constraint firstAttribute="height" constant="80" id="YhA-06-Lmm"/>
                                     <constraint firstAttribute="trailing" secondItem="wPy-rK-1UY" secondAttribute="trailing" id="mQH-4x-5ob"/>
                                     <constraint firstAttribute="bottom" secondItem="wPy-rK-1UY" secondAttribute="bottom" id="oyC-Ia-cbk"/>
+                                    <constraint firstItem="6zn-S2-Ibg" firstAttribute="top" secondItem="C1D-xr-TzG" secondAttribute="top" constant="8" id="waZ-Dh-JNT"/>
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="czl-rq-k7o">
@@ -461,9 +465,11 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="aShuttleTime" destination="T52-SO-4nx" id="dQ3-yw-lCM"/>
                         <outlet property="activeIndicator" destination="czl-rq-k7o" id="8rp-1z-gUG"/>
                         <outlet property="arriveBus1" destination="reX-jU-8Ad" id="si2-Dl-J6J"/>
                         <outlet property="arriveBus2" destination="hA8-tx-3gm" id="Mw5-QT-te0"/>
+                        <outlet property="bShuttleTime" destination="SQ6-fq-uiG" id="Osw-tS-mLK"/>
                         <outlet property="cityBusInfo" destination="oyo-k7-wYP" id="Iwb-ta-lah"/>
                         <outlet property="cityBusInfoHeight" destination="hDu-J0-qgA" id="edx-U5-Qan"/>
                         <outlet property="cityBusMain" destination="8zJ-Db-oH5" id="b7v-cM-rnf"/>

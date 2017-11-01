@@ -11,9 +11,15 @@ import UIKit
 class ShuttleBusCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var timeView: UIView!
+    @IBOutlet weak var firstTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        timeView.layer.cornerRadius = timeView.layer.bounds.height/2
+        timeView.alpha = 0.3
+        
+        firstTimeLabel.alpha = 1
     }
 }
 
