@@ -21,6 +21,7 @@ class ShuttleBusView: UIViewController {
     let shuttleBusController = ShuttleBusController()
     var prevOffset: CGPoint?
     var aStationIndex: Int?
+    var currentIndex: Int?
     var onceOnly = false
     
     override func viewDidLoad() {
@@ -38,12 +39,16 @@ class ShuttleBusView: UIViewController {
         setCollectionViewLayout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    @IBAction func favoriteButtionClick(_ sender: Any) {
+        UserDefaults.standard.set(AshuttleStation[currentIndex!], forKey: "mainStation")
+        aStationIndex = currentIndex
+        setFavoriteButton(stationIndex: aStationIndex!)
+        shuttleBusController.setShuttleBusIndex(shuttleBusName: AshuttleStation[aStationIndex!])
     }
     
     @objc func setShuttleIndex(_ notification: Notification) {
         aStationIndex = notification.userInfo!["aShuttleIndex"] as? Int
+        currentIndex = aStationIndex
         setStationLabel(stationIndex: aStationIndex!)
         setFavoriteButton(stationIndex: aStationIndex!)
     }
@@ -62,7 +67,7 @@ class ShuttleBusView: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
-        layout.itemSize = CGSize(width: self.view.bounds.width - 64 - 10, height: self.view.bounds.height/2)
+        layout.itemSize = CGSize(width: self.view.bounds.width - 64 - 10, height: self.view.bounds.height/2 + 20)
         
         shuttleBusCollectionView.collectionViewLayout = layout
         shuttleBusCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
@@ -143,6 +148,7 @@ extension ShuttleBusView: UICollectionViewDelegate {
         
         setStationLabel(stationIndex: (indexPath?.row)!)
         setFavoriteButton(stationIndex: (indexPath?.row)!)
+        self.currentIndex = indexPath?.row
     }
 }
 

@@ -16,10 +16,10 @@ class ShuttleBusController {
     
     func getMainStation() {
         if UserDefaults.standard.object(forKey: "mainStation") != nil {
-            mainStation = UserDefaults.standard.string(forKey: "mainStation")!
+            self.mainStation = UserDefaults.standard.string(forKey: "mainStation")!
         }
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil, userInfo: ["mainStation": mainStation])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil, userInfo: ["mainStation": self.mainStation])
     }
     
     func setShuttleBusIndex(shuttleBusName: String) {
@@ -28,6 +28,11 @@ class ShuttleBusController {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setAShuttleIndex"), object: nil, userInfo: ["aShuttleIndex": aShuttleIndex!])
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBShuttleIndex"), object: nil, userInfo: ["bShuttleIndex": bShuttleIndex!])
-
+    }
+    
+    func getMainShuttleTime() {
+        ServerRepository.getShuttleBusMain(shuttleIndex: AshuttleStation.index(of: mainStation)!) { mainShuttleBusTime in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusTime"), object: nil, userInfo: ["aShuttleTime": mainShuttleBusTime[0], "bShuttleTime": mainShuttleBusTime[1]])
+        }
     }
 }

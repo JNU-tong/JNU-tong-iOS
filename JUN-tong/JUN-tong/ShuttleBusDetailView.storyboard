@@ -160,6 +160,9 @@
                                     <constraint firstAttribute="width" constant="15" id="UUd-qS-zqA"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="blackHeart"/>
+                                <connections>
+                                    <action selector="favoriteButtionClick:" destination="tIS-u4-hFI" eventType="touchUpInside" id="xA2-JR-tfY"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qfv-3K-kFb">
                                 <rect key="frame" x="0.0" y="78.5" width="375" height="377.5"/>
@@ -256,6 +259,9 @@
                                     <constraint firstAttribute="height" constant="15" id="l0B-sq-Sso"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="blackHeart"/>
+                                <connections>
+                                    <action selector="favoriteButtionClick:" destination="Nub-Ra-a7L" eventType="touchUpInside" id="qdF-Pr-Vec"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fI5-H1-qQH">
                                 <rect key="frame" x="0.0" y="78.5" width="375" height="377.5"/>

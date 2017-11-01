@@ -37,7 +37,7 @@ class ServerRepository {
                 var busInfo:[String : JSON] = [:]
                 var remainInfo:[String : JSON] = [:]
                 
-                busInfo = (busJson.1.dictionaryValue["busLineInfo"]?.dictionaryValue)!
+                busInfo = (busJson.1.dictionaryValue["cityBusLineInfo"]?.dictionaryValue)!
                 remainInfo = (busJson.1.dictionaryValue["remainTime"]?.dictionaryValue)!
             
                 if let lineNo = busInfo["detailLineNo"]?.string,
@@ -124,5 +124,46 @@ class ServerRepository {
         }
     }
     
-    
+    static func getShuttleBusMain(shuttleIndex: Int, completion: @escaping([Int]) -> Void) {
+        
+        guard let url = URL(string: baseURL + "getJnuBusArrivalInfoByStationId?stationId=" + "\(shuttleIndex)") else {
+            print("URL is nil")
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.timeoutInterval = 10
+        
+        Alamofire.request(urlRequest).responseJSON { response in
+            guard response.result.isSuccess else {
+                print("Response get store error: \(response.result.error!)")
+                return
+            }
+            
+            guard let value = response.result.value else { return }
+            let swiftyJson = JSON(value)
+            
+            var aShuttleBus:[String : Any?] = [:]
+            var bShuttleBus:[String : Any?] = [:]
+            aShuttleBus = swiftyJson["A"].dictionaryObject!
+            bShuttleBus = swiftyJson["B"].dictionaryObject!
+            
+            var aTime: Int = -1
+            var bTime: Int = -1
+            
+            if let aFirstTime = aShuttleBus["first"].unsafelyUnwrapped,
+                let bFirstTime = bShuttleBus["first"].unsafelyUnwrapped {
+                
+                if String(describing: aFirstTime) != "<null>" {
+                    aTime = (aFirstTime as? Int)!
+                }
+                
+                if String(describing: bFirstTime) != "<null>" {
+                    bTime = (bFirstTime as? Int)!
+                }
+            }
+
+            completion([aTime, bTime])
+        }
+    }
 }

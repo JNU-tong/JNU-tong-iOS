@@ -21,6 +21,7 @@ class BShuttleBusView: UIViewController {
     let shuttleBusController = ShuttleBusController()
     var prevOffset: CGPoint?
     var bStationIndex: Int?
+    var currentIndex: Int?
     var onceOnly = false
     
     override func viewDidLoad() {
@@ -36,6 +37,13 @@ class BShuttleBusView: UIViewController {
         
         bShuttleBusCollectionView.register(UINib(nibName: "ShuttleBusInfo", bundle: nil), forCellWithReuseIdentifier: "ShuttleBusInfo")
         setCollectionViewLayout()
+    }
+    
+    @IBAction func favoriteButtionClick(_ sender: Any) {
+        UserDefaults.standard.set(BshuttleStation[currentIndex!], forKey: "mainStation")
+        bStationIndex = currentIndex
+        setFavoriteButton(stationIndex: bStationIndex!)
+        shuttleBusController.setShuttleBusIndex(shuttleBusName: BshuttleStation[bStationIndex!])
     }
     
     @objc func setShuttleIndex(_ notification: Notification) {
@@ -139,5 +147,6 @@ extension BShuttleBusView: UICollectionViewDelegate {
         
         setStationLabel(stationIndex: (indexPath?.row)!)
         setFavoriteButton(stationIndex: (indexPath?.row)!)
+        self.currentIndex = indexPath?.row
     }
 }
