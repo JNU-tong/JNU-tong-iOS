@@ -27,28 +27,33 @@ class ShuttleBusDetailViewController: UIViewController {
         //A버스 부터 시작
         BBusStatus.isHidden = true
         BBusButtonOutlet.setTitleColor(.gray, for: .normal)
-        BBusContainerView.isHidden = true
+        self.BBusContainerView.alpha = 0
+        self.ABusContainerView.alpha = 1
         
         shuttleBusController.setShuttleBusIndex(shuttleBusName: mainStation!)
     }
     
     @IBAction func ABusTab(_ sender: Any) {
-        BBusContainerView.isHidden = true
-        BBusStatus.isHidden = true
-        BBusButtonOutlet.setTitleColor(.gray, for: .normal)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.BBusContainerView.alpha = 0
+            self.ABusContainerView.alpha = 1
+        })
+        self.BBusStatus.isHidden = true
+        self.BBusButtonOutlet.setTitleColor(.gray, for: .normal)
         
-        ABusContainerView.isHidden = false
-        ABusStatus.isHidden = false
-        ABusButtonOutlet.setTitleColor(UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1), for: .normal)
+        self.ABusStatus.isHidden = false
+        self.ABusButtonOutlet.setTitleColor(UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1), for: .normal)
     }
     
     @IBAction func BBusTab(_ sender: Any) {
-        ABusContainerView.isHidden = true
-        ABusStatus.isHidden = true
-        ABusButtonOutlet.setTitleColor(.gray, for: .normal)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.ABusContainerView.alpha = 0
+            self.BBusContainerView.alpha = 1
+        })
+        self.ABusStatus.isHidden = true
+        self.ABusButtonOutlet.setTitleColor(.gray, for: .normal)
         
-        BBusContainerView.isHidden = false
-        BBusStatus.isHidden = false
-        BBusButtonOutlet.setTitleColor(UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1), for: .normal)
+        self.BBusStatus.isHidden = false
+        self.BBusButtonOutlet.setTitleColor(UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1), for: .normal)
     }
 }

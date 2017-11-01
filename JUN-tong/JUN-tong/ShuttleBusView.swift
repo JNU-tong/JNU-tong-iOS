@@ -14,8 +14,11 @@ class ShuttleBusView: UIViewController {
     
     @IBOutlet weak var centerStationLabel: UILabel!
     @IBOutlet weak var leftStationLabel: UILabel!
-    @IBOutlet weak var righyStationLabel: UILabel!
+    @IBOutlet weak var rightStationLabel: UILabel!
+    @IBOutlet weak var favoriteButtonOutlet: UIButton!
     
+    
+    let shuttleBusController = ShuttleBusController()
     var prevOffset: CGPoint?
     var aStationIndex: Int?
     var onceOnly = false
@@ -35,8 +38,22 @@ class ShuttleBusView: UIViewController {
         setCollectionViewLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @objc func setShuttleIndex(_ notification: Notification) {
-        aStationIndex = notification.userInfo!["aShuttleIndex"] as! Int
+        aStationIndex = notification.userInfo!["aShuttleIndex"] as? Int
+        setStationLabel(stationIndex: aStationIndex!)
+        setFavoriteButton(stationIndex: aStationIndex!)
+    }
+    
+    func setFavoriteButton(stationIndex: Int) {
+        if aStationIndex == stationIndex {
+            favoriteButtonOutlet.setImage(#imageLiteral(resourceName: "redHeart"), for: .normal)
+        } else {
+            favoriteButtonOutlet.setImage(#imageLiteral(resourceName: "blackHeart"), for: .normal)
+        }
     }
     
     func setCollectionViewLayout() {
@@ -52,7 +69,21 @@ class ShuttleBusView: UIViewController {
     }
     
     func setStationLabel(stationIndex: Int) {
-        
+        if stationIndex == 0 {
+            self.leftStationLabel.isHidden = true
+            self.centerStationLabel.text = AshuttleStation[stationIndex]
+            self.rightStationLabel.text = AshuttleStation[stationIndex+1]
+        } else if stationIndex == AshuttleStation.count-1 {
+            self.leftStationLabel.text = AshuttleStation[stationIndex-1]
+            self.centerStationLabel.text = AshuttleStation[stationIndex]
+            self.rightStationLabel.isHidden = true
+        } else {
+            self.rightStationLabel.isHidden = false
+            self.leftStationLabel.isHidden = false
+            self.leftStationLabel.text = AshuttleStation[stationIndex-1]
+            self.centerStationLabel.text = AshuttleStation[stationIndex]
+            self.rightStationLabel.text = AshuttleStation[stationIndex+1]
+        }
     }
 }
 
@@ -109,6 +140,9 @@ extension ShuttleBusView: UICollectionViewDelegate {
                 }
             }
         }
+        
+        setStationLabel(stationIndex: (indexPath?.row)!)
+        setFavoriteButton(stationIndex: (indexPath?.row)!)
     }
 }
 

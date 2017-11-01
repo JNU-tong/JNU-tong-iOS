@@ -61,8 +61,9 @@ class MainViewController: UIViewController {
         //loading Data...
         cityBusController.setBusData()
         startLoading()
+        loadingFlag = true
         
-        shuttleBusController.setMainStation()
+        shuttleBusController.getMainStation()
         
         //set button animation(애니메이션 설정만)  ->  로딩중에 애니메이션 설정만 하기로
         cityBusInfoTap = UITapGestureRecognizer(target: self, action: #selector(self.cityBusInfoTap(_:)))
@@ -91,13 +92,18 @@ class MainViewController: UIViewController {
         self.cityBusTable.dataSource = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetData(Bool.self)
+        shuttleBusController.getMainStation()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func resetData(_ sender: Any) {
-        
         if loadingFlag == false {
             cityBusTable.allowsSelection = false
             cityBusController.setBusData()
@@ -108,7 +114,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func setMainShuttleBus(_ notification: Notification) {
-        mainStation = notification.userInfo!["mainStation"] as! String
+        mainStation = notification.userInfo!["mainStation"] as? String
         shuttleStationLabel.text = mainStation
     }
     
