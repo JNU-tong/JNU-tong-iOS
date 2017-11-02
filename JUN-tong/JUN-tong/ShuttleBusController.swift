@@ -35,4 +35,16 @@ class ShuttleBusController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusTime"), object: nil, userInfo: ["aShuttleTime": mainShuttleBusTime[0], "bShuttleTime": mainShuttleBusTime[1]])
         }
     }
+    
+    func getDetailAshuttleTime() {
+        ServerRepository.getShuttleBusDetail(shuttleCourse: "A") { firstTime, secondTime  in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setAShuttelTime"), object: nil, userInfo: ["ashuttleFirstTime": firstTime, "ashuttleSecondTime": secondTime])
+        }
+    }
+    
+    func getDetailBshuttleTime() {
+        ServerRepository.getShuttleBusDetail(shuttleCourse: "B") { firstTime, secondTime  in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setBShuttelTime"), object: nil, userInfo: ["bshuttleFirstTime": firstTime, "bshuttleSecondTime": secondTime])
+        }
+    }
 }

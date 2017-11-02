@@ -31,6 +31,8 @@ class ShuttleBusDetailViewController: UIViewController {
         self.ABusContainerView.alpha = 1
         
         shuttleBusController.setShuttleBusIndex(shuttleBusName: mainStation!)
+        shuttleBusController.getDetailAshuttleTime()
+        shuttleBusController.getDetailBshuttleTime()
     }
     
     @IBAction func ABusTab(_ sender: Any) {
@@ -43,6 +45,7 @@ class ShuttleBusDetailViewController: UIViewController {
         
         self.ABusStatus.isHidden = false
         self.ABusButtonOutlet.setTitleColor(UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1), for: .normal)
+        self.shuttleBusController.getDetailAshuttleTime()
     }
     
     @IBAction func BBusTab(_ sender: Any) {
@@ -55,5 +58,6 @@ class ShuttleBusDetailViewController: UIViewController {
         
         self.BBusStatus.isHidden = false
         self.BBusButtonOutlet.setTitleColor(UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1), for: .normal)
+        self.shuttleBusController.getDetailBshuttleTime()
     }
 }

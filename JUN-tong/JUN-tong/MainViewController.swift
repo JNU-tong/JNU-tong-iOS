@@ -102,6 +102,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         resetData(Bool.self)
         shuttleBusController.getMainStation()
+        shuttleBusController.getMainShuttleTime()
     }
     
     override func didReceiveMemoryWarning() {

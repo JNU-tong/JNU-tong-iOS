@@ -166,4 +166,43 @@ class ServerRepository {
             completion([aTime, bTime])
         }
     }
+    
+    static func getShuttleBusDetail(shuttleCourse: String, completion: @escaping([Int], [Int]) -> Void) {
+        guard let url = URL(string: baseURL + "getJnuBusArrivalInfoListByCourse?course=" + "\(shuttleCourse)") else {
+            print("URL is nil")
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.timeoutInterval = 10
+        
+        Alamofire.request(urlRequest).responseJSON { response in
+            guard response.result.isSuccess else {
+                print("Response get store error: \(response.result.error!)")
+                return
+            }
+            
+            guard let value = response.result.value else { return }
+            let swiftyJson = JSON(value)
+            var firstTime: [Int] = []
+            var secondTime: [Int] = []
+            
+            for index in 0..<swiftyJson.count {
+      
+                if String(describing: swiftyJson.arrayValue[index]["remainTime"]["first"]) != "null" {
+                    firstTime.append(swiftyJson.arrayValue[index]["remainTime"]["first"].int!)
+                } else {
+                    firstTime.append(-1)
+                }
+
+                if String(describing: swiftyJson.arrayValue[index]["remainTime"]["second"]) != "null" {
+                    secondTime.append(swiftyJson.arrayValue[index]["remainTime"]["second"].int!)
+                } else {
+                    secondTime.append(-1)
+                }
+            }
+            
+            completion(firstTime, secondTime)
+        }
+    }
 }
