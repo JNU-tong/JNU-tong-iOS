@@ -22,6 +22,8 @@ class BShuttleBusView: UIViewController {
     var prevOffset: CGPoint?
     var bStationIndex: Int?
     var currentIndex: Int?
+    var bShuttleFirstTime: [Int] = []
+    var bShuttleSecondTime: [Int] = []
     var onceOnly = false
     
     override func viewDidLoad() {
@@ -29,6 +31,8 @@ class BShuttleBusView: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(setShuttleIndex),
                                                name: NSNotification.Name(rawValue: "setBShuttleIndex"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setShuttleTime),
+                                               name: NSNotification.Name(rawValue: "setBShuttelTime"), object: nil)
         
         view.addSubview(bShuttleBusCollectionView)
         
@@ -48,8 +52,15 @@ class BShuttleBusView: UIViewController {
     
     @objc func setShuttleIndex(_ notification: Notification) {
         bStationIndex = notification.userInfo!["bShuttleIndex"] as? Int
+        currentIndex = bStationIndex
         setStationLabel(stationIndex: bStationIndex!)
         setFavoriteButton(stationIndex: bStationIndex!)
+    }
+    
+    @objc func setShuttleTime(_ notification: Notification) {
+        bShuttleFirstTime = notification.userInfo!["bshuttleFirstTime"] as! [Int]
+        bShuttleSecondTime = notification.userInfo!["bshuttleSecondTime"] as! [Int]
+        bShuttleBusCollectionView.reloadData()
     }
     
     func setFavoriteButton(stationIndex: Int) {
@@ -66,7 +77,7 @@ class BShuttleBusView: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
-        layout.itemSize = CGSize(width: self.view.bounds.width - 64 - 10, height: self.view.bounds.height/2)
+        layout.itemSize = CGSize(width: self.view.bounds.width - 64 - 10, height: self.view.bounds.height/2 )
         
         bShuttleBusCollectionView.collectionViewLayout = layout
         bShuttleBusCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
@@ -99,6 +110,11 @@ extension BShuttleBusView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ShuttleBusInfo", for: indexPath) as? ShuttleBusCollectionViewCell {
+            
+            if bShuttleFirstTime.count > 0 {
+                cell.setShuttleTime(fistTime: bShuttleFirstTime[indexPath.row], secondTime: bShuttleSecondTime[indexPath.row])
+                cell.setStationImage(course: "B", stationIndex: indexPath.row)
+            }
             
             return cell
         }

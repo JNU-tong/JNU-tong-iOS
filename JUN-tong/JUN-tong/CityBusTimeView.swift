@@ -11,7 +11,6 @@ import UIKit
 class CityBusTimeView: UIViewController {
     
     @IBOutlet weak var cityBusTimeTable: UITableView!
-    
     @IBOutlet weak var departTimeLabel: UILabel!
     
     
