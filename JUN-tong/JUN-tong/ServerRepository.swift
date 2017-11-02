@@ -125,8 +125,7 @@ class ServerRepository {
     }
     
     static func getShuttleBusMain(shuttleIndex: Int, completion: @escaping([Int]) -> Void) {
-        
-        guard let url = URL(string: baseURL + "getJnuBusArrivalInfoByStationId?stationId=" + "\(shuttleIndex)") else {
+        guard let url = URL(string: baseURL + "getJnuBusArrivalInfoByStationId?stationId=" + "\(shuttleIndex+1)") else {
             print("URL is nil")
             return
         }

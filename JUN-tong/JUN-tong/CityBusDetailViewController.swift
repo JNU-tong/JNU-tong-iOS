@@ -27,6 +27,9 @@ class CityBusDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        self.navigationItem.title = "상세정보"
         
         NotificationCenter.default.addObserver(self, selector: #selector(setLine),
                                                name: NSNotification.Name(rawValue: "busLineInfo"), object: nil)
@@ -46,7 +49,6 @@ class CityBusDetailViewController: UIViewController {
         
         busNoLabel.textColor = busInfo?.cityBusColor
         busNoLabel.text = busInfo!.lineNo
-        busLineLabel.textColor = busInfo?.cityBusColor
         busLineLabel.text = busInfo!.description
         
         setBusLineImage()

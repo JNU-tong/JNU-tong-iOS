@@ -25,7 +25,7 @@ class CityBusLineController {
             
             for i in 0..<cityBusTimeData.0.count {
                 
-                if cityBusTimeData.1[i] != -1 {
+                if cityBusTimeData.1[i] > -1 {
                     self.cityBusDepartTimeInfo.append(cityBusTimeData.0[i])
                     self.cityBusRemainTimeInfo.append(cityBusTimeData.1[i])
                 }

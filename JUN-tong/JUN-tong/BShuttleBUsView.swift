@@ -52,6 +52,7 @@ class BShuttleBusView: UIViewController {
     
     @objc func setShuttleIndex(_ notification: Notification) {
         bStationIndex = notification.userInfo!["bShuttleIndex"] as? Int
+        currentIndex = bStationIndex
         setStationLabel(stationIndex: bStationIndex!)
         setFavoriteButton(stationIndex: bStationIndex!)
     }

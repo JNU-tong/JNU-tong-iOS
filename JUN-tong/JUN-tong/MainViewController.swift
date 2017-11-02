@@ -54,6 +54,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        self.navigationItem.title = "제대로通(통)한다"
+        
         NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
                                                name: NSNotification.Name(rawValue: "setBusInfo"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteButton),
@@ -100,6 +103,9 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        self.navigationItem.title = "제대로通(통)한다"
+        
         resetData(Bool.self)
         shuttleBusController.getMainStation()
         shuttleBusController.getMainShuttleTime()
@@ -280,7 +286,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return headerView
         } else if section == 1 {
             let headerText = UILabel()
-            headerText.text = "도착예정 버스"
+            headerText.text = "출발예정 버스"
             headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
             headerText.frame = CGRect(x: 15, y: 10, width: 100, height: 25)
             headerText.font = UIFont.boldSystemFont(ofSize: 14)

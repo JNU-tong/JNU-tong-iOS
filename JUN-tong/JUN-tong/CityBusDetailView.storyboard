@@ -38,30 +38,30 @@
                                                 <color key="textColor" red="0.82352941180000006" green="0.1529411765" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주대-시청-중앙로-공항" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSF-l9-l2y">
-                                                <rect key="frame" x="132" y="61" width="111" height="13.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <color key="textColor" red="0.0" green="0.17254901960784313" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dn4-U2-mBt">
-                                                <rect key="frame" x="151" y="93.5" width="72" height="72"/>
+                                                <rect key="frame" x="151" y="62" width="72" height="72"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="72" id="0G3-lE-skj"/>
                                                     <constraint firstAttribute="width" constant="72" id="mPK-js-1WJ"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주대-시청-중앙로-공항" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSF-l9-l2y">
+                                                <rect key="frame" x="132" y="145" width="111.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                <color key="textColor" red="0.0" green="0.17254901960784313" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="dn4-U2-mBt" firstAttribute="top" secondItem="9Dn-bO-9Cg" secondAttribute="bottom" constant="12" id="HOy-iy-fk7"/>
                                             <constraint firstItem="08z-N8-6mR" firstAttribute="top" secondItem="Hc2-of-iVA" secondAttribute="top" id="JzS-fy-x8g"/>
+                                            <constraint firstItem="dn4-U2-mBt" firstAttribute="centerX" secondItem="Hc2-of-iVA" secondAttribute="centerX" id="MkY-fG-6mn"/>
                                             <constraint firstItem="9Dn-bO-9Cg" firstAttribute="top" secondItem="08z-N8-6mR" secondAttribute="bottom" constant="19" id="NAp-Kx-I7g"/>
-                                            <constraint firstItem="dn4-U2-mBt" firstAttribute="top" secondItem="rSF-l9-l2y" secondAttribute="bottom" constant="19" id="Yrz-X3-YmY"/>
-                                            <constraint firstItem="rSF-l9-l2y" firstAttribute="centerX" secondItem="Hc2-of-iVA" secondAttribute="centerX" id="eSR-SV-FPV"/>
+                                            <constraint firstItem="rSF-l9-l2y" firstAttribute="centerX" secondItem="Hc2-of-iVA" secondAttribute="centerX" id="aOv-BG-hF6"/>
                                             <constraint firstItem="08z-N8-6mR" firstAttribute="centerX" secondItem="Hc2-of-iVA" secondAttribute="centerX" id="kbm-Hv-Bhp"/>
-                                            <constraint firstItem="rSF-l9-l2y" firstAttribute="top" secondItem="9Dn-bO-9Cg" secondAttribute="bottom" constant="11" id="l7W-Pn-5xL"/>
-                                            <constraint firstItem="dn4-U2-mBt" firstAttribute="centerX" secondItem="Hc2-of-iVA" secondAttribute="centerX" id="lKZ-Uo-XrI"/>
+                                            <constraint firstItem="rSF-l9-l2y" firstAttribute="top" secondItem="dn4-U2-mBt" secondAttribute="bottom" constant="11" id="p5X-kI-LpU"/>
                                             <constraint firstAttribute="height" constant="177" id="ujD-ug-QfJ"/>
                                             <constraint firstItem="9Dn-bO-9Cg" firstAttribute="centerX" secondItem="Hc2-of-iVA" secondAttribute="centerX" id="vTa-F5-WvD"/>
                                         </constraints>
