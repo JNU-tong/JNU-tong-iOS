@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eow-Vk-pWW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eow-Vk-pWW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,9 +40,18 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dn4-U2-mBt">
                                                 <rect key="frame" x="151" y="62" width="72" height="72"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EJa-jq-xew">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="72" id="0G3-lE-skj"/>
+                                                    <constraint firstItem="EJa-jq-xew" firstAttribute="leading" secondItem="dn4-U2-mBt" secondAttribute="leading" id="5dq-NG-Eh7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EJa-jq-xew" secondAttribute="trailing" id="Pgt-MF-bFp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EJa-jq-xew" secondAttribute="bottom" id="XZH-DE-R7u"/>
+                                                    <constraint firstItem="EJa-jq-xew" firstAttribute="top" secondItem="dn4-U2-mBt" secondAttribute="top" id="cn9-lw-H4x"/>
                                                     <constraint firstAttribute="width" constant="72" id="mPK-js-1WJ"/>
                                                 </constraints>
                                             </view>
@@ -161,6 +170,7 @@
                     </view>
                     <connections>
                         <outlet property="busColorView" destination="08z-N8-6mR" id="VjX-LB-04l"/>
+                        <outlet property="busImage" destination="EJa-jq-xew" id="q42-85-fvz"/>
                         <outlet property="busImageView" destination="dn4-U2-mBt" id="7EC-cu-tgl"/>
                         <outlet property="busLineButtonOutlet" destination="85F-wE-IhE" id="4Rx-ix-2eg"/>
                         <outlet property="busLineLabel" destination="rSF-l9-l2y" id="kDN-je-5Wu"/>
