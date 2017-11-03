@@ -13,7 +13,8 @@ class CityBusDetailViewController: UIViewController {
     @IBOutlet weak var busNoLabel: UILabel!
     @IBOutlet weak var busLineLabel: UILabel!
     @IBOutlet weak var busImageView: UIView!
-
+    @IBOutlet weak var busImage: UIImageView!
+    
     @IBOutlet weak var busLineButtonOutlet: UIButton!
     @IBOutlet weak var busTimeButtonOutlet: UIButton!
     
@@ -52,6 +53,20 @@ class CityBusDetailViewController: UIViewController {
         busLineLabel.text = busInfo!.description
         
         setBusLineImage()
+        setBusImage()
+    }
+    
+    private func setBusImage() {
+        
+        if busInfo?.cityBusType.rawValue == 1 {
+            self.busImage.image = #imageLiteral(resourceName: "nightBus")
+        } else if busInfo?.cityBusType.rawValue == 2 {
+            self.busImage.image = #imageLiteral(resourceName: "blueBus")
+        } else if busInfo?.cityBusType.rawValue == 3 {
+            self.busImage.image = #imageLiteral(resourceName: "blueBus")
+        } else if busInfo?.cityBusType.rawValue == 4 {
+            self.busImage.image = #imageLiteral(resourceName: "greenBus")
+        }
     }
     
     private func setBusLineImage() {
