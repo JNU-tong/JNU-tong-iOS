@@ -368,7 +368,7 @@ extension MainViewController: UIGestureRecognizerDelegate {
                 self.mainImageView.frame.size.height += self.imageExtensRange!
                 self.mainImageHeight.constant += self.imageExtensRange!
                 self.mainImageViewHeight.constant += self.imageExtensRange!
-                self.cityBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)! + self.imageExtensRange!)
+                self.cityBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)! + (self.imageExtensRange!) + 100)
                 
                 self.cityBusMain.frame.size.height -= self.extensRange!
                 self.cityBusTableHeight.constant -= self.extensRange!
