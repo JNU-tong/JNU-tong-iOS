@@ -41,6 +41,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Tb-IL-tPJ">
+                                <rect key="frame" x="16" y="64" width="343" height="0.0"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainImage" translatesAutoresizingMaskIntoConstraints="NO" id="6sD-dt-87f">
+                                        <rect key="frame" x="-16" y="0.0" width="375" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="68s-aM-7CN"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6sD-dt-87f" firstAttribute="leading" secondItem="5Tb-IL-tPJ" secondAttribute="leading" constant="-16" id="7gG-7n-f0t"/>
+                                    <constraint firstAttribute="trailing" secondItem="6sD-dt-87f" secondAttribute="trailing" constant="-16" id="dcL-9d-M3y"/>
+                                    <constraint firstItem="6sD-dt-87f" firstAttribute="top" secondItem="5Tb-IL-tPJ" secondAttribute="top" id="iD6-as-hNJ"/>
+                                    <constraint firstAttribute="height" id="rhR-eS-tIk"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zJ-Db-oH5">
                                 <rect key="frame" x="16" y="74" width="343" height="80"/>
                                 <subviews>
@@ -350,7 +368,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-xr-TzG">
-                                <rect key="frame" x="16" y="199" width="343" height="80"/>
+                                <rect key="frame" x="16" y="174" width="343" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="교내셔틀버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-S2-Ibg">
                                         <rect key="frame" x="10" y="8" width="73" height="17"/>
@@ -448,10 +466,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Sa-HF-OEe"/>
-                            <constraint firstItem="C1D-xr-TzG" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="bottom" constant="45" id="1kL-xf-7O4"/>
+                            <constraint firstItem="C1D-xr-TzG" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="bottom" constant="20" id="1kL-xf-7O4"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="D23-i3-E70"/>
-                            <constraint firstItem="8zJ-Db-oH5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bye-ug-Rrc"/>
+                            <constraint firstItem="8zJ-Db-oH5" firstAttribute="top" secondItem="5Tb-IL-tPJ" secondAttribute="bottom" constant="10" id="TyH-d5-Yrh"/>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cUn-rJ-VX0"/>
+                            <constraint firstItem="5Tb-IL-tPJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iYj-1x-ZgC"/>
+                            <constraint firstItem="5Tb-IL-tPJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jKM-Gd-66m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Tb-IL-tPJ" secondAttribute="trailing" id="rDv-4I-BFC"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uwC-8e-xH1"/>
                         </constraints>
                     </view>
@@ -476,6 +497,10 @@
                         <outlet property="cityBusMain" destination="8zJ-Db-oH5" id="b7v-cM-rnf"/>
                         <outlet property="cityBusTable" destination="JZF-et-4Qs" id="Sxs-P7-FU6"/>
                         <outlet property="cityBusTableHeight" destination="2dy-XZ-DB7" id="xJr-tv-lPG"/>
+                        <outlet property="mainImage" destination="6sD-dt-87f" id="g4s-3U-FeV"/>
+                        <outlet property="mainImageHeight" destination="68s-aM-7CN" id="Jvj-ws-DxX"/>
+                        <outlet property="mainImageView" destination="5Tb-IL-tPJ" id="pKi-lC-t60"/>
+                        <outlet property="mainImageViewHeight" destination="rhR-eS-tIk" id="iM0-2d-tdu"/>
                         <outlet property="shuttleBusInfo" destination="wPy-rK-1UY" id="bWM-fy-30y"/>
                         <outlet property="shuttleBusMain" destination="C1D-xr-TzG" id="9vp-Ws-ltg"/>
                         <outlet property="shuttleStationLabel" destination="7qf-rZ-eMr" id="BGC-0k-TZ1"/>
@@ -505,6 +530,7 @@
     </scenes>
     <resources>
         <image name="blackHeart" width="15" height="14"/>
+        <image name="mainImage" width="375" height="259"/>
         <image name="redHeart" width="15" height="14"/>
         <image name="reset" width="19" height="19"/>
     </resources>

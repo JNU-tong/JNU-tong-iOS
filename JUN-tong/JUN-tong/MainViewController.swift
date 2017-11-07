@@ -10,6 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var mainImageView: UIView!
+    @IBOutlet weak var mainImageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var cityBusMain: UIView!
     @IBOutlet weak var shuttleBusMain: UIView!
     
@@ -39,6 +44,7 @@ class MainViewController: UIViewController {
     // 본래 있던 자리를 알기 위해
     var cityBusCenter: CGPoint?
     var shuttleBusCenter: CGPoint?
+    var imageExtensRange: CGFloat?
     var extensRange: CGFloat?
     
     var cityBusList: [CityBus] = []
@@ -54,6 +60,19 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //custom mainView
+        cityBusCenter = cityBusMain.center
+        shuttleBusCenter = shuttleBusMain.center
+        extensRange = self.view.bounds.height-25-180
+        imageExtensRange = self.view.bounds.height/2
+        
+        UIView.animate(withDuration: 0.5, delay: 0, animations: {
+            self.mainImage.frame.size.height += self.imageExtensRange!
+            self.mainImageView.frame.size.height += self.imageExtensRange!
+            self.mainImageHeight.constant += self.imageExtensRange!
+            self.mainImageViewHeight.constant += self.imageExtensRange!
+        })
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(setBusInfo),
@@ -89,11 +108,6 @@ class MainViewController: UIViewController {
         
         self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
         self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
-        
-        //custom mainView
-        cityBusCenter = cityBusMain.center
-        shuttleBusCenter = shuttleBusMain.center
-        extensRange = self.view.bounds.height-25-180
         
         cityBusMain.layer.borderColor = UIColor.darkGray.cgColor
         cityBusMain.layer.borderWidth = 0.5
@@ -334,6 +348,12 @@ extension MainViewController: UIGestureRecognizerDelegate {
             self.cityBusInfoFolder = true
         
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.mainImage.frame.size.height -= self.imageExtensRange!
+                self.mainImageView.frame.size.height -= self.imageExtensRange!
+                self.mainImageHeight.constant -= self.imageExtensRange!
+                self.mainImageViewHeight.constant -= self.imageExtensRange!
+               self.cityBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)!)
+                
                 self.cityBusMain.frame.size.height += self.extensRange!
                 self.cityBusTableHeight.constant += self.extensRange!
                 self.cityBusTable.frame.size.height += self.extensRange!
@@ -344,7 +364,12 @@ extension MainViewController: UIGestureRecognizerDelegate {
             self.cityBusInfoFolder = false
             
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
-
+                self.mainImage.frame.size.height += self.imageExtensRange!
+                self.mainImageView.frame.size.height += self.imageExtensRange!
+                self.mainImageHeight.constant += self.imageExtensRange!
+                self.mainImageViewHeight.constant += self.imageExtensRange!
+                self.cityBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)! + self.imageExtensRange!)
+                
                 self.cityBusMain.frame.size.height -= self.extensRange!
                 self.cityBusTableHeight.constant -= self.extensRange!
                 self.cityBusTable.frame.size.height -= self.extensRange!
