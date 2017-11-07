@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p88-ax-5o2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p88-ax-5o2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxo-5G-f1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678" y="132"/>
+            <point key="canvasLocation" x="-679" y="115"/>
         </scene>
         <!--제대로通(통)한다-->
         <scene sceneID="tne-QT-ifu">
@@ -329,6 +329,10 @@
                                             <constraint firstAttribute="height" constant="50" id="uqD-tZ-M0B"/>
                                         </constraints>
                                     </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="czl-rq-k7o">
+                                        <rect key="frame" x="69" y="5" width="20" height="20"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -338,8 +342,10 @@
                                     <constraint firstItem="oyo-k7-wYP" firstAttribute="leading" secondItem="8zJ-Db-oH5" secondAttribute="leading" id="FRq-vg-1Lc"/>
                                     <constraint firstAttribute="trailing" secondItem="oyo-k7-wYP" secondAttribute="trailing" id="GfR-kv-8lW"/>
                                     <constraint firstAttribute="trailing" secondItem="JZF-et-4Qs" secondAttribute="trailing" id="MPb-EN-0KV"/>
+                                    <constraint firstItem="czl-rq-k7o" firstAttribute="leading" secondItem="u1o-hH-MGi" secondAttribute="trailing" constant="7.5" id="bBe-L3-YUf"/>
                                     <constraint firstAttribute="height" constant="80" id="hDu-J0-qgA"/>
                                     <constraint firstItem="JZF-et-4Qs" firstAttribute="leading" secondItem="8zJ-Db-oH5" secondAttribute="leading" id="ofZ-B0-wT3"/>
+                                    <constraint firstItem="czl-rq-k7o" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="top" constant="5" id="yG9-52-zdA"/>
                                     <constraint firstItem="u1o-hH-MGi" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="top" constant="8" id="ze8-nV-eJf"/>
                                 </constraints>
                             </view>
@@ -438,17 +444,12 @@
                                     <constraint firstItem="6zn-S2-Ibg" firstAttribute="top" secondItem="C1D-xr-TzG" secondAttribute="top" constant="8" id="waZ-Dh-JNT"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="czl-rq-k7o">
-                                <rect key="frame" x="177" y="162" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Sa-HF-OEe"/>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="bottom" constant="45" id="1kL-xf-7O4"/>
-                            <constraint firstItem="czl-rq-k7o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CZt-6a-Ytb"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="D23-i3-E70"/>
-                            <constraint firstItem="czl-rq-k7o" firstAttribute="top" secondItem="8zJ-Db-oH5" secondAttribute="bottom" constant="8" id="T9B-CT-oA5"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bye-ug-Rrc"/>
                             <constraint firstItem="C1D-xr-TzG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cUn-rJ-VX0"/>
                             <constraint firstItem="8zJ-Db-oH5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uwC-8e-xH1"/>
@@ -457,7 +458,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="제대로通(통)한다" id="xkG-o5-4Bn">
                         <barButtonItem key="rightBarButtonItem" image="reset" id="5BS-aB-Zw3">
-                            <color key="tintColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="resetData:" destination="BYZ-38-t0r" id="sPa-aC-Z5t"/>
                             </connections>

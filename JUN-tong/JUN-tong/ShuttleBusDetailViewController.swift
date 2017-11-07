@@ -23,8 +23,13 @@ class ShuttleBusDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigation custom
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = ["NSColor": UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)]
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.default
         self.navigationItem.title = "셔틀버스"
         
         //A버스 부터 시작

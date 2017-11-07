@@ -54,17 +54,23 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
-        self.navigationItem.title = "제대로通(통)한다"
         
-        NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
-                                               name: NSNotification.Name(rawValue: "setBusInfo"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteButton),
-                                               name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleBus),
-                                               name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleTime),
-                                               name: NSNotification.Name(rawValue: "mainShuttleBusTime"), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setBusInfo),
+                                               name: NSNotification.Name(rawValue: "setBusInfo"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(clickFavoriteButton),
+                                               name: NSNotification.Name(rawValue: "favoriteButtonClick"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setMainShuttleBus),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusSet"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setMainShuttleTime),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusTime"),
+                                               object: nil)
         
         //loading Data...
         cityBusController.setBusData()
@@ -103,7 +109,11 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        //navigation custom
+        self.navigationController?.navigationBar.titleTextAttributes = ["NSColor": UIColor.white]
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationItem.title = "제대로通(통)한다"
         
         resetData(Bool.self)
