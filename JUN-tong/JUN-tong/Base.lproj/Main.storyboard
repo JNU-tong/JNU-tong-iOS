@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-679" y="115"/>
         </scene>
-        <!--제대로通(통)한다-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="JUN_tong" customModuleProvider="target" sceneMemberID="viewController">
@@ -477,7 +477,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="제대로通(통)한다" id="xkG-o5-4Bn">
+                    <navigationItem key="navigationItem" id="xkG-o5-4Bn">
                         <barButtonItem key="rightBarButtonItem" image="reset" id="5BS-aB-Zw3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

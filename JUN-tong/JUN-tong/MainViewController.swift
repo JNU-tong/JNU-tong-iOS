@@ -128,7 +128,6 @@ class MainViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
-        self.navigationItem.title = "제대로通(통)한다"
         
         resetData(Bool.self)
         shuttleBusController.getMainStation()
