@@ -113,13 +113,17 @@ class MainViewController: UIViewController {
         self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
         self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
         
-        cityBusMain.layer.borderColor = UIColor.darkGray.cgColor
-        cityBusMain.layer.borderWidth = 0.5
         cityBusMain.layer.cornerRadius = 7
-        
-        shuttleBusMain.layer.borderColor = UIColor.darkGray.cgColor
-        shuttleBusMain.layer.borderWidth = 0.5
+        cityBusMain.layer.shadowColor = UIColor.black.cgColor
+        cityBusMain.layer.shadowOpacity = 0.5
+        cityBusMain.layer.shadowOffset = CGSize.zero
+        cityBusMain.layer.shadowRadius = 1
+
         shuttleBusMain.layer.cornerRadius = 7
+        shuttleBusMain.layer.shadowColor = UIColor.black.cgColor
+        shuttleBusMain.layer.shadowOpacity = 0.5
+        shuttleBusMain.layer.shadowOffset = CGSize.zero
+        shuttleBusMain.layer.shadowRadius = 1
         
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
