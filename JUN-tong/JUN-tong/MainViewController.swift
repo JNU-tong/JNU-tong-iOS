@@ -311,7 +311,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let headerText = UILabel()
             headerText.text = "자주타는 버스"
             headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
-            headerText.frame = CGRect(x: 15, y: 10, width: 100, height: 25)
+            headerText.frame = CGRect(x: 13, y: 10, width: 100, height: 25)
             headerText.font = UIFont.boldSystemFont(ofSize: 14)
             headerView.addSubview(headerText)
             headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor
@@ -320,7 +320,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let headerText = UILabel()
             headerText.text = "출발예정 버스"
             headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
-            headerText.frame = CGRect(x: 15, y: 10, width: 100, height: 25)
+            headerText.frame = CGRect(x: 13, y: 10, width: 100, height: 25)
             headerText.font = UIFont.boldSystemFont(ofSize: 14)
             headerView.addSubview(headerText)
             headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor

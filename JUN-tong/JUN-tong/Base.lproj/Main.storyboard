@@ -292,7 +292,7 @@
                                         <rect key="frame" x="0.0" y="30" width="343" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkP-l6-c1w">
-                                                <rect key="frame" x="5" y="16" width="95" height="18"/>
+                                                <rect key="frame" x="13" y="16" width="95" height="18"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출발예정버스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdn-rD-UAB">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="18"/>
@@ -321,7 +321,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ec3-ek-8uZ">
-                                                <rect key="frame" x="104" y="16" width="94" height="17"/>
+                                                <rect key="frame" x="112" y="16" width="94" height="17"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로딩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reX-jU-8Ad">
                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="17"/>
@@ -346,7 +346,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="GkP-l6-c1w" firstAttribute="leading" secondItem="oyo-k7-wYP" secondAttribute="leading" constant="5" id="9Mt-bg-ngf"/>
+                                            <constraint firstItem="GkP-l6-c1w" firstAttribute="leading" secondItem="oyo-k7-wYP" secondAttribute="leading" constant="13" id="9Mt-bg-ngf"/>
                                             <constraint firstItem="lXO-Ei-2jY" firstAttribute="centerY" secondItem="oyo-k7-wYP" secondAttribute="centerY" id="Thr-7v-JPx"/>
                                             <constraint firstItem="Ec3-ek-8uZ" firstAttribute="leading" secondItem="GkP-l6-c1w" secondAttribute="trailing" constant="4" id="bcH-s3-oZb"/>
                                             <constraint firstItem="GkP-l6-c1w" firstAttribute="centerY" secondItem="oyo-k7-wYP" secondAttribute="centerY" id="kqm-bs-NUJ"/>
