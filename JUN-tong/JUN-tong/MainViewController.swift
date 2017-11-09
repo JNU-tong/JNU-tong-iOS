@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var aShuttleTime: UILabel!
     @IBOutlet weak var bShuttleTime: UILabel!
+    @IBOutlet weak var todayDate: UILabel!
     
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
@@ -58,6 +59,9 @@ class MainViewController: UIViewController {
     
     var mainStation: String?
     
+    let date = Date()
+    let formatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +69,7 @@ class MainViewController: UIViewController {
         cityBusCenter = cityBusMain.center
         shuttleBusCenter = shuttleBusMain.center
         extensRange = self.view.bounds.height-25-180
-        imageExtensRange = self.view.bounds.height/2
+        imageExtensRange = self.view.bounds.height/2.5
         
         UIView.animate(withDuration: 0.5, delay: 0, animations: {
             self.mainImage.frame.size.height += self.imageExtensRange!
@@ -119,6 +123,11 @@ class MainViewController: UIViewController {
         
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
+        
+        //for date
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        let result = formatter.string(from: date)
+        todayDate.text = result
     }
 
     override func viewWillAppear(_ animated: Bool) {

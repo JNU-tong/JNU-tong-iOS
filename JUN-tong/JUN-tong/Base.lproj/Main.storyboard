@@ -50,6 +50,12 @@
                                             <constraint firstAttribute="height" id="68s-aM-7CN"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 11월 9일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1R-tQ-JX6">
+                                        <rect key="frame" x="173" y="-97.5" width="162" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -57,6 +63,8 @@
                                     <constraint firstAttribute="trailing" secondItem="6sD-dt-87f" secondAttribute="trailing" constant="-16" id="dcL-9d-M3y"/>
                                     <constraint firstItem="6sD-dt-87f" firstAttribute="top" secondItem="5Tb-IL-tPJ" secondAttribute="top" id="iD6-as-hNJ"/>
                                     <constraint firstAttribute="height" id="rhR-eS-tIk"/>
+                                    <constraint firstAttribute="trailing" secondItem="O1R-tQ-JX6" secondAttribute="trailing" constant="8" id="uCZ-RA-Xb4"/>
+                                    <constraint firstAttribute="bottom" secondItem="O1R-tQ-JX6" secondAttribute="bottom" constant="70" id="ulG-gt-hg6"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zJ-Db-oH5">
@@ -504,6 +512,7 @@
                         <outlet property="shuttleBusInfo" destination="wPy-rK-1UY" id="bWM-fy-30y"/>
                         <outlet property="shuttleBusMain" destination="C1D-xr-TzG" id="9vp-Ws-ltg"/>
                         <outlet property="shuttleStationLabel" destination="7qf-rZ-eMr" id="BGC-0k-TZ1"/>
+                        <outlet property="todayDate" destination="O1R-tQ-JX6" id="HKZ-cJ-uYI"/>
                         <segue destination="Ded-4y-HZN" kind="show" identifier="shuttleBusSegue" id="PUY-GE-gqb"/>
                     </connections>
                 </viewController>
