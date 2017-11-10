@@ -270,10 +270,10 @@
 			isa = PBXGroup;
 			children = (
 				4E1853651FA2F48100DD9129 /* ShuttleBusDetailView.storyboard */,
+				4E1853691FA31F9000DD9129 /* ShuttleBusInfo.xib */,
 				4E18536D1FA3270B00DD9129 /* ShuttleBusView.swift */,
 				4E23C33A1FA9B557000E6EBD /* BShuttleBUsView.swift */,
 				4E18536B1FA325D300DD9129 /* ShuttleBusCollectionViewCell.swift */,
-				4E1853691FA31F9000DD9129 /* ShuttleBusInfo.xib */,
 			);
 			name = ShuttleBusDetail;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 				TargetAttributes = {
 					4E7FB9E51F6D50590066C96D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = B3PWYBKFUK;
+						DevelopmentTeam = Y4TX5PVNK4;
 						ProvisioningStyle = Automatic;
 					};
 					4E7FB9F91F6D50590066C96D = {
@@ -664,11 +664,14 @@
 			baseConfigurationReference = 51DC8ACFB4DAE6E36970D05F /* Pods-JUN-tong.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B3PWYBKFUK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4TX5PVNK4;
 				INFOPLIST_FILE = "JUN-tong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.grohong.JUN-tong";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.grohong.JNU-tong";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -678,11 +681,14 @@
 			baseConfigurationReference = D8B3DB7291429A09FCBD9618 /* Pods-JUN-tong.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B3PWYBKFUK;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4TX5PVNK4;
 				INFOPLIST_FILE = "JUN-tong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.grohong.JUN-tong";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.grohong.JNU-tong";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

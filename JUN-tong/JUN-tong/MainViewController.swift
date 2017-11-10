@@ -10,6 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var mainImageView: UIView!
+    @IBOutlet weak var mainImageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var cityBusMain: UIView!
     @IBOutlet weak var shuttleBusMain: UIView!
     
@@ -30,6 +35,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var aShuttleTime: UILabel!
     @IBOutlet weak var bShuttleTime: UILabel!
+    @IBOutlet weak var todayDate: UILabel!
     
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
@@ -39,6 +45,7 @@ class MainViewController: UIViewController {
     // 본래 있던 자리를 알기 위해
     var cityBusCenter: CGPoint?
     var shuttleBusCenter: CGPoint?
+    var imageExtensRange: CGFloat?
     var extensRange: CGFloat?
     
     var cityBusList: [CityBus] = []
@@ -52,19 +59,41 @@ class MainViewController: UIViewController {
     
     var mainStation: String?
     
+    let date = Date()
+    let formatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
-        self.navigationItem.title = "제대로通(통)한다"
         
-        NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
-                                               name: NSNotification.Name(rawValue: "setBusInfo"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteButton),
-                                               name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleBus),
-                                               name: NSNotification.Name(rawValue: "mainShuttleBusSet"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleTime),
-                                               name: NSNotification.Name(rawValue: "mainShuttleBusTime"), object: nil)
+        //custom mainView
+        cityBusCenter = cityBusMain.center
+        shuttleBusCenter = shuttleBusMain.center
+        extensRange = self.view.bounds.height-25-180
+        imageExtensRange = self.view.bounds.height/2.5
+        
+        UIView.animate(withDuration: 0.5, delay: 0, animations: {
+            self.mainImage.frame.size.height += self.imageExtensRange!
+            self.mainImageView.frame.size.height += self.imageExtensRange!
+            self.mainImageHeight.constant += self.imageExtensRange!
+            self.mainImageViewHeight.constant += self.imageExtensRange!
+        })
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setBusInfo),
+                                               name: NSNotification.Name(rawValue: "setBusInfo"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(clickFavoriteButton),
+                                               name: NSNotification.Name(rawValue: "favoriteButtonClick"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setMainShuttleBus),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusSet"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setMainShuttleTime),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusTime"),
+                                               object: nil)
         
         //loading Data...
         cityBusController.setBusData()
@@ -84,27 +113,34 @@ class MainViewController: UIViewController {
         self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
         self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
         
-        //custom mainView
-        cityBusCenter = cityBusMain.center
-        shuttleBusCenter = shuttleBusMain.center
-        extensRange = self.view.bounds.height-25-180
-        
-        cityBusMain.layer.borderColor = UIColor.darkGray.cgColor
-        cityBusMain.layer.borderWidth = 0.5
         cityBusMain.layer.cornerRadius = 7
-        
-        shuttleBusMain.layer.borderColor = UIColor.darkGray.cgColor
-        shuttleBusMain.layer.borderWidth = 0.5
+        cityBusMain.layer.shadowColor = UIColor.black.cgColor
+        cityBusMain.layer.shadowOpacity = 0.5
+        cityBusMain.layer.shadowOffset = CGSize.zero
+        cityBusMain.layer.shadowRadius = 1
+
         shuttleBusMain.layer.cornerRadius = 7
+        shuttleBusMain.layer.shadowColor = UIColor.black.cgColor
+        shuttleBusMain.layer.shadowOpacity = 0.5
+        shuttleBusMain.layer.shadowOffset = CGSize.zero
+        shuttleBusMain.layer.shadowRadius = 1
         
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
+        
+        //for date
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        let result = formatter.string(from: date)
+        todayDate.text = result
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
-        self.navigationItem.title = "제대로通(통)한다"
+        //navigation custom
+        self.navigationController?.navigationBar.titleTextAttributes = ["NSColor": UIColor.white]
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         
         resetData(Bool.self)
         shuttleBusController.getMainStation()
@@ -279,7 +315,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let headerText = UILabel()
             headerText.text = "자주타는 버스"
             headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
-            headerText.frame = CGRect(x: 15, y: 10, width: 100, height: 25)
+            headerText.frame = CGRect(x: 13, y: 10, width: 100, height: 25)
             headerText.font = UIFont.boldSystemFont(ofSize: 14)
             headerView.addSubview(headerText)
             headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor
@@ -288,7 +324,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let headerText = UILabel()
             headerText.text = "출발예정 버스"
             headerText.textColor = UIColor.init(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
-            headerText.frame = CGRect(x: 15, y: 10, width: 100, height: 25)
+            headerText.frame = CGRect(x: 13, y: 10, width: 100, height: 25)
             headerText.font = UIFont.boldSystemFont(ofSize: 14)
             headerView.addSubview(headerText)
             headerView.layer.backgroundColor = UIColor.init(red: CGFloat(238.0 / 255.0), green: CGFloat(238.0 / 255.0), blue: CGFloat(238.0 / 255.0), alpha: 1).cgColor
@@ -324,6 +360,12 @@ extension MainViewController: UIGestureRecognizerDelegate {
             self.cityBusInfoFolder = true
         
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                self.mainImage.frame.size.height -= self.imageExtensRange!
+                self.mainImageView.frame.size.height -= self.imageExtensRange!
+                self.mainImageHeight.constant -= self.imageExtensRange!
+                self.mainImageViewHeight.constant -= self.imageExtensRange!
+               self.cityBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)!)
+                
                 self.cityBusMain.frame.size.height += self.extensRange!
                 self.cityBusTableHeight.constant += self.extensRange!
                 self.cityBusTable.frame.size.height += self.extensRange!
@@ -334,7 +376,12 @@ extension MainViewController: UIGestureRecognizerDelegate {
             self.cityBusInfoFolder = false
             
             UIView.animate(withDuration: 0.5, delay: 0, animations: {
-
+                self.mainImage.frame.size.height += self.imageExtensRange!
+                self.mainImageView.frame.size.height += self.imageExtensRange!
+                self.mainImageHeight.constant += self.imageExtensRange!
+                self.mainImageViewHeight.constant += self.imageExtensRange!
+                self.cityBusMain.center = CGPoint(x: self.view.bounds.width/2, y: (self.cityBusCenter?.y)! + (self.imageExtensRange!) + 100)
+                
                 self.cityBusMain.frame.size.height -= self.extensRange!
                 self.cityBusTableHeight.constant -= self.extensRange!
                 self.cityBusTable.frame.size.height -= self.extensRange!

@@ -28,8 +28,13 @@ class CityBusDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = ""
+        //navigation custom
         self.navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.titleTextAttributes = ["NSColor": UIColor(red: CGFloat(0.0 / 255.0), green: CGFloat(44.0 / 255.0), blue: CGFloat(65.0 / 255.0), alpha: 1)]
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.default
         self.navigationItem.title = "상세정보"
         
         NotificationCenter.default.addObserver(self, selector: #selector(setLine),
