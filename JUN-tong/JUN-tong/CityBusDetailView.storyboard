@@ -317,18 +317,9 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shape" translatesAutoresizingMaskIntoConstraints="NO" id="STB-Sk-0bI">
-                                                            <rect key="frame" x="338" y="15" width="14" height="14"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="14" id="Q9v-F9-B9k"/>
-                                                                <constraint firstAttribute="width" constant="14" id="eIk-Ir-rq7"/>
-                                                            </constraints>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="STB-Sk-0bI" firstAttribute="centerY" secondItem="ZRg-h3-Rrt" secondAttribute="centerY" id="0R5-vN-Hgl"/>
-                                                        <constraint firstAttribute="trailing" secondItem="STB-Sk-0bI" secondAttribute="trailing" constant="23" id="iqY-8U-xIz"/>
                                                         <constraint firstItem="Oiw-nu-9rk" firstAttribute="leading" secondItem="ZRg-h3-Rrt" secondAttribute="leading" constant="29" id="rjl-Ac-F2r"/>
                                                         <constraint firstItem="Oiw-nu-9rk" firstAttribute="centerY" secondItem="ZRg-h3-Rrt" secondAttribute="centerY" id="vGK-at-Z5M"/>
                                                     </constraints>
@@ -370,6 +361,5 @@
     </scenes>
     <resources>
         <image name="oval" width="14" height="14"/>
-        <image name="shape" width="14" height="14"/>
     </resources>
 </document>
