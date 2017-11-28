@@ -23,7 +23,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRQ-4l-36y">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JNU-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pC3-hJ-cWA">
+                                        <rect key="frame" x="87" y="283.5" width="200" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Yzd-ts-hYB"/>
+                                            <constraint firstAttribute="height" constant="100" id="ijh-GJ-F3f"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pC3-hJ-cWA" firstAttribute="centerX" secondItem="wRQ-4l-36y" secondAttribute="centerX" id="S8M-mD-w2M"/>
+                                    <constraint firstItem="pC3-hJ-cWA" firstAttribute="centerY" secondItem="wRQ-4l-36y" secondAttribute="centerY" id="xgj-4H-IMq"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,4 +53,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="JNU-logo" width="927" height="390"/>
+    </resources>
 </document>
