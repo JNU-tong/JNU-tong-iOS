@@ -45,7 +45,7 @@
                                 <rect key="frame" x="16" y="64" width="343" height="0.0"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainImage" translatesAutoresizingMaskIntoConstraints="NO" id="6sD-dt-87f">
-                                        <rect key="frame" x="-16" y="0.0" width="375" height="0.0"/>
+                                        <rect key="frame" x="-32" y="0.0" width="407" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="68s-aM-7CN"/>
                                         </constraints>
@@ -59,8 +59,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="6sD-dt-87f" firstAttribute="leading" secondItem="5Tb-IL-tPJ" secondAttribute="leading" constant="-16" id="7gG-7n-f0t"/>
-                                    <constraint firstAttribute="trailing" secondItem="6sD-dt-87f" secondAttribute="trailing" constant="-16" id="dcL-9d-M3y"/>
+                                    <constraint firstItem="6sD-dt-87f" firstAttribute="leading" secondItem="5Tb-IL-tPJ" secondAttribute="leading" constant="-32" id="7gG-7n-f0t"/>
+                                    <constraint firstAttribute="trailing" secondItem="6sD-dt-87f" secondAttribute="trailing" constant="-32" id="dcL-9d-M3y"/>
                                     <constraint firstItem="6sD-dt-87f" firstAttribute="top" secondItem="5Tb-IL-tPJ" secondAttribute="top" id="iD6-as-hNJ"/>
                                     <constraint firstAttribute="height" id="rhR-eS-tIk"/>
                                     <constraint firstAttribute="trailing" secondItem="O1R-tQ-JX6" secondAttribute="trailing" constant="8" id="uCZ-RA-Xb4"/>
