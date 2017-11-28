@@ -37,6 +37,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bShuttleTime: UILabel!
     @IBOutlet weak var todayDate: UILabel!
     
+    @IBOutlet weak var updateTimeLabel: UILabel!
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
     
@@ -61,6 +62,7 @@ class MainViewController: UIViewController {
     
     let date = Date()
     let formatter = DateFormatter()
+    let updateDataFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,6 +134,8 @@ class MainViewController: UIViewController {
         formatter.dateFormat = "yyyy년 MM월 dd일"
         let result = formatter.string(from: date)
         todayDate.text = result
+        
+        setUpdateTime()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -158,7 +162,7 @@ class MainViewController: UIViewController {
             cityBusController.setBusData()
             startLoading()
         }
-        
+        setUpdateTime()
         loadingFlag = true
     }
     
@@ -198,6 +202,13 @@ class MainViewController: UIViewController {
         self.cityBusList = cityBusController.getCityBusList()
         self.favoriteBusList = cityBusController.getFavoriteBusList()
         cityBusTable.reloadData()
+    }
+    
+    private func setUpdateTime() {
+        let updateData = Date()
+        updateDataFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        let updateTimeResult = updateDataFormatter.string(from: updateData)
+        updateTimeLabel.text = updateTimeResult
     }
     
     private func setSoonBusInfo() {
