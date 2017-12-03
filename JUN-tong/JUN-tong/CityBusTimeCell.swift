@@ -13,7 +13,7 @@ class CityBusTimeCell: UITableViewCell {
     @IBOutlet weak var departTimeLabel: UILabel!
     @IBOutlet weak var remainTimeLabel: UILabel!
     @IBOutlet weak var cityBusTimeCell: UIView!
-    
+
     func setCustone(departTime: String, reaminTime: Int, cellColor: UIColor) {
         departTimeLabel.text = departTime
         remainTimeLabel.text = "\(reaminTime)분전"

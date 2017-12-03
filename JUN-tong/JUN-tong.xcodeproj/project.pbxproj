@@ -29,6 +29,7 @@
 		4E7FB9FF1F6D50590066C96D /* JUN_tongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */; };
 		4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */; };
 		4E7FBA171F6FAD270066C96D /* CityBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA161F6FAD270066C96D /* CityBusCell.swift */; };
+		4EC5AE2D1FD40B2B0009C7F5 /* ShuttleBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5AE2C1FD40B2B0009C7F5 /* ShuttleBus.swift */; };
 		4ED42C911F7F8C92004417FE /* CityBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C901F7F8C92004417FE /* CityBusController.swift */; };
 		4ED42C961F7FA0B5004417FE /* CityBusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */; };
 		4ED42C981F80C83A004417FE /* CityBusTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C971F80C83A004417FE /* CityBusTimeView.swift */; };
@@ -76,6 +77,7 @@
 		4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4E7FBA161F6FAD270066C96D /* CityBusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusCell.swift; sourceTree = "<group>"; };
 		4E96CC1B52F1CDDC47AA0C1D /* Pods-JUN-tongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JUN-tongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JUN-tongTests/Pods-JUN-tongTests.release.xcconfig"; sourceTree = "<group>"; };
+		4EC5AE2C1FD40B2B0009C7F5 /* ShuttleBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBus.swift; sourceTree = "<group>"; };
 		4ED42C901F7F8C92004417FE /* CityBusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusController.swift; sourceTree = "<group>"; };
 		4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusDetailViewController.swift; sourceTree = "<group>"; };
 		4ED42C971F80C83A004417FE /* CityBusTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusTimeView.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				4E4D22401F81179800F576F1 /* CityBus.swift */,
+				4EC5AE2C1FD40B2B0009C7F5 /* ShuttleBus.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				4E7FB9E41F6D50590066C96D /* Resources */,
 				E933795313F2100C58D83829 /* [CP] Embed Pods Frameworks */,
 				33B942E03BEC33F7DCDE9B9C /* [CP] Copy Pods Resources */,
+				4EC5AE2B1FD3E7FB0009C7F5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -445,6 +449,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JUN-tongTests/Pods-JUN-tongTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4EC5AE2B1FD3E7FB0009C7F5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		81B712E30ADC73E5468C183F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -512,6 +529,7 @@
 				4E1853681FA300EE00DD9129 /* ShuttleBusDetailViewController.swift in Sources */,
 				4E18536E1FA3270B00DD9129 /* ShuttleBusView.swift in Sources */,
 				4E4D22431F82036000F576F1 /* CityBusLineController.swift in Sources */,
+				4EC5AE2D1FD40B2B0009C7F5 /* ShuttleBus.swift in Sources */,
 				4E4D22411F81179800F576F1 /* CityBus.swift in Sources */,
 				4ED42C961F7FA0B5004417FE /* CityBusDetailViewController.swift in Sources */,
 				4E61F66F1F87DFE4002F5CCF /* ServerRepository.swift in Sources */,

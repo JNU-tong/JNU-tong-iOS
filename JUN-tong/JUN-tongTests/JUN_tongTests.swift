@@ -9,8 +9,7 @@
 import XCTest
 @testable import JUN_tong
 
-class JUN_tongTests: XCTestCase {
-    
+class JUNtongTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.

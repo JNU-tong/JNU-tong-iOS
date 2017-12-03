@@ -9,10 +9,9 @@
 import UIKit
 
 class CityBusLineCell: UITableViewCell {
-    
     @IBOutlet weak var stationNameLabel: UILabel!
     @IBOutlet weak var cityBusLineCell: UIView!
-    
+
     func setCustom(stationName: String, cellColor: UIColor) {
         stationNameLabel.text = stationName
         cityBusLineCell.backgroundColor = cellColor.withAlphaComponent(0.1)

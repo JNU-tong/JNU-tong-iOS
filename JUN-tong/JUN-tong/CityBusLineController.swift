@@ -12,25 +12,31 @@ class CityBusLineController {
     var cityBusLineInfo: [String] = []
     var cityBusDepartTimeInfo: [String] = []
     var cityBusRemainTimeInfo: [Int] = []
-    
+
     func setBusLineData(lineId: String) {
         ServerRepository.getCityBusLineData(lineId: lineId) { cityBusLineData in
             self.cityBusLineInfo = cityBusLineData
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busLineInfo"), object: nil, userInfo: ["lineData": self.cityBusLineInfo])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busLineInfo"),
+                                            object: nil,
+                                            userInfo: ["lineData": self.cityBusLineInfo])
         }
     }
-    
+
     func setBusTimeData(lineId: String) {
         ServerRepository.getCityBusTimeData(lineId: lineId) { cityBusTimeData in
-            
-            for i in 0..<cityBusTimeData.0.count {
-                
-                if cityBusTimeData.1[i] > -1 {
-                    self.cityBusDepartTimeInfo.append(cityBusTimeData.0[i])
-                    self.cityBusRemainTimeInfo.append(cityBusTimeData.1[i])
-                }
+//            for i in 0..<cityBusTimeData.0.count {
+//                if cityBusTimeData.1[i] > -1 {
+//                    self.cityBusDepartTimeInfo.append(cityBusTimeData.0[i])
+//                    self.cityBusRemainTimeInfo.append(cityBusTimeData.1[i])
+//                }
+//            }
+            for cityBusTimeDataInfo in cityBusTimeData.1 where cityBusTimeDataInfo > -1 {
+                self.cityBusRemainTimeInfo.append(cityBusTimeDataInfo)
+                self.cityBusDepartTimeInfo.append(cityBusTimeData.0[cityBusTimeData.1.index(of: cityBusTimeDataInfo)!])
             }
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busTimeInfo"), object: nil, userInfo: ["departData": self.cityBusDepartTimeInfo, "remainData": self.cityBusRemainTimeInfo])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "busTimeInfo"),
+                                            object: nil,
+                                            userInfo: ["departData": self.cityBusDepartTimeInfo, "remainData": self.cityBusRemainTimeInfo])
         }
     }
 }
