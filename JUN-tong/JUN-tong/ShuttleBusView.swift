@@ -9,15 +9,14 @@
 import UIKit
 
 class ShuttleBusView: UIViewController {
-    
+
     @IBOutlet weak var shuttleBusCollectionView: UICollectionView!
-    
+
     @IBOutlet weak var centerStationLabel: UILabel!
     @IBOutlet weak var leftStationLabel: UILabel!
     @IBOutlet weak var rightStationLabel: UILabel!
     @IBOutlet weak var favoriteButtonOutlet: UIButton!
-    
-    
+
     let shuttleBusController = ShuttleBusController()
     var prevOffset: CGPoint?
     var aStationIndex: Int?
@@ -25,44 +24,48 @@ class ShuttleBusView: UIViewController {
     var aShuttleFirstTime: [Int] = []
     var aShuttleSecondTime: [Int] = []
     var onceOnly = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(setShuttleIndex),
                                                name: NSNotification.Name(rawValue: "setAShuttleIndex"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setShuttleTime),
                                                name: NSNotification.Name(rawValue: "setAShuttelTime"), object: nil)
-        
+
         view.addSubview(shuttleBusCollectionView)
-        
+
         shuttleBusCollectionView.dataSource = self
         shuttleBusCollectionView.delegate = self
-        
+
         shuttleBusCollectionView.register(UINib(nibName: "ShuttleBusInfo", bundle: nil), forCellWithReuseIdentifier: "ShuttleBusInfo")
         setCollectionViewLayout()
     }
-    
+
     @IBAction func favoriteButtionClick(_ sender: Any) {
-        UserDefaults.standard.set(AshuttleStation[currentIndex!], forKey: "mainStation")
+        UserDefaults.standard.set(aShuttleStation[currentIndex!].stationName, forKey: "mainStation")
         aStationIndex = currentIndex
         setFavoriteButton(stationIndex: aStationIndex!)
-        shuttleBusController.setShuttleBusIndex(shuttleBusName: AshuttleStation[aStationIndex!])
+        shuttleBusController.setShuttleBusIndex(shuttleBusName: aShuttleStation[aStationIndex!].stationName)
     }
-    
+
     @objc func setShuttleIndex(_ notification: Notification) {
         aStationIndex = notification.userInfo!["aShuttleIndex"] as? Int
         currentIndex = aStationIndex
         setStationLabel(stationIndex: aStationIndex!)
         setFavoriteButton(stationIndex: aStationIndex!)
     }
-    
+
     @objc func setShuttleTime(_ notification: Notification) {
-        aShuttleFirstTime = notification.userInfo!["ashuttleFirstTime"] as! [Int]
-        aShuttleSecondTime = notification.userInfo!["ashuttleSecondTime"] as! [Int]
+        if let aShuttleFirstTime = notification.userInfo!["ashuttleFirstTime"] as? [Int] {
+            self.aShuttleFirstTime = aShuttleFirstTime
+        }
+        if let aShuttleSecondTime = notification.userInfo!["ashuttleSecondTime"] as? [Int] {
+            self.aShuttleSecondTime = aShuttleSecondTime
+        }
         shuttleBusCollectionView.reloadData()
     }
-    
+
     func setFavoriteButton(stationIndex: Int) {
         if aStationIndex == stationIndex {
             favoriteButtonOutlet.setImage(#imageLiteral(resourceName: "redHeart"), for: .normal)
@@ -70,7 +73,7 @@ class ShuttleBusView: UIViewController {
             favoriteButtonOutlet.setImage(#imageLiteral(resourceName: "blackHeart"), for: .normal)
         }
     }
-    
+
     func setCollectionViewLayout() {
         let layout = ShuttleBusCollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
@@ -78,47 +81,47 @@ class ShuttleBusView: UIViewController {
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
         layout.itemSize = CGSize(width: self.view.bounds.width - 64 - 10, height: self.view.bounds.height/2 )
-        
+
         shuttleBusCollectionView.collectionViewLayout = layout
         shuttleBusCollectionView.decelerationRate = UIScrollViewDecelerationRateFast
     }
-    
+
     func setStationLabel(stationIndex: Int) {
         if stationIndex == 0 {
             self.leftStationLabel.isHidden = true
-            self.centerStationLabel.text = AshuttleStation[stationIndex]
-            self.rightStationLabel.text = AshuttleStation[stationIndex+1]
-        } else if stationIndex == AshuttleStation.count-1 {
-            self.leftStationLabel.text = AshuttleStation[stationIndex-1]
-            self.centerStationLabel.text = AshuttleStation[stationIndex]
+            self.centerStationLabel.text = aShuttleStation[stationIndex].stationName
+            self.rightStationLabel.text = aShuttleStation[stationIndex+1].stationName
+        } else if stationIndex == aShuttleStation.count-1 {
+            self.leftStationLabel.text = aShuttleStation[stationIndex-1].stationName
+            self.centerStationLabel.text = aShuttleStation[stationIndex].stationName
             self.rightStationLabel.isHidden = true
         } else {
             self.rightStationLabel.isHidden = false
             self.leftStationLabel.isHidden = false
-            self.leftStationLabel.text = AshuttleStation[stationIndex-1]
-            self.centerStationLabel.text = AshuttleStation[stationIndex]
-            self.rightStationLabel.text = AshuttleStation[stationIndex+1]
+            self.leftStationLabel.text = aShuttleStation[stationIndex-1].stationName
+            self.centerStationLabel.text = aShuttleStation[stationIndex].stationName
+            self.rightStationLabel.text = aShuttleStation[stationIndex+1].stationName
         }
     }
 }
 
 extension ShuttleBusView: UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AshuttleStation.count
+        return aShuttleStation.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ShuttleBusInfo", for: indexPath) as? ShuttleBusCollectionViewCell {
-            
-            if aShuttleFirstTime.count > 0 {
+
+            if !aShuttleFirstTime.isEmpty {
                 cell.setShuttleTime(fistTime: aShuttleFirstTime[indexPath.row], secondTime: aShuttleSecondTime[indexPath.row])
                 cell.setStationImage(course: "A", stationIndex: indexPath.row)
             }
-            
+
             return cell
         }
-        
+
         return UICollectionViewCell()
     }
 }
@@ -132,17 +135,17 @@ extension ShuttleBusView: UICollectionViewDelegate {
             onceOnly = true
         }
     }
-    
+
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         prevOffset = scrollView.contentOffset
     }
-    
+
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
+
         let currentOffset = targetContentOffset.pointee
         let visibleItemIndexPath = shuttleBusCollectionView.indexPathsForVisibleItems
         var indexPath: IndexPath?
-        
+
         if let prev = prevOffset {
             if prev.x <  currentOffset.x {
                 if var max = visibleItemIndexPath.first {
@@ -160,7 +163,7 @@ extension ShuttleBusView: UICollectionViewDelegate {
                 }
             }
         }
-        
+
         setStationLabel(stationIndex: (indexPath?.row)!)
         setFavoriteButton(stationIndex: (indexPath?.row)!)
         self.currentIndex = indexPath?.row
@@ -169,38 +172,36 @@ extension ShuttleBusView: UICollectionViewDelegate {
 
 class ShuttleBusCollectionViewFlowLayout: UICollectionViewFlowLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-        
+
         if let cv = self.collectionView {
-            
+
             let cvBounds = cv.bounds
             let halfWidth = cvBounds.size.width * 0.5
             let proposedContentOffsetCenterX = proposedContentOffset.x + halfWidth + 5
-            
+
             if let attributesForVisibleCells = self.layoutAttributesForElements(in: cvBounds) {
                 var candidateAttributes: UICollectionViewLayoutAttributes?
                 for attributes in attributesForVisibleCells {
-                    
+
                     // == Skip comparison with non-cell items (headers and footers) == //
                     if attributes.representedElementCategory != UICollectionElementCategory.cell {
                         continue
                     }
-                    
+
                     if let candAttrs = candidateAttributes {
                         let a = attributes.center.x - proposedContentOffsetCenterX
                         let b = candAttrs.center.x - proposedContentOffsetCenterX
-                        
+
                         if fabsf(Float(a)) < fabsf(Float(b)) {
                             candidateAttributes = attributes
                         }
-                        
+
                     } else { // == First time in the loop == //
-                        
                         candidateAttributes = attributes
                         continue
                     }
-                    
                 }
-                
+
                 return CGPoint(x : candidateAttributes!.center.x - halfWidth, y : proposedContentOffset.y)
             }
         }
