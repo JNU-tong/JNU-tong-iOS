@@ -24,12 +24,6 @@ class CityBusLineController {
 
     func setBusTimeData(lineId: String) {
         ServerRepository.getCityBusTimeData(lineId: lineId) { cityBusTimeData in
-//            for i in 0..<cityBusTimeData.0.count {
-//                if cityBusTimeData.1[i] > -1 {
-//                    self.cityBusDepartTimeInfo.append(cityBusTimeData.0[i])
-//                    self.cityBusRemainTimeInfo.append(cityBusTimeData.1[i])
-//                }
-//            }
             for cityBusTimeDataInfo in cityBusTimeData.1 where cityBusTimeDataInfo > -1 {
                 self.cityBusRemainTimeInfo.append(cityBusTimeDataInfo)
                 self.cityBusDepartTimeInfo.append(cityBusTimeData.0[cityBusTimeData.1.index(of: cityBusTimeDataInfo)!])

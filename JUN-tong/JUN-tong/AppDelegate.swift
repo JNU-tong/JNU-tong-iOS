@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "laucnchView"), object: nil, userInfo: nil)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

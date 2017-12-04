@@ -90,6 +90,10 @@ class MainViewController: UIViewController {
                                                selector: #selector(setMainShuttleTime),
                                                name: NSNotification.Name(rawValue: "mainShuttleBusTime"),
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateData),
+                                               name: NSNotification.Name(rawValue: "laucnchView"),
+                                               object: nil)
 
         //loading Data...
         cityBusController.setBusData()
@@ -129,9 +133,9 @@ class MainViewController: UIViewController {
                                                                         blue: CGFloat(65.0 / 255.0), alpha: 1)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
 
-        resetData(Bool.self)
         shuttleBusController.getMainStation()
         shuttleBusController.getMainShuttleTime()
+        updateData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -140,6 +144,10 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func resetData(_ sender: Any) {
+        updateData()
+    }
+
+    @objc private func updateData() {
         if loadingFlag == false {
             cityBusTable.allowsSelection = false
             cityBusController.setBusData()
