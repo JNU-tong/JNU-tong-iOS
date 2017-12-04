@@ -74,24 +74,19 @@ class MainViewController: UIViewController {
 
         startAnimation()
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(setBusInfo),
+        NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
                                                name: NSNotification.Name(rawValue: "setBusInfo"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(clickFavoriteButton),
+        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteButton),
                                                name: NSNotification.Name(rawValue: "favoriteButtonClick"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(setMainShuttleBus),
+        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleBus),
                                                name: NSNotification.Name(rawValue: "mainShuttleBusSet"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(setMainShuttleTime),
+        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleTime),
                                                name: NSNotification.Name(rawValue: "mainShuttleBusTime"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateData),
+        NotificationCenter.default.addObserver(self, selector: #selector(updateData),
                                                name: NSNotification.Name(rawValue: "laucnchView"),
                                                object: nil)
 
