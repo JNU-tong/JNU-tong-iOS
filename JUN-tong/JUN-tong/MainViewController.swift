@@ -132,6 +132,8 @@ class MainViewController: UIViewController {
                                                                         green: CGFloat(44.0 / 255.0),
                                                                         blue: CGFloat(65.0 / 255.0), alpha: 1)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
 
         shuttleBusController.getMainStation()
         shuttleBusController.getMainShuttleTime()
