@@ -106,7 +106,9 @@ class MainViewController: UIViewController {
         shuttleBusInfoTap?.delegate = self
 
         self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
+        self.cityBusMain.addGestureRecognizer(cityBusInfoTap!)
         self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
+        self.shuttleBusMain.addGestureRecognizer(shuttleBusInfoTap!)
 
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
