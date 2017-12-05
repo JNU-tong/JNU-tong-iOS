@@ -13,7 +13,7 @@
 		4E18536C1FA325D300DD9129 /* ShuttleBusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E18536B1FA325D300DD9129 /* ShuttleBusCollectionViewCell.swift */; };
 		4E18536E1FA3270B00DD9129 /* ShuttleBusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E18536D1FA3270B00DD9129 /* ShuttleBusView.swift */; };
 		4E1EB33A1FA861BE00B828B1 /* ShuttleBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EB3391FA861BE00B828B1 /* ShuttleBusController.swift */; };
-		4E23C33B1FA9B557000E6EBD /* BShuttleBUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C33A1FA9B557000E6EBD /* BShuttleBUsView.swift */; };
+		4E23C33B1FA9B557000E6EBD /* BShuttleBusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C33A1FA9B557000E6EBD /* BShuttleBusView.swift */; };
 		4E4D22411F81179800F576F1 /* CityBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22401F81179800F576F1 /* CityBus.swift */; };
 		4E4D22431F82036000F576F1 /* CityBusLineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22421F82036000F576F1 /* CityBusLineController.swift */; };
 		4E4D22481F8388A600F576F1 /* FavoriteBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */; };
@@ -56,7 +56,7 @@
 		4E18536B1FA325D300DD9129 /* ShuttleBusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBusCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E18536D1FA3270B00DD9129 /* ShuttleBusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBusView.swift; sourceTree = "<group>"; };
 		4E1EB3391FA861BE00B828B1 /* ShuttleBusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBusController.swift; sourceTree = "<group>"; };
-		4E23C33A1FA9B557000E6EBD /* BShuttleBUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BShuttleBUsView.swift; sourceTree = "<group>"; };
+		4E23C33A1FA9B557000E6EBD /* BShuttleBusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BShuttleBusView.swift; sourceTree = "<group>"; };
 		4E4D22401F81179800F576F1 /* CityBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBus.swift; sourceTree = "<group>"; };
 		4E4D22421F82036000F576F1 /* CityBusLineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusLineController.swift; sourceTree = "<group>"; };
 		4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBusCell.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 				4E1853651FA2F48100DD9129 /* ShuttleBusDetailView.storyboard */,
 				4E1853691FA31F9000DD9129 /* ShuttleBusInfo.xib */,
 				4E18536D1FA3270B00DD9129 /* ShuttleBusView.swift */,
-				4E23C33A1FA9B557000E6EBD /* BShuttleBUsView.swift */,
+				4E23C33A1FA9B557000E6EBD /* BShuttleBusView.swift */,
 				4E18536B1FA325D300DD9129 /* ShuttleBusCollectionViewCell.swift */,
 			);
 			name = ShuttleBusDetail;
@@ -539,7 +539,7 @@
 				4ED42C911F7F8C92004417FE /* CityBusController.swift in Sources */,
 				4ED42C981F80C83A004417FE /* CityBusTimeView.swift in Sources */,
 				4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */,
-				4E23C33B1FA9B557000E6EBD /* BShuttleBUsView.swift in Sources */,
+				4E23C33B1FA9B557000E6EBD /* BShuttleBusView.swift in Sources */,
 				4E4D22481F8388A600F576F1 /* FavoriteBusCell.swift in Sources */,
 				4ED42C9C1F810D15004417FE /* CityBusLineCell.swift in Sources */,
 				4E18536C1FA325D300DD9129 /* ShuttleBusCollectionViewCell.swift in Sources */,
