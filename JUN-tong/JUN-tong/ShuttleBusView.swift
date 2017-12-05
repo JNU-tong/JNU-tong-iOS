@@ -17,6 +17,12 @@ class ShuttleBusView: UIViewController {
     @IBOutlet weak var rightStationLabel: UILabel!
     @IBOutlet weak var favoriteButtonOutlet: UIButton!
 
+    @IBOutlet weak var previousStationLabel: UILabel!
+    @IBOutlet weak var nextStationLabel1: UILabel!
+    @IBOutlet weak var nextStationLabel2: UILabel!
+    @IBOutlet weak var nextStationLabel3: UILabel!
+    @IBOutlet weak var nextStationLabel4: UILabel!
+
     let shuttleBusController = ShuttleBusController()
     var prevOffset: CGPoint?
     var aStationIndex: Int?
@@ -52,8 +58,11 @@ class ShuttleBusView: UIViewController {
     @objc func setShuttleIndex(_ notification: Notification) {
         aStationIndex = notification.userInfo!["aShuttleIndex"] as? Int
         currentIndex = aStationIndex
-        setStationLabel(stationIndex: aStationIndex!)
-        setFavoriteButton(stationIndex: aStationIndex!)
+        if let stationIndex = aStationIndex {
+            setStationLabel(stationIndex: stationIndex)
+            setFavoriteButton(stationIndex: stationIndex)
+            setStationLocation(stationIndex: stationIndex)
+        }
     }
 
     @objc func setShuttleTime(_ notification: Notification) {
@@ -101,6 +110,46 @@ class ShuttleBusView: UIViewController {
             self.leftStationLabel.text = aShuttleStation[stationIndex-1].stationName
             self.centerStationLabel.text = aShuttleStation[stationIndex].stationName
             self.rightStationLabel.text = aShuttleStation[stationIndex+1].stationName
+        }
+    }
+
+    func setStationLocation(stationIndex: Int) {
+        if stationIndex == aShuttleStation.count-1 {
+            self.nextStationLabel4.text = ""
+            self.nextStationLabel3.text = ""
+            self.nextStationLabel2.text = ""
+            self.nextStationLabel1.text = ""
+            self.previousStationLabel.text = aShuttleStation[stationIndex-1].stationName
+        } else if stationIndex == aShuttleStation.count-2 {
+            self.nextStationLabel4.text = ""
+            self.nextStationLabel3.text = ""
+            self.nextStationLabel2.text = ""
+            self.nextStationLabel1.text = aShuttleStation[stationIndex+1].stationName
+            self.previousStationLabel.text = aShuttleStation[stationIndex-1].stationName
+        } else if stationIndex == aShuttleStation.count-3 {
+            self.nextStationLabel4.text = ""
+            self.nextStationLabel3.text = ""
+            self.nextStationLabel2.text = aShuttleStation[stationIndex+2].stationName
+            self.nextStationLabel1.text = aShuttleStation[stationIndex+1].stationName
+            self.previousStationLabel.text = aShuttleStation[stationIndex-1].stationName
+        } else if stationIndex == aShuttleStation.count-4 {
+            self.nextStationLabel4.text = ""
+            self.nextStationLabel3.text = aShuttleStation[stationIndex+3].stationName
+            self.nextStationLabel2.text = aShuttleStation[stationIndex+2].stationName
+            self.nextStationLabel1.text = aShuttleStation[stationIndex+1].stationName
+            self.previousStationLabel.text = aShuttleStation[stationIndex-1].stationName
+        } else if stationIndex == 0 {
+            self.nextStationLabel4.text = aShuttleStation[stationIndex+4].stationName
+            self.nextStationLabel3.text = aShuttleStation[stationIndex+3].stationName
+            self.nextStationLabel2.text = aShuttleStation[stationIndex+2].stationName
+            self.nextStationLabel1.text = aShuttleStation[stationIndex+1].stationName
+            self.previousStationLabel.text = ""
+        } else {
+            self.nextStationLabel4.text = aShuttleStation[stationIndex+4].stationName
+            self.nextStationLabel3.text = aShuttleStation[stationIndex+3].stationName
+            self.nextStationLabel2.text = aShuttleStation[stationIndex+2].stationName
+            self.nextStationLabel1.text = aShuttleStation[stationIndex+1].stationName
+            self.previousStationLabel.text = aShuttleStation[stationIndex-1].stationName
         }
     }
 }
@@ -164,8 +213,13 @@ extension ShuttleBusView: UICollectionViewDelegate {
             }
         }
 
-        setStationLabel(stationIndex: (indexPath?.row)!)
-        setFavoriteButton(stationIndex: (indexPath?.row)!)
+        //index work
+        if let index = indexPath?.row {
+            setStationLabel(stationIndex: index)
+            setStationLocation(stationIndex: index)
+            setFavoriteButton(stationIndex: index)
+        }
+
         self.currentIndex = indexPath?.row
     }
 }
