@@ -56,10 +56,18 @@
                                         <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종강까지 D-260" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfy-zt-dkG">
+                                        <rect key="frame" x="198.5" y="-60" width="136.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="6sD-dt-87f" firstAttribute="leading" secondItem="5Tb-IL-tPJ" secondAttribute="leading" constant="-32" id="7gG-7n-f0t"/>
+                                    <constraint firstItem="Qfy-zt-dkG" firstAttribute="top" secondItem="O1R-tQ-JX6" secondAttribute="bottom" constant="10" id="V6x-9F-h4c"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qfy-zt-dkG" secondAttribute="trailing" constant="8" id="ZJy-AC-L3y"/>
                                     <constraint firstAttribute="trailing" secondItem="6sD-dt-87f" secondAttribute="trailing" constant="-32" id="dcL-9d-M3y"/>
                                     <constraint firstItem="6sD-dt-87f" firstAttribute="top" secondItem="5Tb-IL-tPJ" secondAttribute="top" id="iD6-as-hNJ"/>
                                     <constraint firstAttribute="height" id="rhR-eS-tIk"/>
@@ -525,6 +533,7 @@
                         <outlet property="cityBusMain" destination="8zJ-Db-oH5" id="b7v-cM-rnf"/>
                         <outlet property="cityBusTable" destination="JZF-et-4Qs" id="Sxs-P7-FU6"/>
                         <outlet property="cityBusTableHeight" destination="2dy-XZ-DB7" id="xJr-tv-lPG"/>
+                        <outlet property="dDayLabel" destination="Qfy-zt-dkG" id="vBz-we-6Pm"/>
                         <outlet property="mainImage" destination="6sD-dt-87f" id="g4s-3U-FeV"/>
                         <outlet property="mainImageHeight" destination="68s-aM-7CN" id="Jvj-ws-DxX"/>
                         <outlet property="mainImageView" destination="5Tb-IL-tPJ" id="pKi-lC-t60"/>
