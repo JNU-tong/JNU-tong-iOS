@@ -208,4 +208,32 @@ class ServerRepository {
             completion(firstTime, secondTime)
         }
     }
+
+    static func getDday(comletion: @escaping(String, Int) -> Void) {
+        guard let url = URL(string: baseURL + "jnu/eventDay/first") else {
+            print("URL is nil")
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.timeoutInterval = 10
+
+        Alamofire.request(urlRequest).responseJSON { response in
+            guard response.result.isSuccess else {
+                print("Response get store error: \(response.result.error!)")
+                return
+            }
+
+            guard let value = response.result.value else { return }
+            let swiftyJson = JSON(value)
+
+            if let dDayData = swiftyJson.dictionary {
+                if let dDayLeft = dDayData["dDay"]?.intValue,
+                    let dDayName = dDayData["event"]?.description {
+
+                    comletion(dDayName, dDayLeft)
+                }
+            }
+        }
+    }
 }
