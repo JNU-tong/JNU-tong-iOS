@@ -34,6 +34,7 @@ class ShuttleBusDetailViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.barStyle = UIBarStyle.default
         self.navigationItem.title = "셔틀버스"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "reset"), style: .plain, target: self, action: #selector(self.updateData))
 
         //A버스 부터 시작
         BBusStatus.isHidden = true
@@ -43,6 +44,11 @@ class ShuttleBusDetailViewController: UIViewController {
         self.ABusContainerView.alpha = 1
 
         shuttleBusController.setShuttleBusIndex(shuttleBusName: mainStation!)
+        shuttleBusController.getDetailAshuttleTime()
+        shuttleBusController.getDetailBshuttleTime()
+    }
+
+    func updateData() {
         shuttleBusController.getDetailAshuttleTime()
         shuttleBusController.getDetailBshuttleTime()
     }

@@ -24,9 +24,7 @@ class ShuttleBusController {
     }
 
     func setShuttleBusIndex(shuttleBusName: String) {
-        //aShuttleIndex = aShuttleStation.index(of: shuttleBusName)
         aShuttleIndex = aShuttleStation.index(where: { $0.stationName.elementsEqual(shuttleBusName) })
-        //bShuttleIndex = bShuttleStation.index(of: shuttleBusName)
         bShuttleIndex = bShuttleStation.index(where: { $0.stationName.elementsEqual(shuttleBusName)})
 
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setAShuttleIndex"),

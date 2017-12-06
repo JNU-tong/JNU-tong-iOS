@@ -21,39 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRQ-4l-36y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="B3f-mA-HSr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JNU-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pC3-hJ-cWA">
-                                        <rect key="frame" x="87" y="283.5" width="200" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Yzd-ts-hYB"/>
-                                            <constraint firstAttribute="height" constant="100" id="ijh-GJ-F3f"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="pC3-hJ-cWA" firstAttribute="centerX" secondItem="wRQ-4l-36y" secondAttribute="centerX" id="S8M-mD-w2M"/>
-                                    <constraint firstItem="pC3-hJ-cWA" firstAttribute="centerY" secondItem="wRQ-4l-36y" secondAttribute="centerY" id="xgj-4H-IMq"/>
-                                </constraints>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wRQ-4l-36y" secondAttribute="trailing" id="QYO-Lg-Tjt"/>
-                            <constraint firstItem="wRQ-4l-36y" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hwo-Hc-R2W"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wRQ-4l-36y" secondAttribute="bottom" id="oQA-1m-Y7I"/>
-                            <constraint firstItem="wRQ-4l-36y" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="wZQ-tf-KEE"/>
+                            <constraint firstAttribute="trailing" secondItem="B3f-mA-HSr" secondAttribute="trailing" id="24d-nL-UfQ"/>
+                            <constraint firstItem="B3f-mA-HSr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BA0-Bs-ZaV"/>
+                            <constraint firstItem="B3f-mA-HSr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="R0I-sd-8He"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="B3f-mA-HSr" secondAttribute="bottom" id="kgQ-rd-GgD"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="JNU-logo" width="927" height="390"/>
+        <image name="launchScreen" width="375" height="667"/>
     </resources>
 </document>

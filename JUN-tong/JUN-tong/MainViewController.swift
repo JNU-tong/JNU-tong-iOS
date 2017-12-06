@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var aShuttleTime: UILabel!
     @IBOutlet weak var bShuttleTime: UILabel!
     @IBOutlet weak var todayDate: UILabel!
-
+    @IBOutlet weak var dDayLabel: UILabel!
     @IBOutlet weak var updateTimeLabel: UILabel!
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
@@ -74,21 +74,20 @@ class MainViewController: UIViewController {
 
         startAnimation()
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(setBusInfo),
+        NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
                                                name: NSNotification.Name(rawValue: "setBusInfo"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(clickFavoriteButton),
+        NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteButton),
                                                name: NSNotification.Name(rawValue: "favoriteButtonClick"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(setMainShuttleBus),
+        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleBus),
                                                name: NSNotification.Name(rawValue: "mainShuttleBusSet"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(setMainShuttleTime),
+        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleTime),
                                                name: NSNotification.Name(rawValue: "mainShuttleBusTime"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateData),
+                                               name: NSNotification.Name(rawValue: "laucnchView"),
                                                object: nil)
 
         //loading Data...
@@ -108,6 +107,7 @@ class MainViewController: UIViewController {
 
         self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
         self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
+        self.shuttleBusMain.addGestureRecognizer(shuttleBusInfoTap!)
 
         self.cityBusTable.delegate = self
         self.cityBusTable.dataSource = self
@@ -117,6 +117,7 @@ class MainViewController: UIViewController {
         //for date
         setTodey()
         setUpdateTime()
+        setDday()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -128,10 +129,12 @@ class MainViewController: UIViewController {
                                                                         green: CGFloat(44.0 / 255.0),
                                                                         blue: CGFloat(65.0 / 255.0), alpha: 1)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
 
-        resetData(Bool.self)
         shuttleBusController.getMainStation()
         shuttleBusController.getMainShuttleTime()
+        updateData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -140,6 +143,10 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func resetData(_ sender: Any) {
+        updateData()
+    }
+
+    @objc private func updateData() {
         if loadingFlag == false {
             cityBusTable.allowsSelection = false
             cityBusController.setBusData()
@@ -194,11 +201,29 @@ class MainViewController: UIViewController {
         cityBusTable.reloadData()
     }
 
+    func setDday() {
+        ServerRepository.getDday(comletion: {name, left in
+            self.dDayLabel.text = "\(name)까지 D-\(left)"
+        })
+    }
+
     private func setUpdateTime() {
         let updateData = Date()
         updateDataFormatter.dateFormat = "yyyy.MM.dd HH:mm"
         let updateTimeResult = updateDataFormatter.string(from: updateData)
         updateTimeLabel.text = updateTimeResult
+    }
+
+    private func setTodey() {
+        //for date
+        formatter.dateFormat = "MM월 dd일"
+        var result = formatter.string(from: date)
+        let calendar = Calendar(identifier: .gregorian)
+        let component = calendar.component(.weekday, from: date)
+        if let weekDay = Weekday(rawValue: component-1) {
+            result += "(\(weekDay))"
+        }
+        todayDate.text = result
     }
 
     private func setSoonBusInfo() {
@@ -262,13 +287,6 @@ class MainViewController: UIViewController {
 //            self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
 //            self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
 //        }
-    }
-
-    private func setTodey() {
-        //for date
-        formatter.dateFormat = "yyyy년 MM월 dd일"
-        let result = formatter.string(from: date)
-        todayDate.text = result
     }
 
     private func setBoxCustom() {
@@ -454,4 +472,14 @@ extension MainViewController: UIGestureRecognizerDelegate {
 //            })
 //        }
 //    }
+}
+
+enum Weekday: Int {
+    case 월 = 1
+    case 화
+    case 수
+    case 목
+    case 금
+    case 토
+    case 일
 }
