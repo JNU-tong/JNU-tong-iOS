@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var aShuttleTime: UILabel!
     @IBOutlet weak var bShuttleTime: UILabel!
     @IBOutlet weak var todayDate: UILabel!
-
+    @IBOutlet weak var dDayLabel: UILabel!
     @IBOutlet weak var updateTimeLabel: UILabel!
     var cityBusInfoFolder = false
     var shuttleBusInfoFolder = false
@@ -117,6 +117,7 @@ class MainViewController: UIViewController {
         //for date
         setTodey()
         setUpdateTime()
+        setDday()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -200,11 +201,29 @@ class MainViewController: UIViewController {
         cityBusTable.reloadData()
     }
 
+    func setDday() {
+        ServerRepository.getDday(comletion: {name, left in
+            self.dDayLabel.text = "\(name)까지 D-\(left)"
+        })
+    }
+
     private func setUpdateTime() {
         let updateData = Date()
         updateDataFormatter.dateFormat = "yyyy.MM.dd HH:mm"
         let updateTimeResult = updateDataFormatter.string(from: updateData)
         updateTimeLabel.text = updateTimeResult
+    }
+
+    private func setTodey() {
+        //for date
+        formatter.dateFormat = "MM월 dd일"
+        var result = formatter.string(from: date)
+        let calendar = Calendar(identifier: .gregorian)
+        let component = calendar.component(.weekday, from: date)
+        if let weekDay = Weekday(rawValue: component-1) {
+            result += "(\(weekDay))"
+        }
+        todayDate.text = result
     }
 
     private func setSoonBusInfo() {
@@ -268,13 +287,6 @@ class MainViewController: UIViewController {
 //            self.cityBusInfo.addGestureRecognizer(cityBusInfoTap!)
 //            self.shuttleBusInfo.addGestureRecognizer(shuttleBusInfoTap!)
 //        }
-    }
-
-    private func setTodey() {
-        //for date
-        formatter.dateFormat = "yyyy년 MM월 dd일"
-        let result = formatter.string(from: date)
-        todayDate.text = result
     }
 
     private func setBoxCustom() {
@@ -460,4 +472,14 @@ extension MainViewController: UIGestureRecognizerDelegate {
 //            })
 //        }
 //    }
+}
+
+enum Weekday: Int {
+    case 월 = 1
+    case 화
+    case 수
+    case 목
+    case 금
+    case 토
+    case 일
 }
