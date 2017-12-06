@@ -37,7 +37,7 @@ class ShuttleBusCollectionViewCell: UICollectionViewCell {
 
     func setStationImage(course: String, stationIndex: Int) {
         if course == "A" {
-            stationImage.image = bShuttleStation[stationIndex].stationImage
+            stationImage.image = aShuttleStation[stationIndex].stationImage
         } else {
             stationImage.image = bShuttleStation[stationIndex].stationImage
         }
