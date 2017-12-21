@@ -220,7 +220,7 @@ class MainViewController: UIViewController {
         var result = formatter.string(from: date)
         let calendar = Calendar(identifier: .gregorian)
         let component = calendar.component(.weekday, from: date)
-        if let weekDay = Weekday(rawValue: component-1) {
+        if let weekDay = Weekday(rawValue: component - 1) {
             result += "(\(weekDay))"
         }
         todayDate.text = result

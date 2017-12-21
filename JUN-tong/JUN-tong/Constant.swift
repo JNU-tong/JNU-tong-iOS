@@ -8,7 +8,7 @@
 
 import Foundation
 
-let baseURL = "http://14.49.144.25:8080/"
+let baseURL = "http://218.50.253.120:8080/"
 
 let aShuttleStation = [ShuttleBus(stationName: "정문(출발)", stationImage: #imageLiteral(resourceName: "stationFrontDoor")),
                        ShuttleBus(stationName: "제2도서관\n(해대 방면)", stationImage: #imageLiteral(resourceName: "stationSecondLibrary")),
