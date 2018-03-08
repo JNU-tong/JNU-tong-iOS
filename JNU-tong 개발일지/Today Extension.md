@@ -13,6 +13,24 @@
   - 즐겨찾기에 등록한 셔틀버스 정류소의 버스 알림
 
 
-## 구현 방법
+## Implement
 
-  
+### Today Extension Add
+
+우선 ```Project/Target``` 에서 ```Today Extension```을 추가해 줍니다.
+
+![todayExtensionAdd](/images/todayExtensionAdd.png)
+
+<br>
+그러면 아래와 같이 ```Target```에 ```Widget```이 등록이 됩니다.
+
+![todayExtensionAddResult1](/images/todayExtensionAddResult1.png)
+
+<br>
+그리고 파일이 아래와 같이 생성됩니다.
+
+![todayExtensionAddResult2](/images/todayExtensionAddResult2.png)
+
+- ```MainInterface.storyboard```: 위젯의 인터페이스를 다루는 ```storyboard```
+- ```TodayViewController```: 해당 위겟에 ```ViewController```
+- ```info.plist```:  위젯의 설정 ```plist```
