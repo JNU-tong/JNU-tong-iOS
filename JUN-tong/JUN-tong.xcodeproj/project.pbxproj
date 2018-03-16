@@ -22,10 +22,10 @@
 		4E4D224F1F87681100F576F1 /* UIColor+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D224E1F87681100F576F1 /* UIColor+extention.swift */; };
 		4E61F66D1F87ACF2002F5CCF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66C1F87ACF2002F5CCF /* Constant.swift */; };
 		4E61F66F1F87DFE4002F5CCF /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66E1F87DFE4002F5CCF /* ServerRepository.swift */; };
-		4E6F64CA205BC1CC00F9A8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
+		4E6F64CB205BE92F00F9A8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
+		4E6F64CC205BEAA700F9A8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
 		4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9E91F6D50590066C96D /* AppDelegate.swift */; };
 		4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9ED1F6D50590066C96D /* Main.storyboard */; };
-		4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
 		4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F21F6D50590066C96D /* LaunchScreen.storyboard */; };
 		4E7FB9FF1F6D50590066C96D /* JUN_tongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */; };
 		4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */; };
@@ -461,9 +461,9 @@
 			files = (
 				4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */,
 				4E1853661FA2F48100DD9129 /* ShuttleBusDetailView.storyboard in Resources */,
-				4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */,
 				4E4D224C1F85D59500F576F1 /* CityBusDetailView.storyboard in Resources */,
 				4E18536A1FA31F9000DD9129 /* ShuttleBusInfo.xib in Resources */,
+				4E6F64CB205BE92F00F9A8DC /* Assets.xcassets in Resources */,
 				4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,7 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6F64CA205BC1CC00F9A8DC /* Assets.xcassets in Resources */,
+				4E6F64CC205BEAA700F9A8DC /* Assets.xcassets in Resources */,
 				4EB78CEC20512C4B00ED33BD /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

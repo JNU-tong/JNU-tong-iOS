@@ -34,3 +34,18 @@
 - ```MainInterface.storyboard```: 위젯의 인터페이스를 다루는 ```storyboard```
 - ```TodayViewController```: 해당 위겟에 ```ViewController```
 - ```info.plist```:  위젯의 설정 ```plist```
+
+<br>
+Widget scheme를 빌드하면 다음과 같은 결과화면을 볼수 있습니다.
+
+![widgetResult](/images/widgetResult.jpeg)
+
+<br>
+#### widget default
+
+- CGSize : width(320), height(110)
+
+
+## Function
+
+### 버스 시간의 업데이트 시간
