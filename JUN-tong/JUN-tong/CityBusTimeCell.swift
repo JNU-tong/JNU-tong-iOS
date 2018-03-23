@@ -13,10 +13,15 @@ class CityBusTimeCell: UITableViewCell {
     @IBOutlet weak var departTimeLabel: UILabel!
     @IBOutlet weak var remainTimeLabel: UILabel!
     @IBOutlet weak var cityBusTimeCell: UIView!
-
+    @IBOutlet var cityBusAlarmButton: UIButton!
+    
     func setCustone(departTime: String, reaminTime: Int, cellColor: UIColor) {
         departTimeLabel.text = departTime
         remainTimeLabel.text = "\(reaminTime)분전"
         cityBusTimeCell.backgroundColor = cellColor.withAlphaComponent(0.1)
+    }
+    
+    @IBAction func cityBusAlarmButtonTap(_ sender: Any) {
+        
     }
 }
