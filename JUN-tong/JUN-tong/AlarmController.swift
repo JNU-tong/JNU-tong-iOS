@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import UserNotifications
+
+class AlarmController {
+    init() {
+        
+    }
+    
+    func registCityBusAlarm(time: Int) {
+        let alarmContent = UNMutableNotificationContent()
+    }
+}
