@@ -14,6 +14,7 @@ class CityBusController {
     var cityBusList: [CityBus] = []
     var favoriteBusList: [CityBus] = []
     var favoriteBusIdArray: [String] = []
+    let defaults = UserDefaults(suiteName: "group.JNU-tong")
 
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(clickFavoriteHeart),
@@ -21,9 +22,13 @@ class CityBusController {
         NotificationCenter.default.addObserver(self, selector: #selector(clickUnfavoriteHeart),
                                                name: NSNotification.Name(rawValue: "UnFavoriteHeartClick"), object: nil)
 
-        if UserDefaults.standard.object(forKey: "favoriteBusList") != nil {
-            favoriteBusIdArray = UserDefaults.standard.stringArray(forKey: "favoriteBusList")!
+        defaults?.synchronize()
+        if let tempFavoriteBusIdArray = defaults?.stringArray(forKey: "favoriteBusList") {
+            self.favoriteBusIdArray = tempFavoriteBusIdArray
         }
+//        if UserDefaults.standard.object(forKey: "favoriteBusList") != nil {
+//            favoriteBusIdArray = UserDefaults.standard.stringArray(forKey: "favoriteBusList")!
+//        }
     }
 
     @objc private func clickFavoriteHeart(_ notification: NSNotification) {
@@ -36,7 +41,9 @@ class CityBusController {
             favoriteBusIdArray.append(heartClickBus.lineId)
         }
 
-        UserDefaults.standard.set(favoriteBusIdArray, forKey: "favoriteBusList")
+        defaults?.set(favoriteBusIdArray, forKey: "favoriteBusList")
+        defaults?.synchronize()
+//        UserDefaults.standard.set(favoriteBusIdArray, forKey: "favoriteBusList")
         cityBusList.remove(at: heartIndexPath.row)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "favoriteButtonClick"), object: nil, userInfo: nil)
     }
@@ -49,7 +56,9 @@ class CityBusController {
         if let heartClickBus = notification.userInfo?["cityBusInfo"] as? CityBus {
             for busId in favoriteBusIdArray where busId == heartClickBus.lineId {
                 favoriteBusIdArray.remove(at: favoriteBusIdArray.index(of: busId)!)
-                UserDefaults.standard.set(favoriteBusIdArray, forKey: "favoriteBusList")
+                defaults?.set(favoriteBusIdArray, forKey: "favoriteBusList")
+                defaults?.synchronize()
+//                UserDefaults.standard.set(favoriteBusIdArray, forKey: "favoriteBusList")
             }
 
             cityBusList.append(heartClickBus)

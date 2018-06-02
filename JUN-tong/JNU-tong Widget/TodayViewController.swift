@@ -12,6 +12,12 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet var updateTimeLabel: UILabel!
     @IBOutlet var cityBusView: UIView!
+    @IBOutlet var favoriteBusView: UIView!
+    @IBOutlet var shuttleBusLabel: UILabel!
+    @IBOutlet var aShuttleTime: UILabel!
+    @IBOutlet var bShuttleTime: UILabel!
+    
+    @IBOutlet var indicator: UIActivityIndicatorView!
     
     let updateDataFormatter = DateFormatter()
     
@@ -19,17 +25,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var cityBusList = [CityBus]()
     var favoriteBusList = [CityBus]()
     
+    let shuttleBusController = ShuttleBusController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = true
+        
         updateTimeLabel.text = ""
         cityBusView.backgroundColor = UIColor.clear
+        favoriteBusView.backgroundColor = UIColor.clear
         
         NotificationCenter.default.addObserver(self, selector: #selector(setBusInfo),
                                                name: NSNotification.Name(rawValue: "setBusInfo"),
                                                object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setShuttleBus),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusSet"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setMainShuttleTime),
+                                               name: NSNotification.Name(rawValue: "mainShuttleBusTime"),
+                                               object: nil)
         
         setUpdateTime()
         cityBusController.setBusData()
+        shuttleBusController.getMainStation()
+        shuttleBusController.getMainShuttleTime()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,27 +60,82 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
-    @objc func setBusInfo() {
-        cityBusList = cityBusController.getCityBusList()
-        favoriteBusList = cityBusController.getFavoriteBusList()
-        setArriveSoonCityBus()
-    }
-    
     @IBAction func updateButton(_ sender: Any) {
         setUpdateTime()
-        setArriveSoonCityBus()
+        cityBusController.setBusData()
+        shuttleBusController.getMainStation()
+        shuttleBusController.getMainShuttleTime()
     }
     
-    private func setArriveSoonCityBus() {
-        let cityBusCount = cityBusList.count <= 3 ? cityBusList.count : 3
-        let busViewCGRect = cityBusView.bounds
+    @objc func setBusInfo() {
+        self.cityBusList = cityBusController.getCityBusList()
+        self.favoriteBusList = cityBusController.getFavoriteBusList()
+        
+        setBus(view: cityBusView, busList: cityBusList, time: 3)
+        setBus(view: favoriteBusView, busList: favoriteBusList, time: 10)
+    }
+    
+    @objc private func setShuttleBus(_ notification: Notification) {
+        if let mainStation = notification.userInfo!["mainStation"] as? String {
+            let main = mainStation.split(separator: "\n")
+            
+            if main.count > 1 {
+                shuttleBusLabel.text = "교내셔틀버스[\(main[0])...]"
+            } else {
+                shuttleBusLabel.text = "교내셔틀버스[\(mainStation)]"
+            }
+        }
+        shuttleBusLabel.sizeToFit()
+    }
+    
+    @objc private func setMainShuttleTime(_ notification: Notification) {
+        var aShuttle = Int()
+        var bShuttle = Int()
+        
+        if let aShuttleTime = notification.userInfo!["aShuttleTime"] as? Int {
+            aShuttle = aShuttleTime
+        }
+        if let bShuttleTime = notification.userInfo!["bShuttleTime"] as? Int {
+            bShuttle = bShuttleTime
+        }
+        
+        if aShuttle == -1 {
+            aShuttleTime.text = "미운행"
+        } else {
+            aShuttleTime.text = "\(aShuttle)분전"
+        }
+        
+        if bShuttle == -1 {
+            bShuttleTime.text = "미운행"
+        } else {
+            bShuttleTime.text = "\(bShuttle)분전"
+        }
+    }
+    
+    private func startLoading() {
+        self.indicator.bounds.size = self.view.bounds.size
+        self.indicator.startAnimating()
+    }
+    
+    private func setBus(view: UIView, busList: [CityBus], time: Int) {
+        let busCount = busList.count <= 3 ? busList.count : 3
+        let busViewCGRect = view.bounds
         
         let busViewHeight = busViewCGRect.size.height
         let busViewWidth = 48
         let busViewBetween = 4
         
-        for index in 0..<cityBusCount {
-            let cityBus = cityBusList[index]
+        for index in 0..<busCount {
+            let cityBus = busList[index]
+            
+            guard let firstTime = cityBus.firstBusTime else {
+                continue
+            }
+            
+            if firstTime > time {
+                continue
+            }
+            
             let x = index*(busViewWidth+busViewBetween) + busViewBetween
             
             let busView = UIView(frame: CGRect(x: x, y: 0, width: busViewWidth, height: Int(busViewHeight)))
@@ -76,7 +150,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             busView.backgroundColor = cityBus.cityBusColor
             busView.layer.cornerRadius = 4
-            cityBusView.addSubview(busView)
+            view.addSubview(busView)
         }
     }
     

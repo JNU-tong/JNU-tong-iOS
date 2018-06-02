@@ -12,11 +12,15 @@ class ShuttleBusController {
     var mainStation = "본관"
     var aShuttleIndex: Int?
     var bShuttleIndex: Int?
+    let defaults = UserDefaults(suiteName: "group.JNU-tong")
 
     func getMainStation() {
-        if UserDefaults.standard.object(forKey: "mainStation") != nil {
-            self.mainStation = UserDefaults.standard.string(forKey: "mainStation")!
+        if let tempMainStation = defaults?.string(forKey: "mainStation") {
+            self.mainStation = tempMainStation
         }
+//        if UserDefaults.standard.object(forKey: "mainStation") != nil {
+//            self.mainStation = UserDefaults.standard.string(forKey: "mainStation")!
+//        }
 
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mainShuttleBusSet"),
                                         object: nil,

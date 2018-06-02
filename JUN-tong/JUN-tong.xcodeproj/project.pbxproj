@@ -13,6 +13,7 @@
 		4E04168220BAB55900DE9BD0 /* ShuttleBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5AE2C1FD40B2B0009C7F5 /* ShuttleBus.swift */; };
 		4E04168320BAB56600DE9BD0 /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66E1F87DFE4002F5CCF /* ServerRepository.swift */; };
 		4E04168420BAB56F00DE9BD0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66C1F87ACF2002F5CCF /* Constant.swift */; };
+		4E04168920C2CFE200DE9BD0 /* ShuttleBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EB3391FA861BE00B828B1 /* ShuttleBusController.swift */; };
 		4E1853661FA2F48100DD9129 /* ShuttleBusDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1853651FA2F48100DD9129 /* ShuttleBusDetailView.storyboard */; };
 		4E1853681FA300EE00DD9129 /* ShuttleBusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1853671FA300EE00DD9129 /* ShuttleBusDetailViewController.swift */; };
 		4E18536A1FA31F9000DD9129 /* ShuttleBusInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1853691FA31F9000DD9129 /* ShuttleBusInfo.xib */; };
@@ -89,6 +90,8 @@
 		3F90C68BFCC596B57BA16A5F /* Pods-JNU-tong Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JNU-tong Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JNU-tong Widget/Pods-JNU-tong Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		41E2B70CE66DE40F2C09BA9D /* Pods_JNU_tong_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JNU_tong_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E04167E20B6EA6800DE9BD0 /* CityBusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusWidget.swift; sourceTree = "<group>"; };
+		4E04168620BAE9B400DE9BD0 /* JUN-tong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JUN-tong.entitlements"; sourceTree = "<group>"; };
+		4E04168720BAED7600DE9BD0 /* JNU-tong Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JNU-tong Widget.entitlements"; sourceTree = "<group>"; };
 		4E1853651FA2F48100DD9129 /* ShuttleBusDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShuttleBusDetailView.storyboard; sourceTree = "<group>"; };
 		4E1853671FA300EE00DD9129 /* ShuttleBusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBusDetailViewController.swift; sourceTree = "<group>"; };
 		4E1853691FA31F9000DD9129 /* ShuttleBusInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShuttleBusInfo.xib; sourceTree = "<group>"; };
@@ -250,6 +253,7 @@
 		4E7FB9E81F6D50590066C96D /* JUN-tong */ = {
 			isa = PBXGroup;
 			children = (
+				4E04168620BAE9B400DE9BD0 /* JUN-tong.entitlements */,
 				4E61F66B1F87ACDD002F5CCF /* Util/Server */,
 				4E4D224D1F87677E00F576F1 /* extention */,
 				4E9CF56C1F7BCDE80072ED05 /* Model */,
@@ -329,6 +333,7 @@
 		4EB78CE720512C4B00ED33BD /* JNU-tong Widget */ = {
 			isa = PBXGroup;
 			children = (
+				4E04168720BAED7600DE9BD0 /* JNU-tong Widget.entitlements */,
 				4E04167D20B6EA2900DE9BD0 /* DataController */,
 				4EB78CE820512C4B00ED33BD /* TodayViewController.swift */,
 				4EB78CEA20512C4B00ED33BD /* MainInterface.storyboard */,
@@ -448,6 +453,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Y4TX5PVNK4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4E7FB9F91F6D50590066C96D = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -459,6 +469,11 @@
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = Y4TX5PVNK4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -651,6 +666,7 @@
 				4E04168220BAB55900DE9BD0 /* ShuttleBus.swift in Sources */,
 				4E04168020BAB3AD00DE9BD0 /* CityBusController.swift in Sources */,
 				4EB78CE920512C4B00ED33BD /* TodayViewController.swift in Sources */,
+				4E04168920C2CFE200DE9BD0 /* ShuttleBusController.swift in Sources */,
 				4E04167F20B6EA6800DE9BD0 /* CityBusWidget.swift in Sources */,
 				4E04168320BAB56600DE9BD0 /* ServerRepository.swift in Sources */,
 				4E04168120BAB55600DE9BD0 /* CityBus.swift in Sources */,
@@ -811,6 +827,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JUN-tong/JUN-tong.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -830,6 +847,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JUN-tong/JUN-tong.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -881,6 +899,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "JNU-tong Widget/JNU-tong Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -903,6 +922,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "JNU-tong Widget/JNU-tong Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
