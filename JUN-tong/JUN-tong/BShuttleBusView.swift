@@ -31,7 +31,7 @@ class BShuttleBusView: UIViewController {
     var onceOnly = false
 
     let defaults = UserDefaults(suiteName: "group.JNU-tong")
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainImageViewHeight: NSLayoutConstraint!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
-
+ 
     @IBOutlet weak var cityBusMain: UIView!
     @IBOutlet weak var shuttleBusMain: UIView!
 

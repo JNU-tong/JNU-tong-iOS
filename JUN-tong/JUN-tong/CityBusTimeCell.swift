@@ -43,7 +43,7 @@ class CityBusTimeCell: UITableViewCell {
             })
         }
     }
-    
+
     func alarmTimePicekr() {
         DispatchQueue.main.async {
             let timePicker = UIDatePicker()
