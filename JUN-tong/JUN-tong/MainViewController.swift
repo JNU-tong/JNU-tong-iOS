@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainImageViewHeight: NSLayoutConstraint!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainImageHeight: NSLayoutConstraint!
-
+ 
     @IBOutlet weak var cityBusMain: UIView!
     @IBOutlet weak var shuttleBusMain: UIView!
 
@@ -342,7 +342,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 && favoriteBusList.isEmpty {
             return 0

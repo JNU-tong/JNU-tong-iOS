@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E04167F20B6EA6800DE9BD0 /* CityBusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E04167E20B6EA6800DE9BD0 /* CityBusWidget.swift */; };
+		4E04168020BAB3AD00DE9BD0 /* CityBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C901F7F8C92004417FE /* CityBusController.swift */; };
+		4E04168120BAB55600DE9BD0 /* CityBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22401F81179800F576F1 /* CityBus.swift */; };
+		4E04168220BAB55900DE9BD0 /* ShuttleBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5AE2C1FD40B2B0009C7F5 /* ShuttleBus.swift */; };
+		4E04168320BAB56600DE9BD0 /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66E1F87DFE4002F5CCF /* ServerRepository.swift */; };
+		4E04168420BAB56F00DE9BD0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66C1F87ACF2002F5CCF /* Constant.swift */; };
+		4E04168920C2CFE200DE9BD0 /* ShuttleBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EB3391FA861BE00B828B1 /* ShuttleBusController.swift */; };
 		4E1853661FA2F48100DD9129 /* ShuttleBusDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1853651FA2F48100DD9129 /* ShuttleBusDetailView.storyboard */; };
 		4E1853681FA300EE00DD9129 /* ShuttleBusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1853671FA300EE00DD9129 /* ShuttleBusDetailViewController.swift */; };
 		4E18536A1FA31F9000DD9129 /* ShuttleBusInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1853691FA31F9000DD9129 /* ShuttleBusInfo.xib */; };
@@ -14,21 +21,34 @@
 		4E18536E1FA3270B00DD9129 /* ShuttleBusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E18536D1FA3270B00DD9129 /* ShuttleBusView.swift */; };
 		4E1EB33A1FA861BE00B828B1 /* ShuttleBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EB3391FA861BE00B828B1 /* ShuttleBusController.swift */; };
 		4E23C33B1FA9B557000E6EBD /* BShuttleBusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C33A1FA9B557000E6EBD /* BShuttleBusView.swift */; };
+		4E3D0F5F20FCBAD70085D0BC /* APIKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D0F5E20FCBAD70085D0BC /* APIKeyManager.swift */; };
+		4E3D0F6120FCBB1D0085D0BC /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D0F6020FCBB1D0085D0BC /* APIKey.plist */; };
+		4E3D0F6220FCBB1D0085D0BC /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D0F6020FCBB1D0085D0BC /* APIKey.plist */; };
+		4E3D0F6320FCBB1D0085D0BC /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D0F6020FCBB1D0085D0BC /* APIKey.plist */; };
+		4E3D0F6420FCBB250085D0BC /* APIKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D0F5E20FCBAD70085D0BC /* APIKeyManager.swift */; };
+		4E3D0F6520FCBB250085D0BC /* APIKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D0F5E20FCBAD70085D0BC /* APIKeyManager.swift */; };
 		4E4D22411F81179800F576F1 /* CityBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22401F81179800F576F1 /* CityBus.swift */; };
 		4E4D22431F82036000F576F1 /* CityBusLineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22421F82036000F576F1 /* CityBusLineController.swift */; };
 		4E4D22481F8388A600F576F1 /* FavoriteBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */; };
 		4E4D224A1F83E2B300F576F1 /* CityBusTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D22491F83E2B300F576F1 /* CityBusTimeCell.swift */; };
 		4E4D224C1F85D59500F576F1 /* CityBusDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4D224B1F85D59500F576F1 /* CityBusDetailView.storyboard */; };
 		4E4D224F1F87681100F576F1 /* UIColor+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4D224E1F87681100F576F1 /* UIColor+extention.swift */; };
+		4E5EBA402067CE7700DACE0D /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EBA3F2067CE7700DACE0D /* UIView+extension.swift */; };
+		4E5EBA422067CEC900DACE0D /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5EBA412067CEC900DACE0D /* AlarmController.swift */; };
 		4E61F66D1F87ACF2002F5CCF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66C1F87ACF2002F5CCF /* Constant.swift */; };
 		4E61F66F1F87DFE4002F5CCF /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61F66E1F87DFE4002F5CCF /* ServerRepository.swift */; };
+		4E6F64CB205BE92F00F9A8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
+		4E6F64CC205BEAA700F9A8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
 		4E7FB9EA1F6D50590066C96D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9E91F6D50590066C96D /* AppDelegate.swift */; };
 		4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9ED1F6D50590066C96D /* Main.storyboard */; };
-		4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F01F6D50590066C96D /* Assets.xcassets */; };
 		4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB9F21F6D50590066C96D /* LaunchScreen.storyboard */; };
 		4E7FB9FF1F6D50590066C96D /* JUN_tongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FB9FE1F6D50590066C96D /* JUN_tongTests.swift */; };
 		4E7FBA0F1F6D520A0066C96D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */; };
 		4E7FBA171F6FAD270066C96D /* CityBusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBA161F6FAD270066C96D /* CityBusCell.swift */; };
+		4EB78CE620512C4B00ED33BD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB78CD120512C0300ED33BD /* NotificationCenter.framework */; };
+		4EB78CE920512C4B00ED33BD /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB78CE820512C4B00ED33BD /* TodayViewController.swift */; };
+		4EB78CEC20512C4B00ED33BD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EB78CEA20512C4B00ED33BD /* MainInterface.storyboard */; };
+		4EB78CF020512C4B00ED33BD /* JNU-tong Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4EB78CE520512C4B00ED33BD /* JNU-tong Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4EC5AE2D1FD40B2B0009C7F5 /* ShuttleBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5AE2C1FD40B2B0009C7F5 /* ShuttleBus.swift */; };
 		4ED42C911F7F8C92004417FE /* CityBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C901F7F8C92004417FE /* CityBusController.swift */; };
 		4ED42C961F7FA0B5004417FE /* CityBusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */; };
@@ -36,6 +56,7 @@
 		4ED42C9A1F80C856004417FE /* CityBusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C991F80C856004417FE /* CityBusLineView.swift */; };
 		4ED42C9C1F810D15004417FE /* CityBusLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED42C9B1F810D15004417FE /* CityBusLineCell.swift */; };
 		628D611A936BB19F59D893BF /* Pods_JUN_tong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1EB65690ECF28CF8688EE9 /* Pods_JUN_tong.framework */; };
+		AAD1C4517C0857859DD19DAD /* Pods_JNU_tong_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E2B70CE66DE40F2C09BA9D /* Pods_JNU_tong_Widget.framework */; };
 		B7C12C441BA558821C5EA656 /* Pods_JUN_tongTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D727C657DC502A81DEFF550F /* Pods_JUN_tongTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +68,36 @@
 			remoteGlobalIDString = 4E7FB9E51F6D50590066C96D;
 			remoteInfo = "JUN-tong";
 		};
+		4EB78CEE20512C4B00ED33BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E7FB9DE1F6D50590066C96D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EB78CE420512C4B00ED33BD;
+			remoteInfo = "JNU-tong Widget";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4EB78CE020512C0400ED33BD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4EB78CF020512C4B00ED33BD /* JNU-tong Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		31BC75A7527F5C6A58926FD2 /* Pods-JNU-tong Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JNU-tong Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-JNU-tong Widget/Pods-JNU-tong Widget.release.xcconfig"; sourceTree = "<group>"; };
+		3F90C68BFCC596B57BA16A5F /* Pods-JNU-tong Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JNU-tong Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JNU-tong Widget/Pods-JNU-tong Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		41E2B70CE66DE40F2C09BA9D /* Pods_JNU_tong_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JNU_tong_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E04167E20B6EA6800DE9BD0 /* CityBusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusWidget.swift; sourceTree = "<group>"; };
+		4E04168620BAE9B400DE9BD0 /* JUN-tong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JUN-tong.entitlements"; sourceTree = "<group>"; };
+		4E04168720BAED7600DE9BD0 /* JNU-tong Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JNU-tong Widget.entitlements"; sourceTree = "<group>"; };
 		4E1853651FA2F48100DD9129 /* ShuttleBusDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShuttleBusDetailView.storyboard; sourceTree = "<group>"; };
 		4E1853671FA300EE00DD9129 /* ShuttleBusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBusDetailViewController.swift; sourceTree = "<group>"; };
 		4E1853691FA31F9000DD9129 /* ShuttleBusInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShuttleBusInfo.xib; sourceTree = "<group>"; };
@@ -57,12 +105,16 @@
 		4E18536D1FA3270B00DD9129 /* ShuttleBusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBusView.swift; sourceTree = "<group>"; };
 		4E1EB3391FA861BE00B828B1 /* ShuttleBusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBusController.swift; sourceTree = "<group>"; };
 		4E23C33A1FA9B557000E6EBD /* BShuttleBusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BShuttleBusView.swift; sourceTree = "<group>"; };
+		4E3D0F5E20FCBAD70085D0BC /* APIKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyManager.swift; sourceTree = "<group>"; };
+		4E3D0F6020FCBB1D0085D0BC /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		4E4D22401F81179800F576F1 /* CityBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBus.swift; sourceTree = "<group>"; };
 		4E4D22421F82036000F576F1 /* CityBusLineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusLineController.swift; sourceTree = "<group>"; };
 		4E4D22471F8388A500F576F1 /* FavoriteBusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBusCell.swift; sourceTree = "<group>"; };
 		4E4D22491F83E2B300F576F1 /* CityBusTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusTimeCell.swift; sourceTree = "<group>"; };
 		4E4D224B1F85D59500F576F1 /* CityBusDetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CityBusDetailView.storyboard; sourceTree = "<group>"; };
 		4E4D224E1F87681100F576F1 /* UIColor+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extention.swift"; sourceTree = "<group>"; };
+		4E5EBA3F2067CE7700DACE0D /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		4E5EBA412067CEC900DACE0D /* AlarmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		4E61F66C1F87ACF2002F5CCF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		4E61F66E1F87DFE4002F5CCF /* ServerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		4E7FB9E61F6D50590066C96D /* JUN-tong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JUN-tong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +129,11 @@
 		4E7FBA0E1F6D520A0066C96D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4E7FBA161F6FAD270066C96D /* CityBusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityBusCell.swift; sourceTree = "<group>"; };
 		4E96CC1B52F1CDDC47AA0C1D /* Pods-JUN-tongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JUN-tongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JUN-tongTests/Pods-JUN-tongTests.release.xcconfig"; sourceTree = "<group>"; };
+		4EB78CD120512C0300ED33BD /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4EB78CE520512C4B00ED33BD /* JNU-tong Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "JNU-tong Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB78CE820512C4B00ED33BD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4EB78CEB20512C4B00ED33BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4EB78CED20512C4B00ED33BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC5AE2C1FD40B2B0009C7F5 /* ShuttleBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuttleBus.swift; sourceTree = "<group>"; };
 		4ED42C901F7F8C92004417FE /* CityBusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusController.swift; sourceTree = "<group>"; };
 		4ED42C951F7FA0B5004417FE /* CityBusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBusDetailViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +164,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4EB78CE220512C4B00ED33BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EB78CE620512C4B00ED33BD /* NotificationCenter.framework in Frameworks */,
+				AAD1C4517C0857859DD19DAD /* Pods_JNU_tong_Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,6 +183,8 @@
 				D8B3DB7291429A09FCBD9618 /* Pods-JUN-tong.release.xcconfig */,
 				8B3AEBA5A68832E0D85E7801 /* Pods-JUN-tongTests.debug.xcconfig */,
 				4E96CC1B52F1CDDC47AA0C1D /* Pods-JUN-tongTests.release.xcconfig */,
+				3F90C68BFCC596B57BA16A5F /* Pods-JNU-tong Widget.debug.xcconfig */,
+				31BC75A7527F5C6A58926FD2 /* Pods-JNU-tong Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -137,14 +205,24 @@
 				4E1EB3391FA861BE00B828B1 /* ShuttleBusController.swift */,
 				4ED42C901F7F8C92004417FE /* CityBusController.swift */,
 				4E4D22421F82036000F576F1 /* CityBusLineController.swift */,
+				4E5EBA412067CEC900DACE0D /* AlarmController.swift */,
 			);
 			name = DataController;
+			sourceTree = "<group>";
+		};
+		4E04167D20B6EA2900DE9BD0 /* DataController */ = {
+			isa = PBXGroup;
+			children = (
+				4E04167E20B6EA6800DE9BD0 /* CityBusWidget.swift */,
+			);
+			path = DataController;
 			sourceTree = "<group>";
 		};
 		4E4D224D1F87677E00F576F1 /* extention */ = {
 			isa = PBXGroup;
 			children = (
 				4E4D224E1F87681100F576F1 /* UIColor+extention.swift */,
+				4E5EBA3F2067CE7700DACE0D /* UIView+extension.swift */,
 			);
 			name = extention;
 			sourceTree = "<group>";
@@ -154,6 +232,7 @@
 			children = (
 				4E61F66C1F87ACF2002F5CCF /* Constant.swift */,
 				4E61F66E1F87DFE4002F5CCF /* ServerRepository.swift */,
+				4E3D0F5E20FCBAD70085D0BC /* APIKeyManager.swift */,
 			);
 			name = Util/Server;
 			sourceTree = "<group>";
@@ -163,6 +242,7 @@
 			children = (
 				4E7FB9E81F6D50590066C96D /* JUN-tong */,
 				4E7FB9FD1F6D50590066C96D /* JUN-tongTests */,
+				4EB78CE720512C4B00ED33BD /* JNU-tong Widget */,
 				4E7FB9E71F6D50590066C96D /* Products */,
 				36ED6E4CE73796D46763443F /* Pods */,
 				663058E54C4578776CCCEAB0 /* Frameworks */,
@@ -174,6 +254,7 @@
 			children = (
 				4E7FB9E61F6D50590066C96D /* JUN-tong.app */,
 				4E7FB9FA1F6D50590066C96D /* JUN-tongTests.xctest */,
+				4EB78CE520512C4B00ED33BD /* JNU-tong Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +262,7 @@
 		4E7FB9E81F6D50590066C96D /* JUN-tong */ = {
 			isa = PBXGroup;
 			children = (
+				4E04168620BAE9B400DE9BD0 /* JUN-tong.entitlements */,
 				4E61F66B1F87ACDD002F5CCF /* Util/Server */,
 				4E4D224D1F87677E00F576F1 /* extention */,
 				4E9CF56C1F7BCDE80072ED05 /* Model */,
@@ -207,6 +289,7 @@
 				4E7FB9F21F6D50590066C96D /* LaunchScreen.storyboard */,
 				4E7FB9E91F6D50590066C96D /* AppDelegate.swift */,
 				4E7FB9F51F6D50590066C96D /* Info.plist */,
+				4E3D0F6020FCBB1D0085D0BC /* APIKey.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -257,6 +340,18 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		4EB78CE720512C4B00ED33BD /* JNU-tong Widget */ = {
+			isa = PBXGroup;
+			children = (
+				4E04168720BAED7600DE9BD0 /* JNU-tong Widget.entitlements */,
+				4E04167D20B6EA2900DE9BD0 /* DataController */,
+				4EB78CE820512C4B00ED33BD /* TodayViewController.swift */,
+				4EB78CEA20512C4B00ED33BD /* MainInterface.storyboard */,
+				4EB78CED20512C4B00ED33BD /* Info.plist */,
+			);
+			path = "JNU-tong Widget";
+			sourceTree = "<group>";
+		};
 		4ED42C921F7F9D9E004417FE /* CityBusDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +381,8 @@
 			children = (
 				8A1EB65690ECF28CF8688EE9 /* Pods_JUN_tong.framework */,
 				D727C657DC502A81DEFF550F /* Pods_JUN_tongTests.framework */,
+				4EB78CD120512C0300ED33BD /* NotificationCenter.framework */,
+				41E2B70CE66DE40F2C09BA9D /* Pods_JNU_tong_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,12 +399,13 @@
 				4E7FB9E31F6D50590066C96D /* Frameworks */,
 				4E7FB9E41F6D50590066C96D /* Resources */,
 				E933795313F2100C58D83829 /* [CP] Embed Pods Frameworks */,
-				33B942E03BEC33F7DCDE9B9C /* [CP] Copy Pods Resources */,
 				4EC5AE2B1FD3E7FB0009C7F5 /* ShellScript */,
+				4EB78CE020512C0400ED33BD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4EB78CEF20512C4B00ED33BD /* PBXTargetDependency */,
 			);
 			name = "JUN-tong";
 			productName = "JUN-tong";
@@ -322,8 +420,6 @@
 				4E7FB9F61F6D50590066C96D /* Sources */,
 				4E7FB9F71F6D50590066C96D /* Frameworks */,
 				4E7FB9F81F6D50590066C96D /* Resources */,
-				EA981189DB284F0527546D94 /* [CP] Embed Pods Frameworks */,
-				4A70FA58AC598B30F54117D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,13 +431,31 @@
 			productReference = 4E7FB9FA1F6D50590066C96D /* JUN-tongTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4EB78CE420512C4B00ED33BD /* JNU-tong Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EB78CF120512C4C00ED33BD /* Build configuration list for PBXNativeTarget "JNU-tong Widget" */;
+			buildPhases = (
+				844F27EC755BA98E3D1444C7 /* [CP] Check Pods Manifest.lock */,
+				4EB78CE120512C4B00ED33BD /* Sources */,
+				4EB78CE220512C4B00ED33BD /* Frameworks */,
+				4EB78CE320512C4B00ED33BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JNU-tong Widget";
+			productName = "JNU-tong Widget";
+			productReference = 4EB78CE520512C4B00ED33BD /* JNU-tong Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4E7FB9DE1F6D50590066C96D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Seong ho Hong";
 				TargetAttributes = {
@@ -349,12 +463,27 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Y4TX5PVNK4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4E7FB9F91F6D50590066C96D = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = B3PWYBKFUK;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4E7FB9E51F6D50590066C96D;
+					};
+					4EB78CE420512C4B00ED33BD = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = Y4TX5PVNK4;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -373,6 +502,7 @@
 			targets = (
 				4E7FB9E51F6D50590066C96D /* JUN-tong */,
 				4E7FB9F91F6D50590066C96D /* JUN-tongTests */,
+				4EB78CE420512C4B00ED33BD /* JNU-tong Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -384,9 +514,10 @@
 			files = (
 				4E7FB9F41F6D50590066C96D /* LaunchScreen.storyboard in Resources */,
 				4E1853661FA2F48100DD9129 /* ShuttleBusDetailView.storyboard in Resources */,
-				4E7FB9F11F6D50590066C96D /* Assets.xcassets in Resources */,
 				4E4D224C1F85D59500F576F1 /* CityBusDetailView.storyboard in Resources */,
 				4E18536A1FA31F9000DD9129 /* ShuttleBusInfo.xib in Resources */,
+				4E3D0F6120FCBB1D0085D0BC /* APIKey.plist in Resources */,
+				4E6F64CB205BE92F00F9A8DC /* Assets.xcassets in Resources */,
 				4E7FB9EF1F6D50590066C96D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +526,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3D0F6220FCBB1D0085D0BC /* APIKey.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EB78CE320512C4B00ED33BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3D0F6320FCBB1D0085D0BC /* APIKey.plist in Resources */,
+				4E6F64CC205BEAA700F9A8DC /* Assets.xcassets in Resources */,
+				4EB78CEC20512C4B00ED33BD /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,36 +559,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		33B942E03BEC33F7DCDE9B9C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JUN-tong/Pods-JUN-tong-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A70FA58AC598B30F54117D7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JUN-tongTests/Pods-JUN-tongTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4EC5AE2B1FD3E7FB0009C7F5 /* ShellScript */ = {
@@ -480,6 +592,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		844F27EC755BA98E3D1444C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JNU-tong Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E933795313F2100C58D83829 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,21 +630,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JUN-tong/Pods-JUN-tong-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EA981189DB284F0527546D94 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JUN-tongTests/Pods-JUN-tongTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -527,11 +642,14 @@
 				4E61F66D1F87ACF2002F5CCF /* Constant.swift in Sources */,
 				4E4D224F1F87681100F576F1 /* UIColor+extention.swift in Sources */,
 				4E1853681FA300EE00DD9129 /* ShuttleBusDetailViewController.swift in Sources */,
+				4E5EBA422067CEC900DACE0D /* AlarmController.swift in Sources */,
 				4E18536E1FA3270B00DD9129 /* ShuttleBusView.swift in Sources */,
 				4E4D22431F82036000F576F1 /* CityBusLineController.swift in Sources */,
 				4EC5AE2D1FD40B2B0009C7F5 /* ShuttleBus.swift in Sources */,
 				4E4D22411F81179800F576F1 /* CityBus.swift in Sources */,
 				4ED42C961F7FA0B5004417FE /* CityBusDetailViewController.swift in Sources */,
+				4E5EBA402067CE7700DACE0D /* UIView+extension.swift in Sources */,
+				4E3D0F5F20FCBAD70085D0BC /* APIKeyManager.swift in Sources */,
 				4E61F66F1F87DFE4002F5CCF /* ServerRepository.swift in Sources */,
 				4E1EB33A1FA861BE00B828B1 /* ShuttleBusController.swift in Sources */,
 				4E7FBA171F6FAD270066C96D /* CityBusCell.swift in Sources */,
@@ -550,7 +668,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3D0F6420FCBB250085D0BC /* APIKeyManager.swift in Sources */,
 				4E7FB9FF1F6D50590066C96D /* JUN_tongTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EB78CE120512C4B00ED33BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3D0F6520FCBB250085D0BC /* APIKeyManager.swift in Sources */,
+				4E04168420BAB56F00DE9BD0 /* Constant.swift in Sources */,
+				4E04168220BAB55900DE9BD0 /* ShuttleBus.swift in Sources */,
+				4E04168020BAB3AD00DE9BD0 /* CityBusController.swift in Sources */,
+				4EB78CE920512C4B00ED33BD /* TodayViewController.swift in Sources */,
+				4E04168920C2CFE200DE9BD0 /* ShuttleBusController.swift in Sources */,
+				4E04167F20B6EA6800DE9BD0 /* CityBusWidget.swift in Sources */,
+				4E04168320BAB56600DE9BD0 /* ServerRepository.swift in Sources */,
+				4E04168120BAB55600DE9BD0 /* CityBus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +696,11 @@
 			isa = PBXTargetDependency;
 			target = 4E7FB9E51F6D50590066C96D /* JUN-tong */;
 			targetProxy = 4E7FB9FB1F6D50590066C96D /* PBXContainerItemProxy */;
+		};
+		4EB78CEF20512C4B00ED33BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EB78CE420512C4B00ED33BD /* JNU-tong Widget */;
+			targetProxy = 4EB78CEE20512C4B00ED33BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -579,6 +719,14 @@
 				4E7FB9F31F6D50590066C96D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4EB78CEA20512C4B00ED33BD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EB78CEB20512C4B00ED33BD /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -693,7 +841,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51DC8ACFB4DAE6E36970D05F /* Pods-JUN-tong.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JUN-tong/JUN-tong.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y4TX5PVNK4;
@@ -710,7 +861,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8B3DB7291429A09FCBD9618 /* Pods-JUN-tong.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JUN-tong/JUN-tong.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y4TX5PVNK4;
@@ -755,6 +909,52 @@
 			};
 			name = Release;
 		};
+		4EB78CF220512C4C00ED33BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F90C68BFCC596B57BA16A5F /* Pods-JNU-tong Widget.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "JNU-tong Widget/JNU-tong Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4TX5PVNK4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "JNU-tong Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.grohong.JNU-tong.JNU-tong-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EB78CF320512C4C00ED33BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31BC75A7527F5C6A58926FD2 /* Pods-JNU-tong Widget.release.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "JNU-tong Widget/JNU-tong Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4TX5PVNK4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "JNU-tong Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.grohong.JNU-tong.JNU-tong-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -781,6 +981,15 @@
 			buildConfigurations = (
 				4E7FBA071F6D50590066C96D /* Debug */,
 				4E7FBA081F6D50590066C96D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EB78CF120512C4C00ED33BD /* Build configuration list for PBXNativeTarget "JNU-tong Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EB78CF220512C4C00ED33BD /* Debug */,
+				4EB78CF320512C4C00ED33BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -31,6 +31,8 @@ class ShuttleBusView: UIViewController {
     var aShuttleSecondTime: [Int] = []
     var onceOnly = false
 
+    let defaults = UserDefaults(suiteName: "group.JNU-tong")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,7 +51,9 @@ class ShuttleBusView: UIViewController {
     }
 
     @IBAction func favoriteButtionClick(_ sender: Any) {
-        UserDefaults.standard.set(aShuttleStation[currentIndex!].stationName, forKey: "mainStation")
+        defaults?.set(aShuttleStation[currentIndex!].stationName, forKey: "mainStation")
+        defaults?.synchronize()
+//        UserDefaults.standard.set(aShuttleStation[currentIndex!].stationName, forKey: "mainStation")
         aStationIndex = currentIndex
         setFavoriteButton(stationIndex: aStationIndex!)
         shuttleBusController.setShuttleBusIndex(shuttleBusName: aShuttleStation[aStationIndex!].stationName)

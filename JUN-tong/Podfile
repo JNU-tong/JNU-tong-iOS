@@ -12,4 +12,9 @@ target 'JUN-tong' do
     inherit! :search_paths
     # Pods for testing
   end
+
+  target 'JNU-tong Widget' do
+    inherit! :search_paths
+    # Pods for Widget
+  end
 end
