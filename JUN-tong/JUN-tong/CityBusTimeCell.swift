@@ -20,6 +20,7 @@ class CityBusTimeCell: UITableViewCell {
         departTimeLabel.text = departTime
         remainTimeLabel.text = "\(reaminTime)분전"
         cityBusTimeCell.backgroundColor = cellColor.withAlphaComponent(0.1)
+        cityBusAlarmButton.isHidden = true
     }
 
     @IBAction func cityBusAlarmButtonTap(_ sender: Any) {
